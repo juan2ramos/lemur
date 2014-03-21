@@ -1,0 +1,186 @@
+/*
+    Document   : style
+    Created on : 12/02/2014, 18:06:43
+    Author     : Juan Ramos
+
+*/
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?-t4l6c3');
+    src: url('fonts/icomoon.eot?#iefix-t4l6c3') format('embedded-opentype'), url('fonts/icomoon.woff?-t4l6c3') format('woff'), url('fonts/icomoon.ttf?-t4l6c3') format('truetype'), url('fonts/icomoon.svg?-t4l6c3#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pencil:before {
+    content: "\e600";
+}
+
+.icon-pencil2:before {
+    content: "\e601";
+}
+
+.icon-eye:before {
+    content: "\e602";
+}
+
+.icon-eye2:before {
+    content: "\e603";
+}
+
+.icon-checkmark:before {
+    content: "\e604";
+}
+
+.icon-close:before {
+    content: "\e605";
+}
+
+.icon-cancel-circle:before {
+    content: "\e606";
+}
+
+body {
+
+    background: #F6F6F6;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: dimgray;
+    font-weight: 300;
+
+}
+
+h1 {
+    font-weight: 400;
+    margin: 10px 0 50px;
+    text-align: center;
+}
+
+li {
+    list-style: none;
+}
+
+#wrapper {
+    margin: 0 auto;
+    width: 960px;
+
+}
+
+#new-user {
+    text-decoration: none;
+    padding: 13px;
+    background: #D65C4F;
+    color: white;
+    border-bottom: #A74339 3px solid;
+    margin: 20px 0;
+}
+
+.table-primary {
+    background: #fff;
+    margin: 30px auto;
+    position: relative;
+    border: 1px solid #e2e1e1;
+    box-shadow: 0 3px 0 0 #dbdbdb;
+    width: 100%;
+}
+
+.table-primary thead th {
+    background-color: #3695d5;
+    border-color: #3695d5;
+    color: #fff;
+    font-size: .9em;
+    padding: 9px;
+}
+
+.table-primary tbody td {
+    padding: 9px;
+
+}
+
+.table-primary tbody td a {
+    background: red;
+    border: 1px solid;
+    color: white;
+    display: inline-block;
+    margin: 0 -2px;
+    font-size: 0.5em;
+    padding: 6px;
+    text-decoration: none;
+
+}
+
+.table-primary tbody td a.delete {
+    background: #cc3a3a;
+    border-radius: 0 3px 3px 0;
+    border-color: #cc3a3a;
+}
+
+.table-primary tbody td a.view {
+    background: #F0F0F0;
+    border-color: #F0F0F0;
+    border-radius: 3px 0 0 3px;
+    color: #929292;
+
+}
+
+.table-primary tbody td a.edit {
+    background: #8bbf61;
+    border-color: #8bbf61;
+}
+
+.table-primary tbody tr:nth-child(2n) {
+    background: rgba(54, 149, 213, 0.1)
+
+}
+
+.table-primary tbody tr:hover {
+    background: rgba(70, 78, 83, 0.1)
+
+}
+
+.center {
+    text-align: center;
+}
+
+ul.pagination {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.pagination li {
+    background: #fff;
+    border: 1px solid #E6E6E6;
+    border-right: none;
+    display: inline-block;
+    padding: 8px 14px;
+}
+
+.pagination li a {
+    color: #3695d5;
+    text-decoration: none;
+}
+
+.pagination li:first-child {
+    border-radius: 3px 0 0 3px;
+}
+
+.pagination li:last-child {
+    border-radius: 0 3px 3px 0;
+    border-right: 1px solid #E6E6E6;
+}

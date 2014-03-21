@@ -1,0 +1,231 @@
+<?php
+use Carbon\Carbon;
+/**
+ * Class IdeasController
+ */
+class IdeasController extends \BaseController
+{
+
+
+    /**
+     * @return View
+     */
+    public function getIndex()
+    {
+        $ideas = new Ideas;
+        $hidden = 'hidden';
+        $categorias = Categorias::all()->lists('nombre', 'id');
+        $combobox = [0 => "Elige una categoría "] + $categorias;
+
+        return View::make('front.ideasForm', compact('ideas', 'categorias', 'form_data', 'hidden', 'combobox'));
+
+    }
+
+    /**
+     * @return Json
+     */
+    public function create()
+    {
+        $images = explode(';', input::get('images'));
+        $idea = new Ideas;
+
+        $ideaData = Input::all();
+        $ideaData['id_users'] = Auth::user()->id;
+        if ($idea->isValid($ideaData)) {
+            $idea = Ideas::create($ideaData);
+            array_shift($images);
+            foreach ($images as $image) {
+                $img = Imagenes::create(['url' => $image]);
+                $idea->images()->save($img);
+            }
+            return Response::json(['success' => true, 'message' => 'Tu idea ha sido suboda corretamente']);
+        }
+
+        return Response::json($idea->getErrors());
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        $user = new User;
+        // Obtenemos la data enviada por el usuario
+        $data = Input::all();
+        if ($user->isValid($data)) {
+            // Si la data es valida se la asignamos al usuario
+            $user->fill($data);
+            // Guardamos el usuario
+            $user->save();
+            // Y Devolvemos una redirección a la acción show para mostrar el usuario
+            return Redirect::route('admin.users.show', array($user->id));
+        } else {
+            return Response::json($user->getErrors());
+        }
+        //return Input::all();
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function showAllForCategories($id)
+    {
+        $cierreCategoria = Carbon::parse(Categorias::find($id)->fecha_cierre)->endOfDay();
+        $ideas = Ideas::where('id_categorias', '=', $id)->get();
+
+        if ($ideas->isEmpty())
+            return 'error 404';
+        $ideasImage = $this->imagenesForideas($ideas);
+
+        $crono = true;
+
+        return View::make('front.vota-por-una-idea', compact('ideasImage', 'crono','cierreCategoria'));
+
+    }
+
+    /**
+     * @param $ideas
+     * @return mixed
+     */
+    private function imagenesForideas($ideas)
+    {
+
+        foreach ($ideas as $key => $value) {
+            $idea = Ideas::find($value['id']);
+
+            $ideas[$key]->imagen = (empty($idea->images[0]))?'images/detalle_idea.jpg':'upload/'.$idea->images[0]['url'];
+
+            //$ideas[$key]->voto = $idea->votos->count();
+
+        }
+
+        return $ideas;
+
+    }
+
+    public function votar()
+    {
+        if(!Auth::user()){
+            return Response::json(['success' => 2]);
+        }
+        $id_idea = Input::get('id');
+        $id_usuario = Auth::user()->id;
+        $votos = Votos::whereRaw('id_usuario = ' . $id_usuario . ' and id_idea = ' . $id_idea)->get();
+        if (!$votos->isEmpty()) {
+            return Response::json(['success' => 0, 'message' => 'Ya votaste por esta idea']);
+        }
+
+        $votosNew = new Votos;
+        $votosNew->id_idea = $id_idea;
+        $votosNew->id_usuario = $id_usuario;
+        $votosNew->save();
+        $idea = Ideas::find($id_idea);
+        $NVotos = $idea->numero_votos + 1;
+        $idea->numero_votos = $NVotos ;
+        $idea->save();
+        return Response::json(['success' => 1, 'votos' => $NVotos, 'id' => $id_idea,'message' => 'aro']);
+
+
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        $idea = Ideas::find($id);
+        $cierreCategoria = Carbon::parse(Categorias::find($idea->id_categorias)->fecha_cierre)->endOfDay();
+
+        if (is_null($idea)) {
+            return 'error 404';
+        }
+
+        $images = $idea->images;
+        $user = $idea->users;
+        $UserIdea['imagen'] = $user['imagen'];
+        $UserIdea['nombre'] = $user['nombre'];
+        $video = (empty($idea->url_video))?false:$idea->url_video;
+        $crono = true;
+        return View::make('front.detalle-idea', compact('video','idea', 'images', 'UserIdea',$this->comentarios($id),'crono','cierreCategoria'));
+
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        $user = User::find($id);
+        if (is_null($user)) {
+            return 'error 404';
+        }
+        $form_data = ['route' => ['admin.users.update', $user->id], 'method' => 'PATCH'];
+        $action = 'Editar';
+
+        return View::make('admin/users/form', compact('user', 'form_data', 'action'));
+
+
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        // Creamos un nuevo objeto para nuestro nuevo usuario
+        $user = User::find($id);
+
+        // Si el usuario no existe entonces lanzamos un error 404 :(
+        if (is_null($user)) {
+            App::abort(404);
+        }
+
+        // Obtenemos la data enviada por el usuario
+        $data = Input::all();
+
+        // Revisamos si la data es válido
+        if ($user->isValid($data)) {
+            // Si la data es valida se la asignamos al usuario
+            $user->fill($data);
+            // Guardamos el usuario
+            $user->save();
+            // Y Devolvemos una redirección a la acción show para mostrar el usuario
+            return Redirect::route('admin.users.show', array($user->id));
+        } else {
+            // En caso de error regresa a la acción edit con los datos y los errores encontrados
+            return Redirect::route('admin.users.edit', $user->id)->withInput()->withErrors($user->errors);
+        }
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+
+    public function comentarios($id)
+    {
+        return Ideas::find($id)->comentarios;
+    }
+
+}
