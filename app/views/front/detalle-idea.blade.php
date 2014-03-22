@@ -68,7 +68,7 @@
         {{ Form::close() }}
         <section id="comentarios-conted">
         @foreach($comentarios as $value)
-    
+
             @if($value['pivot']['estado'] == 1)
             <article >
                 <span>{{$value["nombre"]}}</span>

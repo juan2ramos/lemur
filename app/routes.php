@@ -14,6 +14,7 @@ Route::group(['before' => 'csrf'], function()
 {
     Route::post('login','LoginController@login');
     Route::post('sube-tu-idea/nueva', 'IdeasController@create');
+    Route::post('password/nueva', 'LoginController@password');
     Route::post('register','admin_UsersController@store');
 });
 
@@ -23,6 +24,7 @@ Route::group(['before' => 'auth'], function()
 });
 Route::get('facebook', 'LoginController@facebook');
 Route::get('twitter', 'LoginController@twitter');
+Route::get('password', function(){return View::make('front.password');});
 
 Route::post('updateUser','admin_UsersController@update');
 Route::get('perfil','admin_UsersController@UpdatePerfil');
