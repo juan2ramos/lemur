@@ -22,7 +22,7 @@ Route::group(['before' => 'auth'], function()
     Route::controller('sube-tu-idea','IdeasController');
 });
 Route::get('facebook', 'LoginController@facebook');
-
+Route::get('twitter', 'LoginController@twitter');
 
 Route::post('updateUser','admin_UsersController@update');
 Route::get('perfil','admin_UsersController@UpdatePerfil');

@@ -1,5 +1,6 @@
 <?php
 use Carbon\Carbon;
+
 /**
  * Class IdeasController
  */
@@ -76,16 +77,19 @@ class IdeasController extends \BaseController
      */
     public function showAllForCategories($id)
     {
+        if (!Categorias::open($id))return Redirect::to('/categorias');
+
         $cierreCategoria = Carbon::parse(Categorias::find($id)->fecha_cierre)->endOfDay();
-        $ideas = Ideas::where('id_categorias', '=', $id)->get();
+
+        $ideas = Ideas::whereRaw('id_categorias = ' . $id. ' and estado_publicacion = 1')->get();
 
         if ($ideas->isEmpty())
-            return 'error 404';
+            return Redirect::to('/categorias');
         $ideasImage = $this->imagenesForideas($ideas);
 
         $crono = true;
 
-        return View::make('front.vota-por-una-idea', compact('ideasImage', 'crono','cierreCategoria'));
+        return View::make('front.vota-por-una-idea', compact('ideasImage', 'crono', 'cierreCategoria'));
 
     }
 
@@ -99,7 +103,7 @@ class IdeasController extends \BaseController
         foreach ($ideas as $key => $value) {
             $idea = Ideas::find($value['id']);
 
-            $ideas[$key]->imagen = (empty($idea->images[0]))?'images/detalle_idea.jpg':'upload/'.$idea->images[0]['url'];
+            $ideas[$key]->imagen = (empty($idea->images[0])) ? 'images/detalle_idea.jpg' : 'upload/' . $idea->images[0]['url'];
 
             //$ideas[$key]->voto = $idea->votos->count();
 
@@ -111,7 +115,7 @@ class IdeasController extends \BaseController
 
     public function votar()
     {
-        if(!Auth::user()){
+        if (!Auth::user()) {
             return Response::json(['success' => 2]);
         }
         $id_idea = Input::get('id');
@@ -127,9 +131,9 @@ class IdeasController extends \BaseController
         $votosNew->save();
         $idea = Ideas::find($id_idea);
         $NVotos = $idea->numero_votos + 1;
-        $idea->numero_votos = $NVotos ;
+        $idea->numero_votos = $NVotos;
         $idea->save();
-        return Response::json(['success' => 1, 'votos' => $NVotos, 'id' => $id_idea,'message' => 'aro']);
+        return Response::json(['success' => 1, 'votos' => $NVotos, 'id' => $id_idea, 'message' => 'aro']);
 
 
     }
@@ -142,20 +146,22 @@ class IdeasController extends \BaseController
      */
     public function show($id)
     {
-        $idea = Ideas::find($id);
-        $cierreCategoria = Carbon::parse(Categorias::find($idea->id_categorias)->fecha_cierre)->endOfDay();
+        if(!is_numeric($id)) return Redirect::to('/categorias');
+        $idea = Ideas::whereRaw('id = ' . $id . ' and estado_publicacion = 1')->get();
+        if ($idea->isEmpty()) return Redirect::to('/categorias');
+        if (!Categorias::open( $idea[0]->id_categorias))return Redirect::to('/categorias');
+        $cierreCategoria = Carbon::parse(Categorias::find($idea[0]->id_categorias)->fecha_cierre)->endOfDay();
 
-        if (is_null($idea)) {
-            return 'error 404';
-        }
 
-        $images = $idea->images;
-        $user = $idea->users;
+
+        $images = $idea[0]->images;
+        $user = $idea[0]->users;
         $UserIdea['imagen'] = $user['imagen'];
         $UserIdea['nombre'] = $user['nombre'];
-        $video = (empty($idea->url_video))?false:$idea->url_video;
+        $video = (empty($idea[0]->url_video)) ? false : $idea[0]->url_video;
         $crono = true;
-        return View::make('front.detalle-idea', compact('video','idea', 'images', 'UserIdea',$this->comentarios($id),'crono','cierreCategoria'));
+        $comentarios = $this->comentarios($id);
+        return View::make('front.detalle-idea', compact('video', 'idea', 'images', 'UserIdea','comentarios', 'crono', 'cierreCategoria'));
 
     }
 

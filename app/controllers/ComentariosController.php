@@ -5,15 +5,25 @@ class ComentariosController extends  \BaseController{
 
     public function __construct()
     {
-        $this->beforeFilter('auth');
+
     }
 
     public function create(){
+        if (!Auth::user()) {
+            return Response::json(['success' => 2]);
+        }
         $data['id_user'] = Auth::user()->id;
         $data['id_idea'] = Input::get('id_idea');
         $data['comentario'] = Input::get('comentario');
-        Comentarios::create($data);
-        return Response::json(['message' => 'Mensaje enviado']);
+        $comemtario = new Comentarios;
+        if($comemtario->isValid($data)){
+            $comemtario->fill($data);
+            $comemtario->save();
+            return Response::json(['success' => 1]);
+        }else{
+            return Response::json($comemtario->getErrors());
+        }
+
     }
     public function show(){
 

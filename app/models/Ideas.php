@@ -4,7 +4,7 @@
 /**
  * Class Ideas
  */
-class Ideas extends Eloquent
+class   Ideas extends Eloquent
 {
 
     protected $table = 'ideas';
@@ -85,7 +85,7 @@ class Ideas extends Eloquent
         return $this->errors;
     }
     public function comentarios(){
-        return $this->belongsToMany('user', 'comentarios', 'id_idea', 'id_user')->withPivot('comentario');;
+        return $this->belongsToMany('user', 'comentarios', 'id_idea', 'estado')->withPivot('comentario');
     }
 
 

@@ -6,19 +6,19 @@
     <div class="detalle-idea">
         <div id="back-contend">
             <div class="back">
-                {{HTML::link('vota-por-una-idea/'.$idea['id_categorias'],'Volver')}}
+                {{HTML::link('vota-por-una-idea/'.$idea[0]['id_categorias'],'Volver')}}
 
             </div>
-            {{HTML::link('votar',$idea['numero_votos'],
-            ['id' => 'id'.$idea['id'], 'class' => 'izq', 'data-idea' => $idea['id']])}}
+            {{HTML::link('votar',$idea[0]['numero_votos'],
+            ['id' => 'id'.$idea[0]['id'], 'class' => 'izq', 'data-idea' => $idea[0]['id']])}}
 
 
 
         </div>
-        <h2>{{$idea['titulo']}}</h2>
+        <h2>{{$idea[0]['titulo']}}</h2>
 
         <p>
-            {{$idea['descripcion']}}
+            {{$idea[0]['descripcion']}}
         </p>
 
         <div id="slide">
@@ -54,18 +54,29 @@
         </div>
         <h3>Oportunidad</h3>
 
-        <p>{{$idea['problematica']}}</p>
+        <p>{{$idea[0]['problematica']}}</p>
 
         <h3>Solución</h3>
 
-        <p>{{$idea['solucion']}}</p>
+        <p>{{$idea[0]['solucion']}}</p>
 
         <h3>Deja tu comentario</h3>
         {{ Form::open(array('url' => 'comentario', 'id'=>'form-comentario')) }}
-        {{Form::hidden('id_idea',$idea['id'])}}
+        {{Form::hidden('id_idea',$idea[0]['id'])}}
         <textarea id="text-comment" name="comentario"></textarea>
         <input type="submit" class="sumbit" value="Enviar">
         {{ Form::close() }}
+        <section id="comentarios-conted">
+        @foreach($comentarios as $value)
+    
+            @if($value['pivot']['estado'] == 1)
+            <article >
+                <span>{{$value["nombre"]}}</span>
+                {{$value['pivot']['comentario']}}
+            </article>
+            @endif
+        @endforeach
+        </section>
     </div>
     <div class="popUp-container-slide">
         <div class="contend-slider">

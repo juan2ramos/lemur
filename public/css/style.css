@@ -1759,7 +1759,16 @@ loading
     -ms-animation-delay:0.6s;
     animation-delay:0.6s;
 }
-
+#comentarios-conted{
+    color: #fff;
+    margin: 40px 0;
+}
+#comentarios-conted span{
+    display: block;
+}
+#comentarios-conted article{
+    margin: 20px 0;
+}
 @-moz-keyframes bounceG{
     0%{
         -moz-transform:scale(1.2);

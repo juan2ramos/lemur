@@ -1,6 +1,7 @@
 <?php
 
 use Carbon\Carbon;
+
 class Categorias extends Eloquent
 {
     protected $perPage = 2;
@@ -24,12 +25,23 @@ class Categorias extends Eloquent
             $categorias[$key]->estado =
                 ($value->estado == 1 && Carbon::today()->between(
                         Carbon::parse($value->fecha_inicio),
-                    Carbon::parse($value->fecha_cierre)
-                    )) ?1:0;
+                        Carbon::parse($value->fecha_cierre)
+                    )) ? 1 : 0;
 
         }
         return $categorias;
 
+    }
+
+    static function  open($id)
+    {
+        $categoria = Categorias::find($id);
+
+        return
+            (!empty($categoria) && $categoria->estado == 1 && Carbon::today()->between(
+                    Carbon::parse($categoria->fecha_inicio),
+                    Carbon::parse($categoria->fecha_cierre)
+                )) ? 1 : 0;
     }
 
 }

@@ -93,3 +93,10 @@ Route::filter('session', function()
 		return Redirect::to('/');
 	}
 });*/
+Route::filter('categoria', function()
+{
+    if (Session::token() != Input::get('_token'))
+    {
+        throw new Illuminate\Session\TokenMismatchException;
+    }
+});

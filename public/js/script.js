@@ -185,7 +185,12 @@ function responseFormRegister(data) {
     }
     else{
 
-        console.log(data)
+
+        for (var key in data) {
+            $('#registra-cuenta').find('h2').text(data[key]);
+            console.log(data[key])
+            break;
+        }
     }
 }
 function responseFormlogin(data) {
