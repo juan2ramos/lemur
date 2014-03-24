@@ -14,9 +14,29 @@ Route::group(['before' => 'csrf'], function()
 {
     Route::post('login','LoginController@login');
     Route::post('sube-tu-idea/nueva', 'IdeasController@create');
-    Route::post('password/nueva', 'LoginController@password');
+
     Route::post('register','admin_UsersController@store');
+
+
 });
+Route::group(['prefix' => 'admin','before' => 'admin'], function()
+{
+    Route::resource('users', 'admin_UsersController');
+    Route::resource('categorias', 'CategoriasController');
+    Route::group(['before' => 'csrf'], function(){
+        Route::post('categoria/update','CategoriasController@update');
+        Route::post('categoria/store','CategoriasController@store');
+        Route::post('users/changeRole','admin_UsersController@changeRole');
+
+
+    });
+    Route::get('users/ingresar/{id}',function($id){
+
+        Auth::login(User::find($id));
+        return Redirect::to('/');
+    });
+});
+Route::post('password/new', 'LoginController@password');
 
 Route::group(['before' => 'auth'], function()
 {
@@ -47,45 +67,11 @@ Route::get('terminos-y-condiciones', function(){return View::make('front.termino
 
 Route::get('registro', function(){return View::make('front.inicio', ['popUp'=>'true']);});
 
-Route::resource('admin/categorias', 'CategoriasController');
 
 
-Route::get("init", function()
-{
 
 
-    if(Auth::attempt($loginData, true))
-    {
-
-        return Redirect::to("home");
-
-    }
-    return Redirect::to("jajda");
-
-});
-
-Route::get('p', function()
-{
-    $users = User::find(2);
-    return Hash::check('123456', $hashedPassword);;	return View::make('front.inicio', array('hidden' => 'hidden'));
-});
 
 
-Route::group(array('before' => 'session' ),function(){
-    //Route::controller('/admin','AdminController');
-    Route::get('/admins/{n?}', function($n = null)
-    {
-        return 'jaja slash ese cesar '.$n;
-    });
-});
-
-Route::get('add',["before" => "roles:1,homde", function()
-{
-
-    return "Como mínimo tu role debe ser administrador, tu eres " . getRole(Auth::user()->role_id);
-
-}]);
-
-Route::resource('admin/users', 'admin_UsersController');
 //Route::controller('admin','AdminController');
 //Route::get('login', 'AuthController@showLogin');

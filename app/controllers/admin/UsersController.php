@@ -3,7 +3,8 @@
 /**
  * Class Admin_UsersController
  */
-class Admin_UsersController extends \BaseController {
+class Admin_UsersController extends \BaseController
+{
 
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class Admin_UsersController extends \BaseController {
     {
         $users = User::paginate(5);
         //dd($users);
-        return View::make('admin/users/list')->with('users',$users);
+        return View::make('admin/users/list')->with('users', $users);
     }
 
     /**
@@ -25,9 +26,9 @@ class Admin_UsersController extends \BaseController {
     public function create()
     {
         $form_data = array('route' => array('admin.users.store'), 'method' => 'POST');
-        $action    = 'Crear';
+        $action = 'Crear';
         $user = new User;
-        return View::make('admin/users/form',compact('user', 'form_data', 'action'));
+        return View::make('admin/users/form', compact('user', 'form_data', 'action'));
     }
 
     /**
@@ -40,22 +41,19 @@ class Admin_UsersController extends \BaseController {
         $user = new User;
         // Obtenemos la data enviada por el usuario
         $data = Input::all();
-        if ($user->isValid($data))
-        {
+        if ($user->isValid($data)) {
             // Si la data es valida se la asignamos al usuario
             $user->fill($data);
             // Guardamos el usuario
             $user->save();
             $userdata = [
                 'email' => Input::get('email'),
-                'password'=> Input::get('password')
+                'password' => Input::get('password')
             ];
             Auth::attempt($userdata, Input::get('remember-me', 0));
             return Response::json(['success' => 1]);
             #return Redirect::route('admin.users.show', array($user->id));
-        }
-        else
-        {
+        } else {
             // En caso de error regresa a la acción create con los datos y los errores encontrados
             //return Redirect::route('admin.users.create')->withInput()->withErrors($user->getErrors());
             return Response::json($user->getErrors());
@@ -67,49 +65,54 @@ class Admin_UsersController extends \BaseController {
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function show($id)
     {
         $user = User::find($id);
-        if (is_null($user))
-        {
+        if (is_null($user)) {
             return 'error 404';
         }
-        $user->full_name;
-        return 'Aquxzci mostramos la info del usuario: ' . $id;
+        $comboBox = [
+            1 => 'administrador',
+            2 => 'Visitante',
+        ];
+        $success = false;
+        return View::make('admin.users.form', compact('user', 'success', 'comboBox'));
 
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function edit($id)
     {
         $user = User::find($id);
-        if (is_null($user))
-        {
+        if (is_null($user)) {
             return 'error 404';
         }
         $form_data = array('route' => array('admin.users.update', $user->id), 'method' => 'PATCH');
-        $action    = 'Editar';
+        $action = 'Editar';
 
-        return View::make('front.perfil',compact('user', 'form_data', 'action'));
+        return View::make('front.perfil', compact('user', 'form_data', 'action'));
 
 
     }
-    public function updatePerfil(){
+
+    public function updatePerfil()
+    {
         $user = User::find(Auth::user()->id);
-        return View::make('front.perfil',compact('user'));
+        return View::make('front.perfil', compact('user'));
     }
+
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function update()
@@ -118,39 +121,46 @@ class Admin_UsersController extends \BaseController {
         $user = User::find(Auth::user()->id);
 
         // Si el usuario no existe entonces lanzamos un error 404 :(
-        if (is_null ($user))
-        {
+        if (is_null($user)) {
             App::abort(404);
         }
 
         // Obtenemos la data enviada por el usuario
         $data = Input::all();
-        if($data['images'] != 'null'){
-            $imagen = explode( ';', $data['images']);
+        if ($data['images'] != 'null') {
+            $imagen = explode(';', $data['images']);
             $data['imagen'] = $imagen[1];
         }
 
         // Revisamos si la data es válido
-        if ($user->isValid($data))
-        {
+        if ($user->isValid($data)) {
             // Si la data es valida se la asignamos al usuario
             $user->fill($data);
             // Guardamos el usuario
             $user->save();
             // Y Devolvemos una redirección a la acción show para mostrar el usuario
             return Response::json(['success' => 1]);
-        }
-        else
-        {
+        } else {
             // En caso de error regresa a la acción edit con los datos y los errores encontrados
             return Response::json($user->getErrors());
         }
     }
+    function changeRole(){
+        $user = User::find(Input::get('id'));
+        $user->fill(Input::all());
+        $user->save();
+        $comboBox = [
+            1 => 'administrador',
+            2 => 'Visitante',
+        ];
+        $success = false;
+        return View::make('admin.users.form', compact('user', 'success', 'comboBox'));
 
+    }
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function destroy($id)

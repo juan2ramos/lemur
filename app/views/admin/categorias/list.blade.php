@@ -3,7 +3,7 @@
 @section('contend')
 <h1>Lista de usuarios</h1>
 <p>
-    <a href="{{ route('admin.users.create') }}" id="new-user">Nueva Categoría</a>
+    <a href="{{ route('admin.categorias.create') }}" id="new-user" class="btn-admin">Nueva Categoría</a>
 </p>
 <table class=" table-primary ">
     <thead>
@@ -23,14 +23,12 @@
         <td>{{ $categoria->fecha_inicio }}</td>
         <td>{{ $categoria->fecha_cierre }}</td>
         <td class="center">
-            <a href="{{ route('admin.categorias.edit', $categoria->id) }}" class="view">
-                <i class="icon-pencil"></i>
-            </a>
-            <a href="{{ route('admin.users.show', $categoria->id) }}" class="edit">
+
+            <a href="{{ route('admin.categorias.update', $categoria->id) }}" class="edit">
                 <i class="icon-eye"></i>
             </a>
 
-            <a href="{{ route('admin.users.edit', $categoria->id) }}" class="delete">
+            <a href="" class="delete">
                 <i class="icon-close"></i>
             </a>
         </td>

@@ -38,11 +38,9 @@ function responseFormUser(data){
         '<li>Guardado exitomasamente</li></ul>';
         $('#popUp-contend').append(template);
         $('.close').on('click', $('body'), function () {
-            $popup.removeClass('show');
-            template = "wew";
-            $('#contend-error').remove();
+            location.reload();
         });
     }else{
-
+        console.log(data);
     }
 }

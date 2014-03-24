@@ -28,7 +28,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface
             'ciudad',
             'sobre_ti',
             'habilidades',
-            'imagen'
+            'imagen',
+            'role'
         ];
     protected $perPage = 2;
     /**
@@ -76,7 +77,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     public function isValid($data)
     {
         $rules = [
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email',
             'nombre' => 'required|min:4|max:40',
             'password' => 'min:8',
             'apellidos' => 'required'
@@ -92,11 +93,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface
             'password.required' => 'la contraseña es requerida'
         ];
         if ($this->exists) {
-            //Evitamos que la regla “unique” tome en cuenta el email del usuario actual
-            $rules['email'] .= ',email,' . $this->id;
+
 
         } else { // Si no existe...
-            // La clave es obligatoria:
+            $rules['email'] .= '|unique:users';
             $rules['password'] .= '|required';
         }
         $validator = Validator::make($data, $rules, $mesages);

@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
 @section('contend')
-<h1>Lista de Categorías</h1>
+<h1>Lista de usuarios</h1>
 <p>
-    <a href="{{ route('admin.users.create') }}" id="new-user">Nuevo Usuario</a>
+    <a href="{{ route('admin.users.create') }}" id="new-user" class="btn-admin">Nuevo Usuario</a>
 </p>
 <table class=" table-primary ">
     <thead>
@@ -23,9 +23,7 @@
         <td>{{ $user->email }}</td>
         <td class="center">{{ $user->role }}</td>
         <td class="center">
-            <a href="{{ route('admin.users.edit', $user->id) }}" class="view">
-                <i class="icon-pencil"></i>
-            </a>
+
             <a href="{{ route('admin.users.show', $user->id) }}" class="edit">
                 <i class="icon-eye"></i>
             </a>

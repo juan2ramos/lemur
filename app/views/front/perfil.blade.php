@@ -36,7 +36,7 @@
             <input type="text" name="nombre" class="half" placeholder="Nombres" value="{{$user['nombre']}}">
             <input type="text" name="apellidos" class="half" placeholder="Apellidos" value="{{$user['apellidos']}}">
             <input type="text" name="email" class="half" placeholder="Correo electrónico" value="{{$user['email']}}">
-            <input type="text" name="username" class="half" placeholder="Nombre de usuario" value="{{$user['username']}}">
+            <input type="text" name="user_name" class="half" placeholder="Nombre de usuario" value="{{$user['user_nameº']}}">
 
             <input type="text" name="edad" class="half" placeholder="Edad" value="{{$user['edad']}}">
             <input type="text" name="genero" class="half" placeholder="Género" value="{{$user['genero']}}">

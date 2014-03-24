@@ -32,7 +32,11 @@
 
     </head>
     <body>
-
+        <ul id="nav-menu-admin">
+            <li>{{HTML::link('admin/categorias','Categorías')}}</li>
+            <li>{{HTML::link('admin/users','Usuarios')}}</li>
+            <li>{{HTML::link('admin/ideas','Ideas')}}</li>
+        </ul>
         <div id="wrapper">
         	@yield('contend')
         </div>

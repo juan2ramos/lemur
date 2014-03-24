@@ -161,7 +161,7 @@ class IdeasController extends \BaseController
         $video = (empty($idea[0]->url_video)) ? false : $idea[0]->url_video;
         $crono = true;
         $comentarios = $this->comentarios($id);
-        return View::make('front.detalle-idea', compact('video', 'idea', 'images', 'UserIdea','comentarios, 'crono', 'cierreCategoria'));
+        return View::make('front.detalle-idea', compact('video', 'idea', 'images', 'UserIdea', 'comentarios' , 'crono', 'cierreCategoria'));
 
     }
 

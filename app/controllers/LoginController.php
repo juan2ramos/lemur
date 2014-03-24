@@ -27,12 +27,21 @@ class LoginController extends \BaseController
 
     public function password()
     {
-        if ($user = User::where('email', '=', Input::get('mail'))) {
-            $user['password'] = Hash::make($value);
-        }else{
+
+        if ($user = User::where('email','=',Input::get('email'))->first()) {
+            $rand_letter = '';
+            $a_z = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+*[]{}";
+            for ($i = 0; $i < 20; $i++) {
+                $int = rand(0, 51);
+                $rand_letter .= $a_z[$int];
+            }
+            $user->fill(['password' => $rand_letter]);
+            $user->save();
+            return Response::json(['success' => 1]);
+        } else {
+            return Response::json(['success' => 0]);
 
         }
-
     }
 
     public function facebook()

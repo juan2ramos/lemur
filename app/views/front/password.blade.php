@@ -19,3 +19,7 @@
 
 </section>
 @stop
+@section('javascript')
+{{HTML::script('js/password.js')}}
+
+@stop

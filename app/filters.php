@@ -100,3 +100,11 @@ Route::filter('categoria', function()
         throw new Illuminate\Session\TokenMismatchException;
     }
 });
+
+Route::filter('admin',function(){
+
+
+    if ( Auth::user()->role != 1){
+        return Redirect::to('/');
+    }
+});
