@@ -15,7 +15,7 @@ class IdeasController extends \BaseController
     {
         $ideas = new Ideas;
         $hidden = 'hidden';
-        $categorias = Categorias::all()->lists('nombre', 'id');
+        $categorias = Categorias::whereRaw('estado = 1 and NOW() BETWEEN fecha_inicio AND fecha_cierre')->lists('nombre', 'id');
         $combobox = [0 => "Elige una categoría "] + $categorias;
 
         return View::make('front.ideasForm', compact('ideas', 'categorias', 'form_data', 'hidden', 'combobox'));
