@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'juan2ramos@juan2ramos.com', 'name' => 'jk'),
+	'from' => array('address' => 'juan2ramos@juan2ramos.com', 'name' => 'Lemur'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -67,7 +67,7 @@ return array(
 	|
 	*/
 
-	'encryption' => 'tls',
+	'encryption' => 'ssl',
 
 	/*
 	|--------------------------------------------------------------------------

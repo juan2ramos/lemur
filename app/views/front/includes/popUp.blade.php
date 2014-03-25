@@ -19,14 +19,20 @@
             <p>Ingresa con</p>
             <ul>
                 <li>
-                    <a href="#">{{HTML::image('images/facebook.png')}}</a>
+                   {{HTML::decode(HTML::link('facebook',
+                    '<img src="images/facebook.png" alt=""/>')
+                   )}}
+
                 </li>
                 <li>
-                    <a href="#">{{HTML::image('images/twitter.png')}}</a>
+                    {{HTML::decode(HTML::link('twitter',
+                    '<img src="images/twitter.png" alt=""/>')
+                    )}}
+
                 </li>
-                <li>
+                <!--<li>
                     <a href="#">{{HTML::image('images/google_plus.png')}}</a>
-                </li>
+                </li>-->
             </ul>
             <input type="submit" value="Ingresa">
         </div>
@@ -44,7 +50,7 @@
                 <label for="email">Correo electrónico:<span>*</span></label>
                 <input name="email" type="text">
                 <label for="password">contraseña:<span>*</span></label>
-                <input name="password" type="password">
+                <input type="password" name="password" >
 
                 <p class="term">
                     Al crear tu cuenta aceptas los
@@ -55,14 +61,20 @@
                 <p>Regístrate con</p>
                 <ul>
                     <li>
-                        <a href="#"><img src="images/facebook.png"></a>
+                        {{HTML::decode(HTML::link('facebook',
+                        '<img src="images/facebook.png" alt=""/>')
+                        )}}
+
                     </li>
                     <li>
-                        <a href="#"><img src="images/twitter.png"></a>
+                        {{HTML::decode(HTML::link('twitter',
+                        '<img src="images/twitter.png" alt=""/>')
+                        )}}
+
                     </li>
-                    <li>
+                    <!--<li>
                         <a href="#"><img src="images/google_plus.png"></a>
-                    </li>
+                    </li>-->
                 </ul>
                 <input type="submit" value="Regístrate">
 

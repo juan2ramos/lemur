@@ -2,11 +2,13 @@ $(function () {
 
     $('#form-register').on('submit', function (e) {
         e.preventDefault();
+        $('#facebookG').addClass('show');
         var str = $(this).serialize();
         $.post($(this).attr('action'), str, responseFormRegister, 'json');
     });
     $('#form-login').on('submit', function (e) {
         e.preventDefault();
+        $('#facebookG').addClass('show');
         var str = $(this).serialize();
         $.post($(this).attr('action'), str, responseFormlogin, 'json');
     });
@@ -180,6 +182,7 @@ function count(elem, startnum, endnum, time) {
 
 }
 function responseFormRegister(data) {
+    $('#facebookG').removeClass('show');
     if (data.success == 1){
         location.reload();
     }
@@ -194,6 +197,7 @@ function responseFormRegister(data) {
     }
 }
 function responseFormlogin(data) {
+    $('#facebookG').removeClass('show');
     if (data.success == 1){
         location.reload();
     }

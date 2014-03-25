@@ -79,3 +79,19 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+App::missing(function($exception)
+{
+    if (Request::is('admin/*'))
+    {return 'Pagina no existe en el administrador';
+        return Response::view('admin.missing',array(),404);
+    }
+    else if (Request::is('site/*'))
+    {
+        return 'paila2';
+        return Response::view('site.missing',array(),404);
+    }
+    else
+    {return 'Pagina no existe';
+        return Response::view('default.missing',array(),404);
+    }
+});
