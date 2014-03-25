@@ -29,14 +29,19 @@ class LoginController extends \BaseController
     {
 
         if ($user = User::where('email','=',Input::get('email'))->first()) {
-            $rand_letter = '';
+            $pass = '';
             $a_z = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+*[]{}";
             for ($i = 0; $i < 20; $i++) {
                 $int = rand(0, 51);
-                $rand_letter .= $a_z[$int];
+                $pass .= $a_z[$int];
             }
-            $user->fill(['password' => $rand_letter]);
+            $data= ['pass' => $pass];
+            $user->fill(['password' => $pass]);
             $user->save();
+            Mail::send('emails.password', $data, function ($message){
+                $message->subject('Restart password');
+                $message->to(Input::get('email'));
+            });
             return Response::json(['success' => 1]);
         } else {
             return Response::json(['success' => 0]);
