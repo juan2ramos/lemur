@@ -47,8 +47,8 @@ Route::group(['before' => 'auth'], function()
 {
     Route::controller('sube-tu-idea','IdeasController');
 });
-Route::get('facebook', 'LoginController@facebook');
-Route::get('twitter', 'LoginController@twitter');
+Route::get('facebook', 'LoginController@Facebook');
+Route::get('twitter', 'LoginController@Twitter');
 Route::get('password', function(){return View::make('front.password');});
 
 Route::post('updateUser','admin_UsersController@update');
