@@ -32,6 +32,7 @@ Route::group(['prefix' => 'admin','before' => 'admin'], function()
         Route::post('categoria/update','CategoriasController@update');
         Route::post('categoria/store','CategoriasController@store');
         Route::post('users/changeRole','admin_UsersController@changeRole');
+        Route::post('ideas/updateAdmin','ideasController@updateAdmin');
 
 
     });

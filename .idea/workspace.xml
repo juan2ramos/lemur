@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc25e6be-4282-40d6-af5e-352fc8b19c78" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/LoginController.php" afterPath="$PROJECT_DIR$/app/controllers/LoginController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/packages/artdarek/oauth-4-laravel/config.php" afterPath="$PROJECT_DIR$/app/config/packages/artdarek/oauth-4-laravel/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Ideas.php" afterPath="$PROJECT_DIR$/app/models/Ideas.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/IdeasController.php" afterPath="$PROJECT_DIR$/app/controllers/IdeasController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="lemur.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,16 +30,34 @@
       <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="40" selection-start="1696" selection-end="1696" vertical-scroll-proportion="-5.76" vertical-offset="518" max-vertical-offset="1653">
+            <state line="34" column="38" selection-start="1317" selection-end="1328" vertical-scroll-proportion="-2.8133333" vertical-offset="435" max-vertical-offset="1672">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="LoginController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="12" selection-start="3890" selection-end="3890" vertical-scroll-proportion="0.46003553" vertical-offset="2344" max-vertical-offset="3192">
+            <state line="137" column="12" selection-start="3890" selection-end="3890" vertical-scroll-proportion="-11.963636" vertical-offset="1945" max-vertical-offset="3192">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IdeasController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/IdeasController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="272" column="63" selection-start="8242" selection-end="8242" vertical-scroll-proportion="0.687389" vertical-offset="4781" max-vertical-offset="5529">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ideas.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Ideas.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="12" selection-start="172" selection-end="172" vertical-scroll-proportion="-3.9285715" vertical-offset="118" max-vertical-offset="2242">
               <folding />
             </state>
           </provider>
@@ -112,9 +129,7 @@
         <option value="$PROJECT_DIR$/app/views/admin/categorias/form.blade.php" />
         <option value="$PROJECT_DIR$/public/css/style-admin.css" />
         <option value="$PROJECT_DIR$/app/views/admin/ideas/form.blade.php" />
-        <option value="$PROJECT_DIR$/app/models/Ideas.php" />
         <option value="$PROJECT_DIR$/app/views/front/includes/header.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/IdeasController.php" />
         <option value="$PROJECT_DIR$/app/views/emails/template.blade.php" />
         <option value="$PROJECT_DIR$/app/views/emails/password.blade.php" />
         <option value="$PROJECT_DIR$/public/js/password.js" />
@@ -125,9 +140,11 @@
         <option value="$PROJECT_DIR$/app/start/global.php" />
         <option value="$PROJECT_DIR$/app/views/front/includes/popUp.blade.php" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/config/packages/artdarek/oauth-4-laravel/config.php" />
         <option value="$PROJECT_DIR$/app/controllers/LoginController.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/models/Ideas.php" />
+        <option value="$PROJECT_DIR$/app/controllers/IdeasController.php" />
       </list>
     </option>
   </component>
@@ -914,11 +931,6 @@
         <state line="16" column="36" selection-start="491" selection-end="491" vertical-scroll-proportion="0.47352025" vertical-offset="0" max-vertical-offset="1140" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/categorias.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="32" selection-start="453" selection-end="504" vertical-scroll-proportion="0.41628265" vertical-offset="33" max-vertical-offset="684" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/admin.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="41" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.6050157" vertical-offset="298" max-vertical-offset="1026" />
@@ -1003,11 +1015,6 @@
         <state line="16" column="18" selection-start="677" selection-end="677" vertical-scroll-proportion="0.495114" vertical-offset="0" max-vertical-offset="1197" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Ideas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="30" selection-start="394" selection-end="394" vertical-scroll-proportion="0.35109717" vertical-offset="137" max-vertical-offset="1938" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/ideas/form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="101" selection-end="161" vertical-scroll-proportion="0.22852233" vertical-offset="0" max-vertical-offset="1919" />
@@ -1028,13 +1035,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/emails/auth/reminder.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="241" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="638" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/IdeasController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="102" selection-start="340" selection-end="340" vertical-scroll-proportion="0.26855123" vertical-offset="171" max-vertical-offset="5206">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/emails/newUser.blade.php">
@@ -1138,13 +1138,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="40" selection-start="1696" selection-end="1696" vertical-scroll-proportion="-5.76" vertical-offset="518" max-vertical-offset="1653">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/packages/artdarek/oauth-4-laravel/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="78" selection-start="789" selection-end="789" vertical-scroll-proportion="-6.672727" vertical-offset="203" max-vertical-offset="779">
@@ -1152,9 +1145,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="38" selection-start="1317" selection-end="1328" vertical-scroll-proportion="-2.8133333" vertical-offset="435" max-vertical-offset="1672">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="12" selection-start="3890" selection-end="3890" vertical-scroll-proportion="0.46003553" vertical-offset="2344" max-vertical-offset="3192">
+        <state line="137" column="12" selection-start="3890" selection-end="3890" vertical-scroll-proportion="-11.963636" vertical-offset="1945" max-vertical-offset="3192">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Ideas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="12" selection-start="172" selection-end="172" vertical-scroll-proportion="-3.9285715" vertical-offset="118" max-vertical-offset="2242">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/categorias.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="32" selection-start="453" selection-end="504" vertical-scroll-proportion="0.4787986" vertical-offset="33" max-vertical-offset="684">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/IdeasController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="272" column="63" selection-start="8242" selection-end="8242" vertical-scroll-proportion="0.687389" vertical-offset="4781" max-vertical-offset="5529">
           <folding />
         </state>
       </provider>

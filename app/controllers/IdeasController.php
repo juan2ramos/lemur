@@ -265,5 +265,22 @@ class IdeasController extends \BaseController
         return View::make('admin/ideas/form',compact('idea','user','comentarios','comboBox','comboBoxPublicacion','images'));
 
     }
+    function updateAdmin(){
+        $input = Input::all();
+        $idea = Ideas::find(Input::get('id'));
+        $idea->fill($input);
+        $idea->save();
+        $categorias = Categorias::all()->lists('nombre', 'id');
+        $user = $idea->users;
+        $comboBox = $categorias;
+        $comboBoxPublicacion = [
+            0 => 'Inactivo',
+            1 => 'Activo'
+        ];
+        $images = $idea->images;
+        $comentarios = $idea->comentariosAll->all();
+        return View::make('admin/ideas/form',compact('idea','user','comentarios','comboBox','comboBoxPublicacion','images'));
 
+
+    }
 }
