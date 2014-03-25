@@ -49,7 +49,7 @@ class LoginController extends \BaseController
 
         $code = Input::get('code');
         $fb = OAuth::consumer('Facebook');
-        dd($code);
+        
         if (!empty($code)) {
 
             $token = $fb->requestAccessToken($code);
