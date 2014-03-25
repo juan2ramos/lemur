@@ -94,6 +94,7 @@ li {
     text-transform: uppercase;
 }
 .form-group{
+    clear: both;
     padding: 15px 0;
     width: 350px;
 }
@@ -107,6 +108,15 @@ li {
     border: none;
     border-bottom: 1px dashed rgb(214, 214, 214);
     color: rgb(121, 121, 121);
+    width: 200px;
+}
+.form-group textarea{
+
+    border: 1px dashed rgb(214, 214, 214);
+
+}
+.form-group span{
+    float: right;
     width: 200px;
 }
 .form-group select{
@@ -252,4 +262,15 @@ ul.pagination {
     border-bottom: 4px solid rgb(224, 102, 102);
     padding: 10px;
     color: #fff;
+}
+
+.images li{
+    display: inline-block;
+    width: 32%;
+    padding: 20px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+.images li img{
+    max-width: 95%  ;
 }

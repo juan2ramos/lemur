@@ -16,6 +16,8 @@ Route::group(['before' => 'csrf'], function()
     Route::post('sube-tu-idea/nueva', 'IdeasController@create');
 
     Route::post('register','admin_UsersController@store');
+    Route::post('search','IdeasController@search');
+
 
 
 });
@@ -23,6 +25,8 @@ Route::group(['prefix' => 'admin','before' => 'admin'], function()
 {
     Route::resource('users', 'admin_UsersController');
     Route::resource('categorias', 'CategoriasController');
+    Route::get('ideas', 'ideasController@adminShow');
+    Route::get('ideas/{id}', 'ideasController@adminUpdate');
     Route::group(['before' => 'csrf'], function(){
         Route::post('categoria/update','CategoriasController@update');
         Route::post('categoria/store','CategoriasController@store');

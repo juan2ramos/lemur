@@ -4,6 +4,7 @@ use Carbon\Carbon;
 
 class Categorias extends Eloquent
 {
+    protected $perPage = 2;
     protected $fillable =
         [
             'nombre',

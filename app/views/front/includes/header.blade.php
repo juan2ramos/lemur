@@ -11,10 +11,10 @@
     <a href="#" id="img-registrar" class="popup-link {{$classHidden}}">Regístrate</a>
     <a href="#" id="img-ingresar" class="popup-link {{$classHidden}}">Ingresa</a>
     {{HTML::link('logout', 'Cerrar Sesión', ['class' => 'padding-pop ' . $classShow])}}
-    <form>
-        <input type="text" placeholder="Buscar">
+    {{ Form::open(array('url' => 'search' )) }}
+        <input type="text" name="word" placeholder="Buscar">
         <input type="submit" value="">
-    </form>
+    {{ Form::close() }}
     <div id="header-info">
         @if(isset($crono))
         {{HTML::image('images/cronometro.png','cronometro',['class'=>'img-cronos'])}}

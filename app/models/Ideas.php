@@ -6,7 +6,7 @@
  */
 class   Ideas extends Eloquent
 {
-
+    protected $perPage = 2;
     protected $table = 'ideas';
     protected $fillable = ['titulo', 'descripcion', 'problematica', 'solucion', 'url_video', 'id_categorias', 'id_users'];
     private $errors = [];
@@ -17,7 +17,10 @@ class   Ideas extends Eloquent
         return $this->hasMany('Imagenes', 'id_idea');
 
     }
-
+    public function categorias()
+    {
+        return $this->belongsTo('Categorias', 'id_categorias');
+    }
     public function users()
     {
         return $this->belongsTo('User', 'id_users');
@@ -87,6 +90,8 @@ class   Ideas extends Eloquent
     public function comentarios(){
         return $this->belongsToMany('user', 'comentarios', 'id_idea', 'estado')->withPivot('comentario');
     }
-
+    public function comentariosAll(){
+        return $this->belongsToMany('user', 'comentarios', 'id_idea', 'id_user')->withPivot('comentario','created_at');
+    }
 
 }

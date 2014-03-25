@@ -92,6 +92,20 @@ class IdeasController extends \BaseController
         return View::make('front.vota-por-una-idea', compact('ideasImage', 'crono', 'cierreCategoria'));
 
     }
+    function search(){
+        $ideas = Ideas::whereRaw('titulo LIKE "%'. Input::get('word') .'%" and estado_publicacion = 1 ')->get();
+
+        foreach($ideas as $idea){
+            $nose = (is_null($idea->categorias()->where('estado', '=', '1')->get()))?false:true;
+            print_r($nose);
+        }
+        dd('d');
+        if ($ideas->isEmpty())
+            return Redirect::to('/categorias');
+        $ideasImage = $this->imagenesForideas($ideas);
+        return View::make('front.vota-por-una-idea', compact('ideasImage'));
+
+    }
 
     /**
      * @param $ideas
@@ -228,10 +242,28 @@ class IdeasController extends \BaseController
     {
         //
     }
-
+    function  adminShow(){
+        $ideas = Ideas::paginate(10);
+        return View::make('admin/ideas/list',compact('ideas'));
+    }
     public function comentarios($id)
     {
         return Ideas::find($id)->comentarios;
+    }
+    function adminUpdate($id){
+        $idea = Ideas::find($id);
+        $user = $idea->users;
+        $comentarios = $idea->comentariosAll->all();
+        $categorias = Categorias::all()->lists('nombre', 'id');
+        $comboBox = $categorias;
+        $comboBoxPublicacion = [
+            0 => 'Inactivo',
+            1 => 'Activo'
+        ];
+        $images = $idea->images;
+
+        return View::make('admin/ideas/form',compact('idea','user','comentarios','comboBox','comboBoxPublicacion','images'));
+
     }
 
 }
