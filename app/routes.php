@@ -23,6 +23,7 @@ Route::group(['before' => 'csrf'], function()
 });
 Route::group(['prefix' => 'admin','before' => 'admin'], function()
 {
+    Route::resource('/', 'CategoriasController');
     Route::resource('users', 'admin_UsersController');
     Route::resource('categorias', 'CategoriasController');
     Route::get('ideas', 'ideasController@adminShow');
