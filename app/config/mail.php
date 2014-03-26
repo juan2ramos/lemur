@@ -28,7 +28,7 @@ return array(
 	|
 	*/
 
-	'host' => 'smtp.gmail.com',
+	'host' => 'bronco.websitewelcome.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'juan2ramos@juan2ramos.com', 'name' => 'Lemur'),
+	'from' => array('address' => 'info@lemurstudio.com.co', 'name' => 'Lemur'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => 'juan2pruebas@gmail.com',
+	'username' => 'info@lemurstudio.com.co',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => 'Juan2Pruebas2012',
+	'password' => '123456789',
 
 	/*
 	|--------------------------------------------------------------------------

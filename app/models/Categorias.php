@@ -10,7 +10,8 @@ class Categorias extends Eloquent
             'nombre',
             'estado',
             'fecha_inicio',
-            'fecha_cierre'
+            'fecha_cierre',
+            'imagen',
         ];
     private $errors;
     protected $table = 'categorias';
