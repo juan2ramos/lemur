@@ -17,4 +17,5 @@ class Votos extends Eloquent
         }
         return false;
     }
+
 } 

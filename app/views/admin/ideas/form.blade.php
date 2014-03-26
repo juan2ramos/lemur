@@ -7,6 +7,8 @@
 
 {{ Form::open(array('url' => 'admin/ideas/updateAdmin' )) }}
 {{Form::hidden('id',$idea['id'])}}
+
+
 <div class="row">
     <div class="form-group">
         {{ Form::label('', 'Ingresada') }}
@@ -66,8 +68,31 @@
     @endforeach
 </ul>
 
+@if(!is_null($votos))
+<h2>Votos</h2>
 
+<table class=" table-primary ">
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>apellidos</th>
+        <th>email</th>
 
+    </tr>
+    <thead>
+    <tbody>
+    @foreach ($votos as $voto)
+    <tr>
+        <td>{{ $voto['nombre'] }}</td>
+        <td>{{ $voto['apellidos'] }}</td>
+        <td>{{ $voto['email'] }}</td>
+    </tr>
+
+    @endforeach
+    </tbody>
+</table>
+@endif
+<h2>Comentarios</h2>
 <table class=" table-primary ">
     <thead>
     <tr>
@@ -81,7 +106,7 @@
     @foreach ($comentarios as $comentario)
     <tr>
         <td>{{ $comentario['pivot']['comentario']}}</td>
-        <td>{{ $comentario['nombre']. ' '  .$comentario['apellido'] }}</td>
+        <td>{{ $comentario['nombre']. ' ' .$comentario['apellido'] }}</td>
         <td>{{ $comentario['pivot']['created_at']}}</td>
         <td class="center">{{Form::checkbox('estado', 'value')}}</td>
     </tr>

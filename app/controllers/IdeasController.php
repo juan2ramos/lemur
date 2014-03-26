@@ -173,6 +173,10 @@ class IdeasController extends \BaseController
         $UserIdea['imagen'] = $user['imagen'];
         $UserIdea['nombre'] = $user['nombre'];
         $video = (empty($idea[0]->url_video)) ? false : $idea[0]->url_video;
+        if($video){
+            $url = explode("=", $video);
+            $video = (empty($url[1]))?false:$url[1];
+        }
         $crono = true;
         $comentarios = $this->comentarios($id);
         return View::make('front.detalle-idea', compact('video', 'idea', 'images', 'UserIdea', 'comentarios' , 'crono', 'cierreCategoria'));
@@ -243,7 +247,7 @@ class IdeasController extends \BaseController
         //
     }
     function  adminShow(){
-        $ideas = Ideas::paginate(10);
+        $ideas = Ideas::paginate(20);
         return View::make('admin/ideas/list',compact('ideas'));
     }
     public function comentarios($id)
@@ -262,7 +266,8 @@ class IdeasController extends \BaseController
         ];
         $images = $idea->images;
 
-        return View::make('admin/ideas/form',compact('idea','user','comentarios','comboBox','comboBoxPublicacion','images'));
+        $votos = $idea->votosPersona;
+        return View::make('admin/ideas/form',compact('idea','user','comentarios','comboBox','comboBoxPublicacion','images','votos'));
 
     }
     function updateAdmin(){
@@ -279,7 +284,8 @@ class IdeasController extends \BaseController
         ];
         $images = $idea->images;
         $comentarios = $idea->comentariosAll->all();
-        return View::make('admin/ideas/form',compact('idea','user','comentarios','comboBox','comboBoxPublicacion','images'));
+        $votos = $idea->votosPersona;
+        return View::make('admin/ideas/form',compact('idea','user','comentarios','comboBox','comboBoxPublicacion','images','votos'));
 
 
     }

@@ -6,7 +6,7 @@
 <h1>Categorias</h1>
 @include ('admin/errors', array('errors' => $errors))
 
-{{ Form::open(array('url' => 'admin/categoria/store', )) }}
+{{ Form::open(array('url' => 'admin/categoria/store','files' => true  )) }}
 
 <div class="row">
     <div class="form-group">
@@ -16,6 +16,10 @@
     <div class="form-group">
         {{ Form::label('estado', 'Estado') }}
         {{Form::select('estado', $comboBox, Input::old('estado'))}}
+    </div>
+    <div class="form-group">
+        {{ Form::label('imagen', 'Imagen') }}
+        {{ Form::file('imagen') }}
     </div>
 </div>
 <div class="row">

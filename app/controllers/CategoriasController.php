@@ -28,7 +28,7 @@ class CategoriasController extends \BaseController
     public function index()
     {
 
-        $categoria = Categorias::paginate(5);
+        $categoria = Categorias::paginate(20);
 
         return View::make('admin.categorias.list')->with('categorias', $categoria);
 
@@ -56,13 +56,26 @@ class CategoriasController extends \BaseController
 
     function update()
     {
+
+
         $categoria = Categorias::find(Input::get('id'));
         $comboBox = [
             0 => 'Inactiva',
             1 => 'Activa',
         ];
         if ($categoria->isValid(Input::all())) {
-            $categoria->fill(Input::all());
+            $input = Input::except('imagen');
+            if (Input::hasFile('imagen'))
+            {
+
+                $file = Input::file('imagen');
+                $destinationPath = 'images';
+                $filename = $file->getClientOriginalName();
+                Input::file('imagen')->move($destinationPath, $filename);
+
+                $input['imagen'] = $filename;
+            }
+            $categoria->fill($input);
             $categoria->save();
         } else {
             $errors = $categoria->getErrors();
@@ -92,8 +105,18 @@ class CategoriasController extends \BaseController
             1 => 'Activa',
         ];
         $categoria = new Categorias;
-        $input = Input::all();
+        $input = Input::except('imagen');
         if ($categoria->isValid($input)) {
+            if (Input::hasFile('imagen'))
+            {
+
+                $file = Input::file('imagen');
+                $destinationPath = 'images';
+                $filename = $file->getClientOriginalName();
+                Input::file('imagen')->move($destinationPath, $filename);
+
+                $input['imagen'] = $filename;
+            }
             $categoria->fill($input);
             $categoria->save();
         } else {

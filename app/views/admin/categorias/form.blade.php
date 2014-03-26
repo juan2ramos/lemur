@@ -6,14 +6,17 @@
 <h1>Categorias</h1>
 @include ('admin/errors', array('errors' => $errors))
 
-{{ Form::open(array('url' => 'admin/categoria/update', )) }}
+{{ Form::open(array('url' => 'admin/categoria/update','files' => true )) }}
 {{Form::hidden('id',$categoria['id'])}}
 <div class="row">
     <div class="form-group">
         {{ Form::label('nombre', 'Nombre') }}
         {{ Form::text('nombre', $categoria['nombre'], array('placeholder' => '')) }}
     </div>
-
+    <div class="form-group">
+        {{ Form::label('imagen', 'Imagen') }}
+        {{ Form::file('imagen') }}
+    </div>
     <div class="form-group">
         {{ Form::label('estado', 'Estado') }}
         {{Form::select('estado', $comboBox, $categoria['estado'])}}

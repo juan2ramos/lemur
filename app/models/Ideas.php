@@ -18,6 +18,7 @@ class   Ideas extends Eloquent
             'id_categorias',
             'id_users',
             'estado_publicacion',
+            'numero_votos'
         ];
     private $errors = [];
 
@@ -44,7 +45,9 @@ class   Ideas extends Eloquent
         return $this->hasMany('Votos', 'id_idea');
 
     }
-
+    public function votosPersona(){
+        return $this->belongsToMany('user', 'votos', 'id_idea', 'id_usuario');
+    }
     public function isValid($data)
     {
         $rules = [
@@ -53,7 +56,7 @@ class   Ideas extends Eloquent
             'problematica' => ['required', 'max:500'],
             'solucion' => ['required', 'max:500'],
             'captchaSum' => ['required', 'same:captcha'],
-            'id_categorias' => ['in:1,2,3']
+            'id_categorias' => ['in:1,2,3'],
         ];
 
         $messages = [
@@ -75,13 +78,15 @@ class   Ideas extends Eloquent
             'captchaSum.required' => 'atributo requerido',
         ];
         $validator = Validator::make($data, $rules, $messages);
+
+        /*
         $validator->sometimes('images', 'not_in:null', function ($data) {
             return empty($data->url_video);
         });
         $validator->sometimes('url_video', 'required|url', function ($data) {
             return $data->images == 'null';
         });
-
+        */
         if ($validator->passes()) {
             return true;
         }

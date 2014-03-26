@@ -40,10 +40,7 @@
             <dd>
                 Cuando el equipo de Lemur Studio te elija como idea ganadora, pasado el tiempo de las votaciones,  te enviaremos una notificación a tu correo electrónico y posteriormente nos comunicaremos contigo para empezar todo el proceso interno para la creación de tu idea de producto.
             </dd>
-            <dt><a href="" class="expand">¿Tienes más preguntas?</a></dt>
-            <dd>
-                Escríbenos y te responderemos cuanto antes.
-            </dd>
+
             <dt><a href="" class="expand">¿Cómo subo mi video?</a></dt>
             <dd>
                 Sencillo, sólo colocas el link de tu video de youtube en el menú “sube tu idea” y ya está.

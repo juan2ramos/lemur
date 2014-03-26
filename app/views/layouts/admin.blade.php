@@ -33,6 +33,7 @@
     </head>
     <body>
         <ul id="nav-menu-admin">
+            <li>{{HTML::link('/','Lemur')}}</li>
             <li>{{HTML::link('admin/categorias','Categorías')}}</li>
             <li>{{HTML::link('admin/users','Usuarios')}}</li>
             <li>{{HTML::link('admin/ideas','Ideas')}}</li>

@@ -21,7 +21,7 @@
 
         <a href="{{ URL::to($href) }}" class="link">
             {{$active}}
-            <div class="contend-img"><img src="images/general.png"></div>
+            <div class="contend-img"><img src="images/{{$value->imagen}}"></div>
             <div class="contend-p"><p>{{$value->nombre}}</p></div>
         </a>
         @endforeach

@@ -274,3 +274,6 @@ ul.pagination {
 .images li img{
     max-width: 95%  ;
 }
+.idea-usuarios span{
+    padding-left:20px ;
+}

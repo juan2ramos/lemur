@@ -94,8 +94,9 @@
                     </li>
                     @endforeach
                     @if($video)
+
                     <li>
-                        <iframe width="500" height="315" src="{{$video}}" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="500" height="315" src="//www.youtube.com/embed/{{$video}}" frameborder="0" allowfullscreen></iframe>
 
                     </li>
 
