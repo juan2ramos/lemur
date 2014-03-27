@@ -10,6 +10,14 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::get('mail',function(){
+    $data = ['pass' => 'jajaj'];
+    Mail::send('emails.password', $data, function ($message) {
+        $message->subject('Restart password');
+        $message->to('juan2ramos@gmail.com');
+    });
+    return Response::json(['success' => 1]);
+});
 
 Route::group(['before' => 'csrf'], function()
 {

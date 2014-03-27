@@ -42,7 +42,7 @@ class LoginController extends \BaseController
                 $message->subject('Restart password');
                 $message->to(Input::get('email'));
             });
-            return Response::json(['success' => 1]);
+
         } else {
             return Response::json(['success' => 0]);
 
@@ -64,7 +64,7 @@ class LoginController extends \BaseController
         if (!empty($code)) {
 
             $result = json_decode($fb->request('/me'), true);
-            
+
             $user = User::where('email', '=', $result['email'])->first();
             if(is_null($user)){
                 $data = [
