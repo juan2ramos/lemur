@@ -26,6 +26,7 @@ Route::group(['prefix' => 'admin','before' => 'admin'], function()
 {
     Route::resource('/', 'CategoriasController');
     Route::resource('users', 'admin_UsersController');
+    Route::resource('publicidad', 'PublicidadController');
     Route::resource('categorias', 'CategoriasController');
     Route::get('idea/{id?}', 'ideasController@adminShow');
     Route::get('ideas/{id}', 'ideasController@adminUpdate');
@@ -37,7 +38,7 @@ Route::group(['prefix' => 'admin','before' => 'admin'], function()
 
 
     });
-
+    Route::post('comentario/update','ComentariosController@update');
     Route::get('categorias/destroy/{id}','Categorias@destroy');
     Route::get('users/destroy/{id}','admin_UsersController@destroy');
     Route::get('ideas/destroy/{id}','IdeasController@destroy');
@@ -71,14 +72,19 @@ Route::get('detalle-idea/{id}', 'IdeasController@show');
 Route::post('comentario','ComentariosController@create');
 
 #
-Route::get('/', function(){return View::make('front.inicio');});
+Route::get('/', function(){
+    $p = Publicidad::all();
+    $publicidad = $p[0];
+    $popUpPublicidad = ($publicidad->estado == 1)?TRUE:FALSE;
+    return View::make('front.inicio',compact('publicidad','popUpPublicidad'));
+});
 Route::get('preguntas', function(){return View::make('front.preguntas');});
 Route::get('contacto', function(){return View::make('front.contacto');});
 Route::get('servicios', function(){return View::make('front.servicios');});
 Route::get('trabaja-en-lemur', function(){return View::make('front.trabaja-en-lemur');});
 Route::get('terminos-y-condiciones', function(){return View::make('front.terminos');});
 
-Route::get('registro', function(){return View::make('front.inicio', ['popUp'=>'true']);});
+Route::get('registro', function(){return View::make('front.inicio', ['popUp'=>'true','popUpPublicidad'=>'false', 'publicidad' => false]);});
 
 
 

@@ -56,7 +56,7 @@ class   Ideas extends Eloquent
             'problematica' => ['required', 'max:500'],
             'solucion' => ['required', 'max:500'],
             'captchaSum' => ['required', 'same:captcha'],
-            'id_categorias' => ['in:1,2,3'],
+            'id_categorias' => ['not_in:0'],
         ];
 
         $messages = [
@@ -74,7 +74,7 @@ class   Ideas extends Eloquent
             'problematica.required' => 'atributo requerido',
             'solucion.required' => 'atributo requerido',
             'url_video.required' => 'atributo requerido',
-            'id_categorias.in' => 'Debe seleccionar una categoría',
+            'id_categorias.not_in' => 'Debe seleccionar una categoría',
             'captchaSum.required' => 'atributo requerido',
         ];
         $validator = Validator::make($data, $rules, $messages);
@@ -112,7 +112,7 @@ class   Ideas extends Eloquent
 
     public function comentariosAll()
     {
-        return $this->belongsToMany('user', 'comentarios', 'id_idea', 'id_user')->withPivot('comentario', 'created_at');
+        return $this->belongsToMany('user', 'comentarios', 'id_idea', 'id_user')->withPivot('comentario', 'created_at','id');
     }
 
 }

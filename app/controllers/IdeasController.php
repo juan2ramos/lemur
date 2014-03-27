@@ -95,17 +95,22 @@ class IdeasController extends \BaseController
 
     function search()
     {
-        $ideas = Ideas::whereRaw('titulo LIKE "%' . Input::get('word') . '%" and estado_publicacion = 1 ')->get();
+        //$ideas = Ideas::whereRaw('titulo LIKE "%' . Input::get('word') . '%" and estado_publicacion = 1 ')->get();
+        $ideas =  DB::table('categorias')
+            ->join('ideas', 'categorias.id', '=', 'ideas.id_categorias')
+            ->whereRaw('categorias.estado = 1
+            AND NOW() BETWEEN categorias.fecha_inicio AND categorias.fecha_cierre
+            AND ideas.estado_publicacion = 1
+                AND ideas.titulo LIKE "%wer%"')
+            ->get();
+            ;
 
-        foreach ($ideas as $idea) {
-            $nose = (is_null($idea->categorias()->where('estado', '=', '1')->get())) ? false : true;
-            print_r($nose);
-        }
-        dd('d');
-        if ($ideas->isEmpty())
+
+        if (is_null($ideas))
             return Redirect::to('/categorias');
         $ideasImage = $this->imagenesForideas($ideas);
-        return View::make('front.vota-por-una-idea', compact('ideasImage'));
+        $cierreCategoria = null;
+        return View::make('front.vota-por-una-idea', compact('ideasImage','cierreCategoria'));
 
     }
 
@@ -257,11 +262,11 @@ class IdeasController extends \BaseController
         if (!$id || $id == 0) {
             $id = 0;
             $ideas = Ideas::paginate(20);
-            return View::make('admin/ideas/list', compact('ideas','categorias','id'));
+            return View::make('admin/ideas/list', compact('ideas', 'categorias', 'id'));
         }
-        $ideas = Ideas::where('id_categorias','=',$id)->paginate(20);
+        $ideas = Ideas::where('id_categorias', '=', $id)->paginate(20);
 
-        return View::make('admin/ideas/list', compact('ideas','categorias','id'));
+        return View::make('admin/ideas/list', compact('ideas', 'categorias', 'id'));
 
 
     }

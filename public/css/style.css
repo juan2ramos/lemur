@@ -1770,6 +1770,30 @@ loading
 #comentarios-conted article{
     margin: 20px 0;
 }
+#publicidad{
+    background: rgba(150, 26, 29, 0.5) url("../images/pattern.jpg") repeat left top;
+    color: #fff;
+    height: 290px;
+    left: 50%;
+    margin: -145px -330px;
+    padding: 35px;
+    position: fixed;
+    top: 50%;
+    width: 660px;
+}
+.closePublicidad{
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1000;
+
+}
+#publicidad h2{
+    margin: 0;
+    color: #fff;
+    font-size: 2.1em;
+}
 @-moz-keyframes bounceG{
     0%{
         -moz-transform:scale(1.2);

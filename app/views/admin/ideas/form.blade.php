@@ -108,14 +108,18 @@
         <td>{{ $comentario['pivot']['comentario']}}</td>
         <td>{{ $comentario['nombre']. ' ' .$comentario['apellido'] }}</td>
         <td>{{ $comentario['pivot']['created_at']}}</td>
-        <td class="center">{{Form::checkbox('estado', 'value')}}</td>
+        <?php
+        $id = $comentario['pivot']['id'];
+        $check = ($comentario['pivot']['id'] == 1)?'checked':'';
+        ?>
+        <td class="center">{{Form::checkbox('estado', 'value', $check ,['class' => 'check','data-id' => $id ])}}</td>
     </tr>
-
+    {{HTML::link('admin/comentario/update','',['id' => 'comntarioUpdate'])}}
     @endforeach
     </tbody>
 </table>
 
 @stop
 @section('javascript')
-<?php echo HTML::script('js/script.js') ?>
+<?php echo HTML::script('js/ideasAdmin.js') ?>
 @stop

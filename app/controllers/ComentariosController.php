@@ -31,5 +31,11 @@ class ComentariosController extends  \BaseController{
 
         $user = $comentario->users();
     }
+    function update(){
+        $comentario = Comentarios::find(Input::get('id'));
+        $comentario->fill(Input::all());
+        $comentario->save();
+        return Response::json(['success' => 'ok']);
+    }
 
 } 

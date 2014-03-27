@@ -37,6 +37,7 @@
             <li>{{HTML::link('admin/categorias','Categorías')}}</li>
             <li>{{HTML::link('admin/users','Usuarios')}}</li>
             <li>{{HTML::link('admin/idea','Ideas')}}</li>
+            <li>{{HTML::link('admin/publicidad','Publicidad')}}</li>
         </ul>
         <div id="wrapper">
         	@yield('contend')
