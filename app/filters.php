@@ -103,7 +103,7 @@ Route::filter('categoria', function()
 
 Route::filter('admin',function(){
 
-
+    if (Auth::guest()) return Redirect::guest('/registro');
     if ( Auth::user()->role != 1){
         return Redirect::to('/');
     }

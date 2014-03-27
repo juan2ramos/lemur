@@ -32,7 +32,7 @@
     </div>
     <div class="form-group">
         {{ Form::label('id_categorias', 'Categorias') }}
-        {{Form::select('estado', $comboBox, $idea['id_categorias'])}}
+        {{Form::select('id_categorias', $comboBox, $idea['id_categorias'])}}
     </div>
     <div class="form-group">
         {{ Form::label('url_video', 'Video') }}

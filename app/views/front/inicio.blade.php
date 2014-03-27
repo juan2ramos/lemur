@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('inicio')
 @if($popUpPublicidad)
-<div class="popUp-container show">
+<div class="popUp-container-p show">
 <div id="publicidad">
     <div class="closePublicidad">
         <img src="images/close2.png">

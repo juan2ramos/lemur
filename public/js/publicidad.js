@@ -5,9 +5,8 @@ $(function(){
 
     $('.closePublicidad').on('click', $('body'), function () {
 
-        $('.popUp-container ').removeClass('show');
+        $('.popUp-container-p ').removeClass('show');
 
-        $('.popUp-container ').remove();
     });
 
 });

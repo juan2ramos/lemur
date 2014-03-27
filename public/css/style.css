@@ -907,7 +907,7 @@ popUp
 	top: 20px;
 	z-index: 1000
 }
-.popUp-container{
+.popUp-container, .popUp-container-p{
 	background: rgba(0,0,0,.5);
 	display: none;
 	left: 0;

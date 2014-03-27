@@ -57,6 +57,7 @@ Route::group(['before' => 'auth'], function()
     Route::controller('sube-tu-idea','IdeasController');
 });
 Route::get('facebook', 'LoginController@Facebook');
+Route::get('google', 'LoginController@Google');
 Route::get('twitter', 'LoginController@Twitter');
 Route::get('password', function(){return View::make('front.password');});
 
@@ -84,7 +85,7 @@ Route::get('servicios', function(){return View::make('front.servicios');});
 Route::get('trabaja-en-lemur', function(){return View::make('front.trabaja-en-lemur');});
 Route::get('terminos-y-condiciones', function(){return View::make('front.terminos');});
 
-Route::get('registro', function(){return View::make('front.inicio', ['popUp'=>'true','popUpPublicidad'=>'false', 'publicidad' => false]);});
+Route::get('registro', function(){return View::make('front.inicio', ['popUp'=>'true','popUpPublicidad'=>false, 'publicidad' => false]);});
 
 
 
