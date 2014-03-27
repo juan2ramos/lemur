@@ -1,0 +1,15 @@
+[22-Mar-2014 09:36:43 America/Denver] PHP Notice:  Undefined variable: argv in - on line 14
+[22-Mar-2014 09:36:43 America/Denver] PHP Warning:  in_array() expects parameter 2 to be array, null given in - on line 21
+[22-Mar-2014 09:36:43 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in - on line 46
+[22-Mar-2014 09:40:41 America/Denver] PHP Notice:  Undefined variable: argv in - on line 14
+[22-Mar-2014 09:40:41 America/Denver] PHP Warning:  in_array() expects parameter 2 to be array, null given in - on line 21
+[22-Mar-2014 09:40:41 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in - on line 46
+[22-Mar-2014 18:36:19 America/Denver] PHP Fatal error:  Class 'Laravel\Auth' not found in /home3/juantwor/public_html/lemur/ide_helper.php on line 19
+[23-Mar-2014 11:52:08 America/Denver] PHP Fatal error:  Class 'Laravel\Auth' not found in /home3/juantwor/public_html/lemur/ide_helper.php on line 19
+[26-Mar-2014 20:35:02 America/Denver] PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Undefined index: argv' in phar:///home3/juantwor/public_html/lemur/composer.phar/vendor/symfony/console/Symfony/Component/Console/Input/ArgvInput.php:57
+Stack trace:
+#0 phar:///home3/juantwor/public_html/lemur/composer.phar/vendor/symfony/console/Symfony/Component/Console/Input/ArgvInput.php(57): Composer\Util\ErrorHandler::handle(8, 'Undefined index...', 'phar:///home3/j...', 57, Array)
+#1 phar:///home3/juantwor/public_html/lemur/composer.phar/vendor/symfony/console/Symfony/Component/Console/Application.php(111): Symfony\Component\Console\Input\ArgvInput->__construct()
+#2 phar:///home3/juantwor/public_html/lemur/composer.phar/src/Composer/Console/Application.php(83): Symfony\Component\Console\Application->run(NULL, Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 phar:///home3/juantwor/public_html/lemur/composer.phar/bin/composer(43): Composer\Console\Application->run()
+#4 /home3/juantwor/public_html/lemur/composer.phar(14): require('phar:///home3/j in phar:///home3/juantwor/public_html/lemur/composer.phar/vendor/symfony/console/Symfony/Component/Console/Input/ArgvInput.php on line 57
