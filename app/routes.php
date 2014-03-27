@@ -10,6 +10,7 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+
 Route::group(['before' => 'csrf'], function()
 {
     Route::post('login','LoginController@login');
@@ -26,7 +27,7 @@ Route::group(['prefix' => 'admin','before' => 'admin'], function()
     Route::resource('/', 'CategoriasController');
     Route::resource('users', 'admin_UsersController');
     Route::resource('categorias', 'CategoriasController');
-    Route::get('ideas', 'ideasController@adminShow');
+    Route::get('idea/{id?}', 'ideasController@adminShow');
     Route::get('ideas/{id}', 'ideasController@adminUpdate');
     Route::group(['before' => 'csrf'], function(){
         Route::post('categoria/update','CategoriasController@update');
@@ -36,6 +37,12 @@ Route::group(['prefix' => 'admin','before' => 'admin'], function()
 
 
     });
+
+    Route::get('categorias/destroy/{id}','Categorias@destroy');
+    Route::get('users/destroy/{id}','admin_UsersController@destroy');
+    Route::get('ideas/destroy/{id}','IdeasController@destroy');
+    Route::get('categorias/destroy/{id}','CategoriasController@destroy');
+    Route::get('excel','admin_UsersController@excel');
     Route::get('users/ingresar/{id}',function($id){
 
         Auth::login(User::find($id));

@@ -13,7 +13,7 @@ class Admin_UsersController extends \BaseController
      */
     public function index()
     {
-        $users = User::paginate(5);
+        $users = User::paginate(20);
         //dd($users);
         return View::make('admin/users/list')->with('users', $users);
     }
@@ -172,7 +172,75 @@ class Admin_UsersController extends \BaseController
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return Redirect::to('admin/users');
+    }
+    function excel(){
+        $objPHPExcel = new PHPExcel();
+
+        $objPHPExcel->setActiveSheetIndex(0)
+            ->setCellValue('A1', 'nombre')
+            ->setCellValue('B1', 'apellidos')
+            ->setCellValue('C1', 'email')
+            ->setCellValue('D1', 'Fecha inscripcion')
+            ->setCellValue('E1', 'edad')
+            ->setCellValue('F1', 'genero')
+            ->setCellValue('G1', 'profesion')
+            ->setCellValue('H1', 'nivel_estudios')
+            ->setCellValue('I1', 'intereses')
+            ->setCellValue('J1', 'estado_civil')
+            ->setCellValue('K1', 'pais')
+            ->setCellValue('L1', 'ciudad')
+            ->setCellValue('M1', 'sobre_ti')
+            ->setCellValue('N1', 'habilidades')
+
+
+        ;
+        $users = User::all();
+        $i = 1;
+        foreach($users as $user ){
+            $objPHPExcel->setActiveSheetIndex(0)
+                ->setCellValue('A'.$i, $user->nombre)
+                ->setCellValue('B'.$i, $user['apellidos'])
+                ->setCellValue('C'.$i, $user['email'])
+                ->setCellValue('D'.$i, $user['Fecha inscripcion'])
+                ->setCellValue('E'.$i, $user['edad'])
+                ->setCellValue('F'.$i, $user['genero'])
+                ->setCellValue('G'.$i, $user['profesion'])
+                ->setCellValue('H'.$i, $user['nivel_estudios'])
+                ->setCellValue('I'.$i, $user['intereses'])
+                ->setCellValue('J'.$i, $user['estado_civil'])
+                ->setCellValue('K'.$i, $user['pais'])
+                ->setCellValue('L'.$i, $user['ciudad'])
+                ->setCellValue('M'.$i, $user['sobre_ti'])
+                ->setCellValue('N'.$i, $user['habilidades'])
+
+
+            ;
+            $i++;
+        }
+
+
+        $objPHPExcel->getActiveSheet()->setTitle('Usuarios');
+      $objPHPExcel->setActiveSheetIndex(0);
+
+
+
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="ReporteUsuarios.xls"');
+        header('Cache-Control: max-age=0');
+
+        header('Cache-Control: max-age=1');
+
+
+        header ('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
+        header ('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); // always modified
+        header ('Cache-Control: cache, must-revalidate'); // HTTP/1.1
+        header ('Pragma: public'); // HTTP/1.0
+
+        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+        $objWriter->save('php://output');
+        exit;
     }
 
 }

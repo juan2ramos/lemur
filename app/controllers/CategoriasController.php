@@ -127,5 +127,10 @@ class CategoriasController extends \BaseController
         $success = true;
         return View::make('admin.categorias.new', compact('categoria', 'comboBox', 'success'));
     }
+    public function destroy($id)
+    {
+        Categorias::destroy($id);
+        return Redirect::to('admin/categorias');
+    }
 
 }

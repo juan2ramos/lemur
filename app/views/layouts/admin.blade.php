@@ -36,7 +36,7 @@
             <li>{{HTML::link('/','Lemur')}}</li>
             <li>{{HTML::link('admin/categorias','Categorías')}}</li>
             <li>{{HTML::link('admin/users','Usuarios')}}</li>
-            <li>{{HTML::link('admin/ideas','Ideas')}}</li>
+            <li>{{HTML::link('admin/idea','Ideas')}}</li>
         </ul>
         <div id="wrapper">
         	@yield('contend')

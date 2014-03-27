@@ -81,7 +81,7 @@ li {
 
 }
 
-.btn-admin {
+.btn-admin,#export {
     text-decoration: none;
     padding: 13px;
     background: #D65C4F;
@@ -92,6 +92,10 @@ li {
     border-top: none;
     margin: 20px 0;
     text-transform: uppercase;
+}
+#export{
+    background: #53AA76;
+    border-bottom: #49796F 3px solid;
 }
 .form-group{
     clear: both;

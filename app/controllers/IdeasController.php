@@ -77,11 +77,11 @@ class IdeasController extends \BaseController
      */
     public function showAllForCategories($id)
     {
-        if (!Categorias::open($id))return Redirect::to('/categorias');
+        if (!Categorias::open($id)) return Redirect::to('/categorias');
 
         $cierreCategoria = Carbon::parse(Categorias::find($id)->fecha_cierre)->endOfDay();
 
-        $ideas = Ideas::whereRaw('id_categorias = ' . $id. ' and estado_publicacion = 1')->get();
+        $ideas = Ideas::whereRaw('id_categorias = ' . $id . ' and estado_publicacion = 1')->get();
 
         if ($ideas->isEmpty())
             return Redirect::to('/categorias');
@@ -92,11 +92,13 @@ class IdeasController extends \BaseController
         return View::make('front.vota-por-una-idea', compact('ideasImage', 'crono', 'cierreCategoria'));
 
     }
-    function search(){
-        $ideas = Ideas::whereRaw('titulo LIKE "%'. Input::get('word') .'%" and estado_publicacion = 1 ')->get();
 
-        foreach($ideas as $idea){
-            $nose = (is_null($idea->categorias()->where('estado', '=', '1')->get()))?false:true;
+    function search()
+    {
+        $ideas = Ideas::whereRaw('titulo LIKE "%' . Input::get('word') . '%" and estado_publicacion = 1 ')->get();
+
+        foreach ($ideas as $idea) {
+            $nose = (is_null($idea->categorias()->where('estado', '=', '1')->get())) ? false : true;
             print_r($nose);
         }
         dd('d');
@@ -160,12 +162,11 @@ class IdeasController extends \BaseController
      */
     public function show($id)
     {
-        if(!is_numeric($id)) return Redirect::to('/categorias');
+        if (!is_numeric($id)) return Redirect::to('/categorias');
         $idea = Ideas::whereRaw('id = ' . $id . ' and estado_publicacion = 1')->get();
         if ($idea->isEmpty()) return Redirect::to('/categorias');
-        if (!Categorias::open( $idea[0]->id_categorias))return Redirect::to('/categorias');
+        if (!Categorias::open($idea[0]->id_categorias)) return Redirect::to('/categorias');
         $cierreCategoria = Carbon::parse(Categorias::find($idea[0]->id_categorias)->fecha_cierre)->endOfDay();
-
 
 
         $images = $idea[0]->images;
@@ -173,13 +174,13 @@ class IdeasController extends \BaseController
         $UserIdea['imagen'] = $user['imagen'];
         $UserIdea['nombre'] = $user['nombre'];
         $video = (empty($idea[0]->url_video)) ? false : $idea[0]->url_video;
-        if($video){
+        if ($video) {
             $url = explode("=", $video);
-            $video = (empty($url[1]))?false:$url[1];
+            $video = (empty($url[1])) ? false : $url[1];
         }
         $crono = true;
         $comentarios = $this->comentarios($id);
-        return View::make('front.detalle-idea', compact('video', 'idea', 'images', 'UserIdea', 'comentarios' , 'crono', 'cierreCategoria'));
+        return View::make('front.detalle-idea', compact('video', 'idea', 'images', 'UserIdea', 'comentarios', 'crono', 'cierreCategoria'));
 
     }
 
@@ -244,17 +245,34 @@ class IdeasController extends \BaseController
      */
     public function destroy($id)
     {
-        //
+        Ideas::destroy($id);
+        return Redirect::to('admin/idea');
     }
-    function  adminShow(){
-        $ideas = Ideas::paginate(20);
-        return View::make('admin/ideas/list',compact('ideas'));
+
+    function  adminShow($id = false)
+    {
+
+        $categorias = [0 => "Todas las categorías "] + Categorias::all()->lists('nombre', 'id');
+
+        if (!$id || $id == 0) {
+            $id = 0;
+            $ideas = Ideas::paginate(20);
+            return View::make('admin/ideas/list', compact('ideas','categorias','id'));
+        }
+        $ideas = Ideas::where('id_categorias','=',$id)->paginate(20);
+
+        return View::make('admin/ideas/list', compact('ideas','categorias','id'));
+
+
     }
+
     public function comentarios($id)
     {
         return Ideas::find($id)->comentarios;
     }
-    function adminUpdate($id){
+
+    function adminUpdate($id)
+    {
         $idea = Ideas::find($id);
         $user = $idea->users;
         $comentarios = $idea->comentariosAll->all();
@@ -267,10 +285,12 @@ class IdeasController extends \BaseController
         $images = $idea->images;
 
         $votos = $idea->votosPersona;
-        return View::make('admin/ideas/form',compact('idea','user','comentarios','comboBox','comboBoxPublicacion','images','votos'));
+        return View::make('admin/ideas/form', compact('idea', 'user', 'comentarios', 'comboBox', 'comboBoxPublicacion', 'images', 'votos'));
 
     }
-    function updateAdmin(){
+
+    function updateAdmin()
+    {
         $input = Input::all();
         $idea = Ideas::find(Input::get('id'));
         $idea->fill($input);
@@ -285,7 +305,7 @@ class IdeasController extends \BaseController
         $images = $idea->images;
         $comentarios = $idea->comentariosAll->all();
         $votos = $idea->votosPersona;
-        return View::make('admin/ideas/form',compact('idea','user','comentarios','comboBox','comboBoxPublicacion','images','votos'));
+        return View::make('admin/ideas/form', compact('idea', 'user', 'comentarios', 'comboBox', 'comboBoxPublicacion', 'images', 'votos'));
 
 
     }

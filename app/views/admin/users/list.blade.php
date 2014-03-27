@@ -3,7 +3,8 @@
 @section('contend')
 <h1>Lista de Categorías</h1>
 <p>
-    <a href="{{ route('admin.users.create') }}" id="new-user">Nuevo Usuario</a>
+    {{HTML::link('admin/excel','Exportar a Excel',['id' => 'export'])}}
+
 </p>
 <table class=" table-primary ">
     <thead>
@@ -28,9 +29,11 @@
                 <i class="icon-eye"></i>
             </a>
 
-            <a href="" class="delete">
-                <i class="icon-close"></i>
-            </a>
+            {{HTML::decode(
+            HTML::link('admin/users/destroy/'.$user->id,'
+            <i class="icon-close"></i>
+            ',['class' => 'delete', 'onclick' => "return confirm('Esta seguro de eliminar el usuario?')"])
+            )}}
         </td>
     </tr>
 

@@ -613,7 +613,7 @@ vota por una idea
 	position: relative;
 }
 .vota-por-una-idea li{
-	background: rgba(150, 26, 29, 0.5) url("../images/bombillo.jpg") no-repeat center top;
+	background: #b21318 ;
 	display: inline-block;
 	border-style: none;
 	border-color: transparent;

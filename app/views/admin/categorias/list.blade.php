@@ -28,9 +28,11 @@
                 <i class="icon-eye"></i>
             </a>
 
-            <a href="" class="delete">
-                <i class="icon-close"></i>
-            </a>
+            {{HTML::decode(
+            HTML::link('admin/categorias/destroy/'.$categoria->id,'
+            <i class="icon-close"></i>
+            ',['class' => 'delete', 'onclick' => "return confirm('Esta seguro de eliminar la idea?')"])
+            )}}
         </td>
     </tr>
 
