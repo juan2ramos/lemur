@@ -24,6 +24,10 @@
         {{ Form::label('estado', 'Estado') }}
         {{Form::select('estado', $comboBox, $publicidad['estado'])}}
     </div>
+    <div class="form-group">
+        {{ Form::label('link', 'Link') }}
+        {{ Form::text('link', $publicidad["link"] ) }}
+    </div>
     {{ Form::button('Actualizar Publicidad', array('type' => 'submit', 'class' => 'btn-admin')) }}
 
 

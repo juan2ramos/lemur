@@ -6,7 +6,7 @@ class Publicidad extends Eloquent
 
     protected $table = 'publicidad';
     private $errors = [];
-    protected $fillable = ['titulo', 'texto', 'imagen','estado'];
+    protected $fillable = ['titulo', 'texto', 'imagen','estado','link'];
 
 
 

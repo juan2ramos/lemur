@@ -9,7 +9,7 @@
     <div id="contend-error">
         <h2>{{$publicidad['titulo']}}</h2>
         <p>{{$publicidad['texto']}}</p>
-        {{HTML::image('images/'.$publicidad['imagen'],'')}}
+        <a href="{{$publicidad['link']}} " target="_blank"  >{{HTML::image('images/'.$publicidad['imagen'],'')}}</a>
     </div>
 </div>
 </div>
