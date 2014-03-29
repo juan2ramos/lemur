@@ -12,7 +12,7 @@
 
                     </li>
                     <li>
-                        {{ HTML::decode(HTML::link('productos', '<p>Productos para tí</p>', array('id' => 'productos'))) }}
+                        {{ HTML::decode(HTML::link('#', '<p>Productos para tí</p>', array('id' => 'productos'))) }}
 
                     </li>
                     </li>

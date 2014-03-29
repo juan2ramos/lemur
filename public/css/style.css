@@ -1794,6 +1794,20 @@ loading
     color: #fff;
     font-size: 2.1em;
 }
+#signin-button button{
+    opacity: 0.5 !important;
+    top: 7px !important;
+    width: 17px !important;
+    height: 17px !important;
+    background: url("../images/google_plus.png") !important;
+    border: none !important;
+}
+#signin-button button:hover{
+    opacity: 1 !important;
+}
+iframe{
+    opacity: 0;
+}
 @-moz-keyframes bounceG{
     0%{
         -moz-transform:scale(1.2);

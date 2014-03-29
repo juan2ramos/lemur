@@ -5,8 +5,7 @@
         now = new Date();
         y2k = new Date(parseInt(date[0]),parseInt(date[1])-1,parseInt(daysF[0]),23,59,59);
         days = (y2k - now) / 1000 / 60 / 60 / 24;
-        console.log(date[0],date[1],parseInt(daysF[0])+1)
-        console.log(now)
+
         daysRound = Math.floor(days);
         hours = (y2k - now) / 1000 / 60 / 60 - (24 * daysRound);
         hoursRound = Math.floor(hours);

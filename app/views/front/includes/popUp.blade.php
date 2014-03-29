@@ -30,9 +30,18 @@
                     )}}
 
                 </li>
-                <!--<li>
-                    <a href="#">{{HTML::image('images/google_plus.png')}}</a>
-                </li>-->
+                <li>
+                    <div id="signin-button" class="show">
+                        <div class="g-signin"
+                             data-callback="loginFinishedCallback"
+                             data-clientid="798327401166-gkbconqk72a7t73prfp8rd6svpdss9q4.apps.googleusercontent.com"
+                             data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read"
+                             data-height="short"
+                             data-cookiepolicy="single_host_origin"
+                             data-width = "iconOnly"
+                            >
+                        </div>
+                </li>
             </ul>
             <input type="submit" value="Ingresa">
         </div>
@@ -72,9 +81,20 @@
                         )}}
 
                     </li>
-                    <!--<li>
-                        <a href="#"><img src="images/google_plus.png"></a>
-                    </li>-->
+
+
+                    <li>
+                        <div id="signin-button" class="show">
+                            <div class="g-signin"
+                                 data-callback="loginFinishedCallback"
+                                 data-clientid="798327401166-gkbconqk72a7t73prfp8rd6svpdss9q4.apps.googleusercontent.com"
+                                 data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read"
+                                 data-height="short"
+                                 data-cookiepolicy="single_host_origin"
+                                 data-width = "iconOnly"
+                                >
+                            </div>
+                    </li>
                 </ul>
                 <input type="submit" value="Regístrate">
 
@@ -123,3 +143,4 @@
         </figure>
     </div>
 </section>
+{{HTML::link('google','',['id' => 'google'])}}

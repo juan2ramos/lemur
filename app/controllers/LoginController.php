@@ -51,34 +51,107 @@ class LoginController extends \BaseController
 
     public function Facebook()
     {
+        $path = explode('/', dirname(__FILE__));
+        array_pop($path);
+        $path = implode('/', $path);
+        require($path . '/config/packages/face/src/facebook.php');
+        $facebook = new Facebook([
+            'appId' => '706814422713940',
+            'secret' => '63c665eb7f5a117fede882be74fd1cdf',
+        ]);
+        $user = $facebook->getUser();
+        if ($user) {
+            try {
+                $user_profile = $facebook->api('/me');
 
-        // get data from input
-        $code = Input::get('code');
+                $user = User::where('email', '=', $user_profile['email'])->first();
+                if (is_null($user)) {
+                    $data = [
+                        'email' => $user_profile['email'],
+                        'nombre' => $user_profile['first_name'],
+                        'apellidos' => $user_profile['last_name']
+                    ];
+                    $user = new User;
+                    Mail::send('emails.newUser', $data, function ($message) use ($user_profile) {
+                        $message->subject('Nuevo usuario plataforma lemur');
+                        $message->to($user_profile['email']);
+                    });
+                    $user->fill($data);
+                    // Guardamos el usuario
+                    $user->save();
+                }
 
-        // get fb service
-        $fb = OAuth::consumer('Facebook');
+                Auth::login($user);
 
-        // check if code is valid
+                return Redirect::to('/');
+            } catch (FacebookApiException $e) {
+                error_log($e);
+                $user = null;
+            }
+        }
+        if ($user) {
+            $logoutUrl = $facebook->getLogoutUrl(array('next' => 'https://www.myapp.com/after_logout'));
+        } else {
+            $statusUrl = $facebook->getLoginStatusUrl();
+            $loginUrl = $facebook->getLoginUrl();
+            return Redirect::to($loginUrl);
+        }
 
-        // if code is provided get user data and sign in
-        if (!empty($code)) {
+        dd($user_profile["email"]);
+        return ' <img src="https://graph.facebook.com/' . $user . '/picture">';
 
-            $result = json_decode($fb->request('/me'), true);
+    }
 
-            $user = User::where('email', '=', $result['email'])->first();
-            if(is_null($user)){
+    public function Twitter()
+    {
+        $path = explode('/', dirname(__FILE__));
+        array_pop($path);
+        $path = implode('/', $path);
+        require($path . '/config/packages/twitter/EpiCurl.php');
+        require($path . '/config/packages/twitter/EpiOAuth.php');
+        require($path . '/config/packages/twitter/EpiTwitter.php');
+
+        $twitterObj = new EpiTwitter('3gU8b8iVmpvKU4q3rNwH0A', 'FQDqeMj2bFs9n31GOXmerMXh6cfpnjTJUE2xWNS310');
+        $authenticateUrl = $twitterObj->getAuthenticateUrl();
+
+        return Redirect::to($authenticateUrl);
+    }
+
+    function twitterLogin()
+    {
+        $path = explode('/', dirname(__FILE__));
+        array_pop($path);
+        $path = implode('/', $path);
+        require($path . '/config/packages/twitter/EpiCurl.php');
+        require($path . '/config/packages/twitter/EpiOAuth.php');
+        require($path . '/config/packages/twitter/EpiTwitter.php');
+
+
+        if (isset($_GET['oauth_token'])) {
+
+            $twitterObj = new EpiTwitter('3gU8b8iVmpvKU4q3rNwH0A', 'FQDqeMj2bFs9n31GOXmerMXh6cfpnjTJUE2xWNS310');
+
+            $twitterObj->setToken($_GET['oauth_token']);
+
+            $token = $twitterObj->getAccessToken();
+
+            $twitterObj->setToken($token->oauth_token, $token->oauth_token_secret);
+
+            $userdata = $twitterObj->get_accountVerify_credentials();
+
+            $user = User::where('screen_name_twitter', '=', $userdata->screen_name)->first();
+            if (is_null($user)) {
                 $data = [
-                    'email' => $result['email'],
-                    'nombre' => $result['first_name'],
-                    'apellidos' => $result['last_name']
+                    'email' => $userdata->screen_name,
+                    'nombre' => $userdata->screen_name,
+                    'screen_name_twitter' => $userdata->screen_name,
                 ];
                 $user = new User;
-                Mail::send('emails.newUser', $data, function ($message){
+                Mail::send('emails.newUser', $data, function ($message) use ($userdata) {
                     $message->subject('Nuevo usuario plataforma lemur');
-                    $message->to($result['email']);
+                    $message->to('juan2ramos@gmail.com');
                 });
                 $user->fill($data);
-                // Guardamos el usuario
                 $user->save();
             }
 
@@ -86,131 +159,32 @@ class LoginController extends \BaseController
 
             return Redirect::to('/');
 
-        } else {
-
-            $url = $fb->getAuthorizationUri();
-
-            return Redirect::to((string)$url);
         }
 
     }
 
-    public function Twitter() {
 
-        // get data from input
-        $code = Input::get( 'oauth_token' );
-        $oauth_verifier = Input::get( 'oauth_verifier' );
-
-        // get fb service
-        $twitterService = OAuth::consumer( 'Twitter' );
-
-        // check if code is valid
-
-        // if code is provided get user data and sign in
-        if ( !empty( $code ) ) {
-
-            $token = $twitterService->getStorage()->retrieveAccessToken('Twitter');
-
-            // This was a callback request from google, get the token
-            $twitterService->requestAccessToken( $code, $oauth_verifier, $token->getRequestTokenSecret() );
-
-            // Send a request with it
-            $result = json_decode( $twitterService->request( 'account/verify_credentials.json') );
-
-            // try to login
-
-            // get user by twitter_id
-            $user = User::where( [ 'twitter_id' => $result->id ] )->first();
-
-            // check if user exists
-            if ( $user ) {
-                // login user
-                Auth::login( $user );
-
-                // build message with some of the resultant data
-                $message = 'Your unique twitter user id is: ' . $result->id . ' and your name is ' . $result->name;
-
-                // redirect to user profile
-                return Redirect::route( 'home.index' )
-                    ->with( 'flash_success', $message );
-
-            }
-            else {
-                // FIRST TIME TWITTER LOGIN
-
-                // create new user
-                $user = User::createNew([
-                    'firstname' => $result->name,
-                    'lastname' => null,
-                    'username' => $result->screen_name,
-                    'twitter_id' => $result->id,
-                ]);
+    public function Google()
+    {
+        if (!Auth::check()) {
+            $user = User::where('email', '=', Input::get('email'))->first();
+            if (is_null($user)) {
+                $data = [
+                    'email' => Input::get('email'),
+                    'nombre' => Input::get('username'),
+                ];
+                $user = new User;
+                Mail::send('emails.newUser', $data, function ($message) use ($userdata) {
+                    $message->subject('Nuevo usuario plataforma lemur');
+                    $message->to($data['email']);
+                });
+                $user->fill($data);
                 $user->save();
-
-                // login user
-                Auth::login( $user );
-
-                // build message with some of the resultant data
-                $message_success = 'Your unique twitter user id is: ' . $result->id . ' and your name is ' . $result->name;
-                $message_notice = 'Account Created.';
-
-                // redirect to game page
-                return Redirect::route( 'home.index' )
-                    ->with( 'flash_success', $message_success )
-                    ->with( 'flash_notice', $message_notice );
-
             }
-        }
-        // if not ask for permission first
-        else {
-                echo('jijis
-                ');
-            // extra request needed for oauth1 to request a request token :-)
-            $token = $twitterService->requestRequestToken();
-            $url = $twitterService->getAuthorizationUri(['oauth_token' => $token->getRequestToken()]);
 
-            // return to twitter login url
-            return Response::make()->header( 'Location', (string)$url );
+            Auth::login($user);
 
-        }
-
-    }
-
-
-    public function Google() {
-
-        // get data from input
-        $code = Input::get( 'code' );
-
-        // get google service
-        $googleService = OAuth::consumer( 'Google' );
-
-        // check if coººde is valid
-
-        // if code is provided get user data and sign in
-        if ( !empty( $code ) ) {
-
-            // This was a callback request from google, get the token
-            $token = $googleService->requestAccessToken( $code );
-
-            // Send a request with it
-            $result = json_decode( $googleService->request( 'https://www.googleapis.com/oauth2/v1/userinfo' ), true );
-
-            $message = 'Your unique Google user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
-            echo $message. "<br/>";
-
-            //Var_dump
-            //display whole array().
-            dd($result);
-
-        }
-        // if not ask for permission first
-        else {
-            // get googleService authorization
-            $url = $googleService->getAuthorizationUri();
-
-            // return to facebook login url
-            return Redirect::to( (string)$url );
-        }
+        };
+        return Response::json(['success' => 1]);
     }
 }

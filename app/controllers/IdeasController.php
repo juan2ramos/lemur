@@ -101,19 +101,36 @@ class IdeasController extends \BaseController
             ->whereRaw('categorias.estado = 1
             AND NOW() BETWEEN categorias.fecha_inicio AND categorias.fecha_cierre
             AND ideas.estado_publicacion = 1
-                AND ideas.titulo LIKE "%wer%"')
+                AND ideas.titulo LIKE "%' . Input::get('sad') . '%"')
+            ->select('ideas.*')
             ->get();
             ;
 
 
+
         if (is_null($ideas))
             return Redirect::to('/categorias');
-        $ideasImage = $this->imagenesForideas($ideas);
+        $ideasImage = $this->imagenesForideasSearch($ideas);
         $cierreCategoria = null;
-        return View::make('front.vota-por-una-idea', compact('ideasImage','cierreCategoria'));
+        return View::make('front.search', compact('ideasImage','cierreCategoria'));
 
     }
+    private function imagenesForideasSearch($ideas)
+    {
 
+        foreach ($ideas as $key => $value) {
+
+            $idea = Ideas::find($value->id);
+
+            $ideas[$key]->imagen = (empty($idea->images[0])) ? 'images/detalle_idea.jpg' : 'upload/' . $idea->images[0]['url'];
+
+            //$ideas[$key]->voto = $idea->votos->count();
+
+        }
+
+        return $ideas;
+
+    }
     /**
      * @param $ideas
      * @return mixed
@@ -122,6 +139,7 @@ class IdeasController extends \BaseController
     {
 
         foreach ($ideas as $key => $value) {
+
             $idea = Ideas::find($value['id']);
 
             $ideas[$key]->imagen = (empty($idea->images[0])) ? 'images/detalle_idea.jpg' : 'upload/' . $idea->images[0]['url'];
@@ -300,6 +318,21 @@ class IdeasController extends \BaseController
         $idea = Ideas::find(Input::get('id'));
         $idea->fill($input);
         $idea->save();
+
+        if($idea['estado_publicacion'] == 1){
+            $data = [
+                'id' => $idea['id'],
+                'titulo' => $idea['titulo'],
+
+            ];
+            $user = User::find($idea['id_users']);
+            Mail::send('emails.ideaAprobada', $data, function ($message) use ($user){
+
+                $message->subject('Idea Aprobada');
+                $message->to($user['email']);
+            });
+        }
+
         $categorias = Categorias::all()->lists('nombre', 'id');
         $user = $idea->users;
         $comboBox = $categorias;

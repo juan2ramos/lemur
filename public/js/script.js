@@ -1,5 +1,36 @@
 $(function () {
 
+
+
+$('#productos').on('click',function(e){
+
+    e.preventDefault();
+    var $popup = $('.popUp-container');
+    $popup.addClass('show');
+
+    var template = '';
+    template +=
+        '<div id="contend-error">' +
+            '<h2>Muy pronto Productos</h2><ul style="color: #ffffff">';
+
+
+    template += '<li>muy pronto productos</li>'
+
+    template += '</ul></div>' ;
+    $('#popUp-contend').append(template);
+    $('.close').on('click', $('body'), function () {
+        $popup.removeClass('show');
+        template = "wew";
+        $('#contend-error').remove();
+    });
+});
+
+
+
+
+
+
+
     $('#form-register').on('submit', function (e) {
         e.preventDefault();
         $('#facebookG').addClass('show');
@@ -205,7 +236,6 @@ function responseFormlogin(data) {
         $('#ingresa-cuenta').find('h2').text('Usuario y/o contraseña incorrecta');
     }
 }
-
 
 //files
 
