@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('contend')
-<h1>Lista de Categorías</h1>
+<h1>Lista de Usuarios</h1>
 <p>
     {{HTML::link('admin/excel','Exportar a Excel',['id' => 'export'])}}
 

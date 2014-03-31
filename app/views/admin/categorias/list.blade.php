@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('contend')
-<h1>Lista de usuarios</h1>
+<h1>Lista de Categorías</h1>
 <p>
     <a href="{{ route('admin.categorias.create') }}" id="new-user" class="btn-admin">Nueva Categoría</a>
 </p>

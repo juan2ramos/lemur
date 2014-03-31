@@ -134,7 +134,7 @@ header dd, header dt {
 	float: left;
 	margin-left: 20px;
 }
-#img-ingresar,#img-registrar{
+#img-ingresar,#img-registrar,#logout{
 	background: url("../images/ingresar.png") no-repeat left bottom;
 	height: 20px;
 	width: 97px;
@@ -888,13 +888,16 @@ popUp
 
 #popUp-contend{
 	background: rgba(150, 26, 29, 0.5) url("../images/pattern.jpg") repeat left top;
-	height: 290px;
+	height: auto;
 	left: 50%;
 	margin: -145px -330px;
 	position: fixed;
 	top: 50%;
 	width: 660px;
-}	
+}
+#logout{
+    width: 150px;
+}
 #popUp-contend h2{
 	margin: 0;
 	color: #fff;
@@ -1805,7 +1808,7 @@ loading
 #signin-button button:hover{
     opacity: 1 !important;
 }
-iframe{
+#signin-button iframe{
     opacity: 0;
 }
 @-moz-keyframes bounceG{
@@ -1829,7 +1832,13 @@ iframe{
         opacity:0.1}
 
 }
-
+.alert-danger{
+    background	: rgba(247, 164, 164, 0.56);
+    padding: 10px;
+    color:#fff;
+    margin-bottom: 20px;
+    width: 540px
+}
 @-o-keyframes bounceG{
     0%{
         -o-transform:scale(1.2);

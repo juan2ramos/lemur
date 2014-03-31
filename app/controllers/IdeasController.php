@@ -101,7 +101,7 @@ class IdeasController extends \BaseController
             ->whereRaw('categorias.estado = 1
             AND NOW() BETWEEN categorias.fecha_inicio AND categorias.fecha_cierre
             AND ideas.estado_publicacion = 1
-                AND ideas.titulo LIKE "%' . Input::get('sad') . '%"')
+                AND ideas.titulo LIKE "%' . Input::get('word') . '%"')
             ->select('ideas.*')
             ->get();
             ;

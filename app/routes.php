@@ -26,6 +26,9 @@ Route::group(['before' => 'csrf'], function()
 
     Route::post('register','admin_UsersController@store');
     Route::post('search','IdeasController@search');
+    Route::post('envioContacto','mails@contacto');
+    Route::post('envioTrabajo','mails@trabajo');
+
 
 
 
