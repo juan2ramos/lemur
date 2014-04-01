@@ -197,7 +197,7 @@ class Admin_UsersController extends \BaseController
 
         ;
         $users = User::all();
-        $i = 1;
+        $i = 2;
         foreach($users as $user ){
             $objPHPExcel->setActiveSheetIndex(0)
                 ->setCellValue('A'.$i, $user->nombre)
