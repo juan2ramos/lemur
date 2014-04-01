@@ -14,6 +14,7 @@
             <label for="password">Contraseña:<span>*</span></label>
             <input type="password" name="password">
             <a href="password">¿Olvidaste tu contraseña?</a>
+            <input type="submit" value="Ingresa" id="sumbit-inicio">
         </div>
         <div class="form form-net">
             <p>Ingresa con</p>
@@ -43,7 +44,7 @@
                         </div>
                 </li>
             </ul>
-            <input type="submit" value="Ingresa">
+
         </div>
         {{ Form::close() }}
     </div>
@@ -60,7 +61,7 @@
                 <input name="email" type="text">
                 <label for="password">contraseña:<span>*</span></label>
                 <input type="password" name="password" >
-
+                <input type="submit" value="Regístrate" id="sumbit-registro">
                 <p class="term">
                     Al crear tu cuenta aceptas los
                     <a href="terminos-y-condiciones"> terminos y condiciones.</a>
@@ -96,7 +97,7 @@
                             </div>
                     </li>
                 </ul>
-                <input type="submit" value="Regístrate">
+
 
             </div>
         {{ Form::close() }}

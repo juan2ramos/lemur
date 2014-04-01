@@ -923,7 +923,7 @@ popUp
 .form{
 	display: inline-block;
 	vertical-align: top;
-	padding: 50px 0;
+    padding: 50px 0 0 0;
 	width: 400px;
 }
 .form-net{
@@ -1810,6 +1810,19 @@ loading
 }
 #signin-button iframe{
     opacity: 0;
+}
+#sumbit-inicio,#sumbit-registro{
+
+    border: none;
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 17px;
+    margin:  0;
+    padding: 4px 0 5px;
+    width: 140px;
+    font-weight: 100;
+    position: absolute;
+    right: 60px;
+    top:230px
 }
 @-moz-keyframes bounceG{
     0%{
