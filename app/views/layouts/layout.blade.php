@@ -19,6 +19,7 @@
     <meta name="author" content="juan2ramos"/>
     <meta name="description" content="Inicio"/>
 
+    @yield('metas')
 
     <!-- Estilos -->
     <?php echo HTML::script('js/prefixfree.js') ?>

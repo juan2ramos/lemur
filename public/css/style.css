@@ -1825,6 +1825,13 @@ loading
     right: 60px;
     top:230px
 }
+#closeBack{
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
 @-moz-keyframes bounceG{
     0%{
         -moz-transform:scale(1.2);

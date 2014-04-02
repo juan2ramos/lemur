@@ -86,10 +86,10 @@ class IdeasController extends \BaseController
         if ($ideas->isEmpty())
             return Redirect::to('/categorias');
         $ideasImage = $this->imagenesForideas($ideas);
-
+        $categoria = Categorias::find($id);
         $crono = true;
 
-        return View::make('front.vota-por-una-idea', compact('ideasImage', 'crono', 'cierreCategoria'));
+        return View::make('front.vota-por-una-idea', compact('categoria','ideasImage', 'crono', 'cierreCategoria'));
 
     }
 

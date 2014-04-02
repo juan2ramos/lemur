@@ -24,7 +24,7 @@ class mails extends \BaseController{
             $mensaje = "Mensaje enviado correctamente, gracias!!";
             Mail::send('emails.mensajeContacto', $data, function ($message)  {
                 $message->subject('Contacto lemur plataforma');
-                $message->to('juan2ramos@gmail.com');
+                $message->to('plataforma@lemurstudio.com.co');
             });
             return View::make('front.mensaje',compact('mensaje'));
         }
@@ -44,12 +44,13 @@ class mails extends \BaseController{
             'nombre.required' => 'Nombre es requerido',
 
         ];
+
         $validator = Validator::make($data, $rules, $mesages);
 
         if ($validator->passes()) {
             Mail::send('emails.mensajeTrabaja', $data, function ($message)  {
                 $message->subject('Trabaja lemur plataforma');
-                $message->to('juan2ramos@gmail.com');
+                $message->to('plataforma@lemurstudio.com.co');
             });
             $mensaje = "Mensaje enviado correctamente, gracias!!";
             return View::make('front.mensaje',compact('mensaje'));

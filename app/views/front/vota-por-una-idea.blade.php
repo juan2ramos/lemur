@@ -6,10 +6,14 @@
         {{HTML::link('categorias','Volver')}}
     </div>
     <div class="vota-por-una-idea">
-        <h2>Nombre de la categoria</h2>
+        @if(!empty($categoria))
+        <h2>{{$categoria['nombre']}}</h2>
 
         <p>Elige tu idea favorita y ayudala con tu voto, encontrarás información detallada de cada idea donde podrás
             dejar tus comentarios.</p>
+        @else
+        <h2>No hay resultados</h2>
+        @endif
         <ul>
             @foreach($ideasImage as $value)
 
