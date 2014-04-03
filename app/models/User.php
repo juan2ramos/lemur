@@ -31,7 +31,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface
             'imagen',
             'role',
             'screen_name_twitter',
-            'habilitado'
+            'activo',
+            'key'
         ];
     protected $perPage = 2;
     /**
