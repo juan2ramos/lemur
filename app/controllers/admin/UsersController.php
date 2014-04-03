@@ -71,15 +71,16 @@ class Admin_UsersController extends \BaseController
         //return Input::all();
     }
      function finalizar($key){
-         $user = User::where('key','=',$key);
+         $user = User::where('key','=',$key)->first();
 
          if (is_null($user)) {
              return 'error 404';
          }
+
          $data = ['activo' => 1];
-         Mail::send('emails.confirmarUser', $user, function ($message) use ($user){
+         Mail::send('emails.confirmarUser', array(), function ($message) use ($user){
              $message->subject('Nuevo usuario plataforma lemur');
-             $message->to($user['email']);
+             $message->to('juan2ramos@gmail.com');
          });
          $user->fill($data);
          // Guardamos el usuario
@@ -90,7 +91,7 @@ class Admin_UsersController extends \BaseController
          ];
          Auth::attempt($userdata, Input::get('remember-me', 0));
 
-         return View::make('/');
+         return Redirect::to('/');
      }
     /**
      * Display the specified resource.
