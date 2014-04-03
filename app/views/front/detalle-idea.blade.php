@@ -3,7 +3,7 @@
 @section('metas')
 @section('metas')
 
-<meta property="og:url" content="www.lemurstudio.com.co" />
+<meta property="og:url" content="http://www.lemurstudio.com.co" />
 <meta property="og:title" content="Lemur Studio " />
 <meta property="og:description" content="Lemur Studio es una plataforma donde puedes sacarle provecho a tus ideas, visítanos y entérate del resto." />
 <meta property="og:image" content="http://aplicacion.lemurstudio.com.co/image/og_facebook.png" />
