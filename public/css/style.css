@@ -1082,8 +1082,8 @@ h3{
 	width: 165px;
 }
 #info-idea img{
-	background: rgba(0, 0, 0, 0.5)url("../images/user.png");
-	margin-top: 23px;
+	background: rgba(0, 0, 0, 0.5);
+	margin-top: 20px;
     max-width: 95px;
     padding: 10px;
 }

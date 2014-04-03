@@ -10,7 +10,7 @@
 <div id="contend-form">
     <a href="#" id="img-registrar" class="popup-link {{$classHidden}}">Regístrate</a>
     <a href="#" id="img-ingresar" class="popup-link {{$classHidden}}">Ingresa</a>
-    {{HTML::link('logout', 'Cerrar Sesión', ['class' => 'popup-link '.$classShow, 'id' => 'logout'])}}
+    {{HTML::link('logout', 'Cerrar sesión', ['class' => 'popup-link '.$classShow, 'id' => 'logout'])}}
     {{ Form::open(array('url' => 'search' )) }}
         <input type="text" name="word" placeholder="Buscar">
         <input type="submit" value="">
