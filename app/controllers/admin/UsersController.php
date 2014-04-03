@@ -72,10 +72,12 @@ class Admin_UsersController extends \BaseController
     }
      function finalizar($key){
          $user = User::where('key','=',$key);
+
          if (is_null($user)) {
              return 'error 404';
          }
-         Mail::send('emails.confirmarUser', $data, function ($message) use ($user){
+         $user['activo'] = 1;
+         Mail::send('emails.confirmarUser', $user, function ($message) use ($user){
              $message->subject('Nuevo usuario plataforma lemur');
              $message->to($user->email);
          });

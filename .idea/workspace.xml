@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc25e6be-4282-40d6-af5e-352fc8b19c78" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/LoginController.php" afterPath="$PROJECT_DIR$/app/controllers/LoginController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/UsersController.php" afterPath="$PROJECT_DIR$/app/controllers/admin/UsersController.php" />
     </list>
     <ignored path="lemur.iws" />
@@ -56,10 +57,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="LoginController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="80" selection-start="2340" selection-end="2344" vertical-scroll-proportion="-4.981818" vertical-offset="1132" max-vertical-offset="3762">
+            <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="3781">
               <folding />
             </state>
           </provider>
@@ -83,10 +84,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="UsersController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/admin/UsersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="38" selection-start="2525" selection-end="2525" vertical-scroll-proportion="0.41372913" vertical-offset="1278" max-vertical-offset="5168">
+            <state line="78" column="22" selection-start="2354" selection-end="2360" vertical-scroll-proportion="-5.090909" vertical-offset="1202" max-vertical-offset="5206">
               <folding />
             </state>
           </provider>
@@ -167,12 +168,12 @@
         <option value="$PROJECT_DIR$/app/controllers/mails.php" />
         <option value="$PROJECT_DIR$/app/views/layouts/layout.blade.php" />
         <option value="$PROJECT_DIR$/app/views/front/detalle-idea.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/LoginController.php" />
         <option value="$PROJECT_DIR$/app/models/User.php" />
         <option value="$PROJECT_DIR$/public/js/script.js" />
         <option value="$PROJECT_DIR$/app/views/emails/newUser.blade.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/views/emails/confirmarUser.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/LoginController.php" />
         <option value="$PROJECT_DIR$/app/controllers/admin/UsersController.php" />
       </list>
     </option>
@@ -841,13 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/emails/confirmarUser.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="7" selection-start="175" selection-end="175" vertical-scroll-proportion="-6.107143" vertical-offset="0" max-vertical-offset="285">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/emails/newUser.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="67" selection-start="183" selection-end="200" vertical-scroll-proportion="-4.75" vertical-offset="0" max-vertical-offset="285">
@@ -855,16 +849,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
+    <entry file="file://$PROJECT_DIR$/app/views/emails/confirmarUser.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="80" selection-start="2340" selection-end="2344" vertical-scroll-proportion="-4.981818" vertical-offset="1132" max-vertical-offset="3762">
+        <state line="9" column="7" selection-start="175" selection-end="175" vertical-scroll-proportion="-6.107143" vertical-offset="0" max-vertical-offset="285">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/admin/UsersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="38" selection-start="2525" selection-end="2525" vertical-scroll-proportion="0.41372913" vertical-offset="1278" max-vertical-offset="5168">
+        <state line="78" column="22" selection-start="2354" selection-end="2360" vertical-scroll-proportion="-5.090909" vertical-offset="1202" max-vertical-offset="5206">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="3781">
           <folding />
         </state>
       </provider>

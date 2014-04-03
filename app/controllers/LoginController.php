@@ -8,7 +8,8 @@ class LoginController extends \BaseController
 
         $userdata = [
             'email' => Input::get('email'),
-            'password' => Input::get('password')
+            'password' => Input::get('password'),
+            'activo' => 1
         ];
         if (Auth::attempt($userdata, Input::get('remember-me', 0))) {
             return Response::json(['success' => 1]);
