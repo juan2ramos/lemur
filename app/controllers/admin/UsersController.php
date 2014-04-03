@@ -75,9 +75,9 @@ class Admin_UsersController extends \BaseController
          if (is_null($user)) {
              return 'error 404';
          }
-         Mail::send('emails.confirmarUser', $data, function ($message){
+         Mail::send('emails.confirmarUser', $data, function ($message) use ($user){
              $message->subject('Nuevo usuario plataforma lemur');
-             $message->to(Input::get('email'));
+             $message->to($user->email);
          });
          $user->fill($data);
          // Guardamos el usuario
