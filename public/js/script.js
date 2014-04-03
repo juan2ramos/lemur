@@ -220,7 +220,7 @@ function responseFormRegister(data) {
     if (data.success == 1){
         location.reload();
     }
-    else{
+    else if(data.success == 0){
 
 
         for (var key in data) {
@@ -228,6 +228,8 @@ function responseFormRegister(data) {
             console.log(data[key])
             break;
         }
+    }else{
+        $(location).attr('href','mensajes');
     }
 }
 function responseFormlogin(data) {

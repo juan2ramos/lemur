@@ -68,7 +68,8 @@ class LoginController extends \BaseController
                     $data = [
                         'email' => $user_profile['email'],
                         'nombre' => $user_profile['first_name'],
-                        'apellidos' => $user_profile['last_name']
+                        'apellidos' => $user_profile['last_name'],
+                        'habilitado' => 1
                     ];
                     $user = new User;
                     Mail::send('emails.newUser', $data, function ($message) use ($user_profile) {
@@ -144,6 +145,8 @@ class LoginController extends \BaseController
                     'email' => $userdata->screen_name,
                     'nombre' => $userdata->screen_name,
                     'screen_name_twitter' => $userdata->screen_name,
+                    'habilitado' => 1
+
                 ];
                 $user = new User;
                 Mail::send('emails.newUser', $data, function ($message) use ($userdata) {
@@ -171,6 +174,7 @@ class LoginController extends \BaseController
                 $data = [
                     'email' => Input::get('email'),
                     'nombre' => Input::get('username'),
+                    'habilitado' => 1
                 ];
                 $user = new User;
                 Mail::send('emails.newUser', $data, function ($message) use ($userdata) {

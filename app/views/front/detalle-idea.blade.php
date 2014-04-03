@@ -1,11 +1,13 @@
 @extends('layouts.layout')
 @section ('title') {{$idea[0]['titulo']}} @stop
 @section('metas')
+@section('metas')
+
 <meta property="og:url" content="www.lemurstudio.com.co" />
-<meta property="og:title" content="{{$idea[0]['titulo']}}" />
+<meta property="og:title" content="Lemur Studio " />
 <meta property="og:description" content="Lemur Studio es una plataforma donde puedes sacarle provecho a tus ideas, visítanos y entérate del resto." />
-<?php $url = 'http://aplicacion.lemurstudio.com.co/upload/' . $images[0]['url'] ?>
-<meta property="og:image" content="{{$url}}" />
+<meta property="og:image" content="http://aplicacion.lemurstudio.com.co/image/og_facebook.png" />
+@stop
 @stop
 @section('contend')
 {{Form::hidden('date',$cierreCategoria,['id'=>'date'])}}
@@ -47,7 +49,7 @@
                 @endif
             </ul>
         </div>
-098Y
+
         <div id="info-idea">
             <figure>
                 {{HTML::image('upload/'.$UserIdea["imagen"])}}
@@ -57,7 +59,22 @@
             <ul>
 
                 <li>
-   
+                    <a href="javascript: void(0);" onclick="window.open('http://www.facebook.com/sharer.php?u={{Request::url();}}','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');">
+                        {{HTML::image('images/facebook.png','facebook')}}
+                    </a>
+                    </li>
+                <li>
+                    <a href="javascript: void(0);" onclick="window.open('http://www.facebook.com/sharer.php?u={{Request::url();}}','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');">
+
+                    <a href="javascript: var dir=window.document.URL;window.location.href=('http://twitter.com/?status='+msg+'%20'+dir+'');">
+                        {{HTML::image('images/twitter.png','Twitter')}}
+                    </a>
+
+
+            </ul>
+        </div>
+        <h3>Oportunidad</h3>
+
         <p>{{$idea[0]['problematica']}}</p>
 
         <h3>Solución</h3>
@@ -114,6 +131,7 @@
 
 <script type="text/javascript" src="http://www.youtube.com/player_api"></script>
 <script>
+    var msg = encodeURIComponent('Lemur Studio es una plataforma donde puedes sacarle provecho a tus ideas, visítanos y entérate del resto.');
     var player;
     function onYouTubeIframeAPIReady() {player = new YT.Player('player');}
     if(window.opera){

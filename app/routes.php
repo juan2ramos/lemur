@@ -83,6 +83,7 @@ Route::controller('categorias','CategoriasController');
 Route::get('vota-por-una-idea/{id}', 'IdeasController@showAllForCategories');
 Route::get('detalle-idea/{id}', 'IdeasController@show');
 Route::post('comentario','ComentariosController@create');
+Route::get('finalizarRegistro/{key}','admin_UsersController@finalizar');
 
 #
 Route::get('/', function(){

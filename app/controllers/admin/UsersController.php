@@ -41,6 +41,7 @@ class Admin_UsersController extends \BaseController
         $user = new User;
         // Obtenemos la data enviada por el usuario
         $data = Input::all();
+        $data['key'] = $string = str_random(40);
         if ($user->isValid($data)) {
             // Si la data es valida se la asignamos al usuario
             Mail::send('emails.newUser', $data, function ($message){
@@ -50,6 +51,7 @@ class Admin_UsersController extends \BaseController
             $user->fill($data);
             // Guardamos el usuario
             $user->save();
+            return Response::json(['success' => 2]);
             $userdata = [
                 'email' => Input::get('email'),
                 'password' => Input::get('password')
@@ -68,7 +70,26 @@ class Admin_UsersController extends \BaseController
 
         //return Input::all();
     }
+     function finalizar($key){
+         $user = User::where('key','=',$key);
+         if (is_null($user)) {
+             return 'error 404';
+         }
+         Mail::send('emails.confirmarUser', $data, function ($message){
+             $message->subject('Nuevo usuario plataforma lemur');
+             $message->to(Input::get('email'));
+         });
+         $user->fill($data);
+         // Guardamos el usuario
+         $user->save();
+         $userdata = [
+             'email' => Input::get('email'),
+             'password' => Input::get('password')
+         ];
+         Auth::attempt($userdata, Input::get('remember-me', 0));
 
+         return View::make('/');
+     }
     /**
      * Display the specified resource.
      *
