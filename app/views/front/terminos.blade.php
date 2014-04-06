@@ -2,7 +2,8 @@
 
 @section('contend')
 <section id='contend'>
-    <div class="back"><a href="categorias">Volver</a></div>
+
+    <div class="back">{{HTML::link('#','Volver',['onclick' => 'javascript:window.history.back(-1);return false;'])}}</div>
     <div class="terminos-y-condiciones">
         <h2>Términos y Condiciones</h2>
         <p>

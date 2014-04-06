@@ -65,15 +65,25 @@ class LoginController extends \BaseController
             try {
                 $user_profile = $facebook->api('/me');
                 $user = User::where('email', '=', $user_profile['email'])->first();
+
                 if (is_null($user)) {
+                    $url = 'http://graph.facebook.com/'. $user_profile ['username'].'/picture?type=large';
+                    $prefijo = sha1(time());
+                    $name = $prefijo.$user_profile ['username'].'.jpg';
+                    $img =  "upload/".$name;
+
+                    file_put_contents($img, file_get_contents($url));
+
+
                     $data = [
-                        'email' => $user_profile['email'],
-                        'nombre' => $user_profile['first_name'],
-                        'apellidos' => $user_profile['last_name'],
-                        'habilitado' => 1
+                        'email'      => $user_profile['email'],
+                        'nombre'     => $user_profile['first_name'],
+                        'apellidos'  => $user_profile['last_name'],
+                        'habilitado' => 1,
+                        'imagen'     => $name
                     ];
                     $user = new User;
-                    Mail::send('emails.newUser', $data, function ($message) use ($user_profile) {
+                    Mail::send('emails.newUserSocial', $data, function ($message) use ($user_profile) {
                         $message->subject('Nuevo usuario plataforma lemur');
                         $message->to($user_profile['email']);
                     });
@@ -103,92 +113,6 @@ class LoginController extends \BaseController
 
     }
 
-    public function Twitter()
-    {
-        $path = explode('/', dirname(__FILE__));
-        array_pop($path);
-        $path = implode('/', $path);
-        require($path . '/config/packages/twitter/EpiCurl.php');
-        require($path . '/config/packages/twitter/EpiOAuth.php');
-        require($path . '/config/packages/twitter/EpiTwitter.php');
-
-        $twitterObj = new EpiTwitter('3gU8b8iVmpvKU4q3rNwH0A', 'FQDqeMj2bFs9n31GOXmerMXh6cfpnjTJUE2xWNS310');
-        $authenticateUrl = $twitterObj->getAuthenticateUrl();
-
-        return Redirect::to($authenticateUrl);
-    }
-
-    function twitterLogin()
-    {
-        $path = explode('/', dirname(__FILE__));
-        array_pop($path);
-        $path = implode('/', $path);
-        require($path . '/config/packages/twitter/EpiCurl.php');
-        require($path . '/config/packages/twitter/EpiOAuth.php');
-        require($path . '/config/packages/twitter/EpiTwitter.php');
 
 
-        if (isset($_GET['oauth_token'])) {
-
-            $twitterObj = new EpiTwitter('3gU8b8iVmpvKU4q3rNwH0A', 'FQDqeMj2bFs9n31GOXmerMXh6cfpnjTJUE2xWNS310');
-
-            $twitterObj->setToken($_GET['oauth_token']);
-
-            $token = $twitterObj->getAccessToken();
-
-            $twitterObj->setToken($token->oauth_token, $token->oauth_token_secret);
-
-            $userdata = $twitterObj->get_accountVerify_credentials();
-
-            $user = User::where('screen_name_twitter', '=', $userdata->screen_name)->first();
-            if (is_null($user)) {
-                $data = [
-                    'email' => $userdata->screen_name,
-                    'nombre' => $userdata->screen_name,
-                    'screen_name_twitter' => $userdata->screen_name,
-                    'habilitado' => 1
-
-                ];
-                $user = new User;
-                Mail::send('emails.newUser', $data, function ($message) use ($userdata) {
-                    $message->subject('Nuevo usuario plataforma lemur');
-                    $message->to('juan2ramos@gmail.com');
-                });
-                $user->fill($data);
-                $user->save();
-            }
-
-            Auth::login($user);
-
-            return Redirect::to('/');
-
-        }
-
-    }
-
-
-    public function Google()
-    {
-        if (!Auth::check()) {
-            $user = User::where('email', '=', Input::get('email'))->first();
-            if (is_null($user)) {
-                $data = [
-                    'email' => Input::get('email'),
-                    'nombre' => Input::get('username'),
-                    'habilitado' => 1
-                ];
-                $user = new User;
-                Mail::send('emails.newUser', $data, function ($message) use ($userdata) {
-                    $message->subject('Nuevo usuario plataforma lemur');
-                    $message->to($data['email']);
-                });
-                $user->fill($data);
-                $user->save();
-            }
-
-            Auth::login($user);
-
-        };
-        return Response::json(['success' => 1]);
-    }
 }

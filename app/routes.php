@@ -55,6 +55,8 @@ Route::group(['prefix' => 'admin','before' => 'admin'], function()
     Route::get('ideas/destroy/{id}','IdeasController@destroy');
     Route::get('categorias/destroy/{id}','CategoriasController@destroy');
     Route::get('excel','admin_UsersController@excel');
+    Route::get('menu','MenuController@show');
+    Route::post('menu','MenuController@update');
     Route::get('users/ingresar/{id}',function($id){
 
         Auth::login(User::find($id));

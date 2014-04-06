@@ -25,12 +25,7 @@
                    )}}
 
                 </li>
-                <li>
-                    {{HTML::decode(HTML::link('twitter',
-                    '<img src="images/twitter.png" alt=""/>')
-                    )}}
 
-                </li>
                 <li>
                     <div id="signin-button" class="show">
                         <div class="g-signin"
@@ -76,12 +71,7 @@
                         )}}
 
                     </li>
-                    <li>
-                        {{HTML::decode(HTML::link('twitter',
-                        '<img src="images/twitter.png" alt=""/>')
-                        )}}
 
-                    </li>
 
 
                     <li>

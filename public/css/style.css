@@ -630,7 +630,9 @@ vota por una idea
 .vota-por-una-idea li img{
 
     position: absolute;
-    width: 100%;
+    top:-50%;
+    left: -50%;
+    max-width: 200%
 }
 /*=================================================================
 Contacto
@@ -776,14 +778,17 @@ Perfil
  	height: 130px;
     overflow: hidden;
  	width: 130px;
+    position: relative;
 }
 .perfil figure, #contend-picture{
 	display: inline-block;
 	vertical-align: top;
 }
 .perfil figure img{
-    max-width: 130px;
-    width: 130px;
+    max-width: 250%;
+    position: absolute;
+    top: -50%;
+    left:-50%
 }
 .perfil h3{
 	color: #fff;
@@ -911,7 +916,7 @@ popUp
 	z-index: 1000
 }
 .popUp-container, .popUp-container-p{
-	background: rgba(0,0,0,.5);
+	background: rgba(0,0,0,.8);
 	display: none;
 	left: 0;
 	min-height: 100%;
@@ -1706,7 +1711,6 @@ loading
 
 .facebook_blockG{
     background-color:#FFFFFF;
-    border:1px solid #000000;
 
     float:left;
     height:43px;
