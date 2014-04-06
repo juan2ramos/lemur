@@ -22,7 +22,7 @@
     @yield('metas')
 
     <!-- Estilos -->
-    <?php echo HTML::script('js/prefixfree.js') ?>
+    <?php echo HTML::script('js/prefixfree.min.js') ?>
     <?php echo HTML::style('css/normalize.css') ?>
     <?php echo HTML::style('http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic') ?>
     <?php echo HTML::style('css/jquery.mCustomScrollbar.css') ?>
