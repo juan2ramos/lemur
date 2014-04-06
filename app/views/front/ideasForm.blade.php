@@ -9,14 +9,14 @@
         {{ Form::open(array('url' => 'sube-tu-idea/nueva', 'class' => 'dropzone', 'id'=>'form-sube-tu-idea')) }}
 
         <div class="input-contend">
-            {{ Form::label('titulo', 'Dale un título a tu idea') }}
-            <span id="titulo-label">30 caracteres restantes</span>
-            {{ Form::text('titulo', null, array('id'=>'titulo','placeholder' => 'Con 2 o 3 palabras bastará','maxlength'=>'30')) }}
+            {{Form::label('titulo', 'Dale un título a tu idea') }}
+           <span id="titulo-label">30 caracteres restantes</span>
+            {{Form::text('titulo', null, array('id'=>'titulo','placeholder' => 'Con 2 o 3 palabras bastará','maxlength'=>'30')) }}
 
 
         </div>
-        {{ Form::label('id_categorias', 'Categoría de tu idea') }}
-        {{Form::select('id_categorias', $combobox)}}
+        {{-- Form::label('id_categorias', 'Categoría de tu idea') --}}
+        {{-- Form::select('id_categorias', $combobox) --}}
 
 
         <div class="input-contend">

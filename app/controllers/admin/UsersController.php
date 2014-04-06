@@ -80,7 +80,7 @@ class Admin_UsersController extends \BaseController
          $data = ['activo' => 1];
          Mail::send('emails.confirmarUser', array(), function ($message) use ($user){
              $message->subject('Nuevo usuario plataforma lemur');
-             $message->to('juan2ramos@gmail.com');
+             $message->to($user['email']);
          });
          $user->fill($data);
          // Guardamos el usuario

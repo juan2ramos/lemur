@@ -284,7 +284,7 @@ class IdeasController extends \BaseController
         }
         $ideas = Ideas::where('id_categorias', '=', $id)->paginate(20);
 
-        return View::make('admin/ideas/list', compact('ideas', 'categorias', 'id'));
+            return View::make('admin/ideas/list', compact('ideas', 'categorias', 'id'));
 
 
     }
@@ -299,7 +299,8 @@ class IdeasController extends \BaseController
         $idea = Ideas::find($id);
         $user = $idea->users;
         $comentarios = $idea->comentariosAll->all();
-        $categorias = Categorias::all()->lists('nombre', 'id');
+        $categorias = [0 => "Eliga una categoría "] + Categorias::all()->lists('nombre', 'id');
+
         $comboBox = $categorias;
         $comboBoxPublicacion = [
             0 => 'Inactivo',
@@ -333,7 +334,8 @@ class IdeasController extends \BaseController
             });
         }
 
-        $categorias = Categorias::all()->lists('nombre', 'id');
+        $categorias = [0 => "Eliga una categoría "] + Categorias::all()->lists('nombre', 'id');
+
         $user = $idea->users;
         $comboBox = $categorias;
         $comboBoxPublicacion = [
