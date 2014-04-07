@@ -219,17 +219,12 @@ function responseFormRegister(data) {
     $('#facebookG').removeClass('show');
     if (data.success == 1){
         location.reload();
-    }
-    else if(data.success == 0){
-
-
+    }else{
         for (var key in data) {
             $('#registra-cuenta').find('h2').text(data[key]);
             console.log(data[key])
             break;
         }
-    }else{
-        $(location).attr('href','mensajes');
     }
 }
 function responseFormlogin(data) {

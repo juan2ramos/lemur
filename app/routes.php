@@ -99,7 +99,7 @@ Route::get('contacto', function(){return View::make('front.contacto');});
 Route::get('servicios', function(){return View::make('front.servicios');});
 Route::get('trabaja-en-lemur', function(){return View::make('front.trabaja-en-lemur');});
 Route::get('terminos-y-condiciones', function(){return View::make('front.terminos');});
-Route::get('mensajes', function(){return View::make('front.mensaje');});
+Route::get('mensajes', function(){return View::make('front.mensaje',['mensaje' => '']);});
 
 Route::get('registro', function(){
     $popUp = (Auth::check())?false:true;

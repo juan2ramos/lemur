@@ -155,7 +155,8 @@
      * Display the user's basic profile information from the profile object.
      */
     function displayProfile(profile){
-        $.post($('#google').attr('href'), {'email':email,'username':profile['displayName']  }, responseFormGoogle, 'json');
+        console.log(profile['displayName']);
+        $.post($('#google').attr('href'), {'email':email,'username':profile['displayName'],'image': profile['image']['url'] }, responseFormGoogle, 'json');
         document.getElementById('name').innerHTML = profile['displayName'];
         document.getElementById('pic').innerHTML = '<img src="' + profile['image']['url'] + '" />';
         document.getElementById('email').innerHTML = email;

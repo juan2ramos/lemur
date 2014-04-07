@@ -51,7 +51,7 @@ class Admin_UsersController extends \BaseController
             $user->fill($data);
             // Guardamos el usuario
             $user->save();
-            return Response::json(['success' => 2]);
+            return Response::json(['success' => 1]);
             $userdata = [
                 'email' => Input::get('email'),
                 'password' => Input::get('password')

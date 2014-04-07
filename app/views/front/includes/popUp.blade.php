@@ -35,6 +35,8 @@
                              data-height="short"
                              data-cookiepolicy="single_host_origin"
                              data-width = "iconOnly"
+                             data-cookiepolicy = "none"
+                             data-accesstype = offline
                             >
                         </div>
                 </li>

@@ -115,4 +115,35 @@ class LoginController extends \BaseController
 
 
 
+    public function Google()
+    {
+        if (!Auth::check()) {
+            $user = User::where('email', '=', Input::get('email'))->first();
+            if (is_null($user)) {
+                $url = Input::get('image');
+                $prefijo = sha1(time());
+                $name = $prefijo.Input::get('username').'.jpg';
+                $img =  "upload/".$name;
+
+                file_put_contents($img, file_get_contents($url));
+                $data = [
+                    'email' => Input::get('email'),
+                    'nombre' => Input::get('username'),
+                    'habilitado' => 1,
+                    'imagen'     => $name
+                ];
+                $user = new User;
+                Mail::send('emails.newUserSocial', $data, function ($message) use ($userdata) {
+                    $message->subject('Nuevo usuario plataforma lemur');
+                    $message->to($data['email']);
+                });
+                $user->fill($data);
+                $user->save();
+            }
+
+            Auth::login($user);
+
+        };
+        return Response::json(['success' => 1]);
+    }
 }
