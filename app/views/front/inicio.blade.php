@@ -49,14 +49,14 @@
 </section>
 <section class="slide1" data-800=" margin:0 auto;"
          data-2500=" opacity: 1; margin:0 auto;top:0px;"
-         data-3000=" opacity: 0; top:-40px;"
+         data-2900=" opacity: 0; top:-30px;"
     >
 
 
     <div class="hsContent slide-2">
         <div
-            data-1200=" opacity: 0; margin:25px auto;"
-            data-1500=" margin:0px auto; opacity: 1;"
+            data-1200=" opacity: 0; margin:-15px auto;"
+            data-1500=" margin:-35px auto; opacity: 1;"
             >
             <p>Todo el tiempo vez cosas que</p>
 
@@ -64,8 +64,8 @@
         </div>
 
         <figure id="pajaro"
-                data-700=" top: 1500px;"
-                data-1000=" top: 370px;"
+                data-500=" top: 1500px;"
+                data-700=" top: 330px;"
                 data-1400=" opacity: 1;"
                 data-2000=" opacity: 0;"
             >
@@ -73,16 +73,16 @@
             <img src="images/pajarito-amarillo2.png " alt="">
         </figure>
         <figure id="pajaro2"
-                data-700="top: 1500px;"
-                data-1000="top: 380px;"
+                data-500="top: 1500px;"
+                data-700="top: 330px;"
                 data-1400=" opacity: 1;"
                 data-2000=" opacity: 0;"
             >
             <img src="images/pajarito-azul2.png " alt="">
         </figure>
         <figure id="gato"
-                data-700="top: 1500px;"
-                data-1000="top: 320px;"
+                data-500="top: 1500px;"
+                data-700="top: 330px;"
                 data-1400=" opacity: 1;"
                 data-2000=" opacity: 0;"
             >
@@ -196,13 +196,13 @@
 <div id="parrafos-mac2"
      data-0=" opacity: 0;"
      data-8500=" opacity: 0;top:30px"
-     data-9000=" opacity: 1;top:0"
-     data-10000="top:0;opacity: 1;"
+     data-9000=" opacity: 1;top:20px"
+     data-10000="top:20px;opacity: 1;"
      data-10500="top: -10px;opacity: 0;"
     >
     <p>Cuantos más votos consigas, </p>
 
-    <p>más cerce estarás de ganar </p>
+    <p>más cerca estarás de ganar </p>
 
 </div>
 
@@ -219,18 +219,18 @@
 <div id="parrafos-banderin"
      data-0=" opacity: 0;"
      data-10800=" opacity: 0;top:30px"
-     data-11300=" opacity: 1;top:0"
-     data-11500=" opacity: 1;top:0"
-     data-12000=" opacity: 0;top:-50px"
+     data-11300=" opacity: 1;top:20px"
+     data-11500=" opacity: 1;top:20px"
+     data-12000=" opacity: 0;top:-10px"
     >
-    <p>Si tu idea es elegida </p>
+    <p>Si tu idea es elegida... </p>
 
 </div>
 
 
 <figure id="mac3"
-        data-12500="top: 1400px;"
-        data-13000="top: 100px;"
+        data-11800="top: 1400px;"
+        data-12300="top: 100px;"
         data-14000=" opacity: 1;top:100px"
         data-14500=" opacity: 0;top:50px"
 
@@ -241,10 +241,10 @@
 </figure>
 <div id="parrafos-mac3"
      data-0=" opacity: 0;"
-     data-13000=" opacity: 0;top:30px"
-     data-13500=" opacity: 1;top:0"
-     data-14000=" opacity: 1;top:0"
-     data-14500=" opacity: 0;top:-30px"
+     data-12300=" opacity: 0;top:30px"
+     data-13500=" opacity: 1;top:20px"
+     data-14000=" opacity: 1;top:20px"
+     data-14500=" opacity: 0;top:-10px"
     >
     <p>nosotros la diseñaremos... </p>
 
@@ -254,7 +254,7 @@
 <figure id="tablet"
         data-14500="top: 1400px;"
         data-15000="top: 158px;"
-        data-15500=" opacity: 1;top:100px"
+        data-15500=" opacity: 1;top:158px"
         data-15800=" opacity: 0;top:50px"
 
     >
@@ -264,9 +264,9 @@
 <div id="parrafos-tablet"
      data-0=" opacity: 0;"
      data-14800=" opacity: 0;top:30px"
-     data-15200=" opacity: 1;top:0"
-     data-15500=" opacity: 1;top:0px"
-     data-15800=" opacity: 0;top:-30px"
+     data-15200=" opacity: 1;top:25px"
+     data-15500=" opacity: 1;top:25px"
+     data-15800=" opacity: 0;top:-10px"
 
     >
     <p>la produciremos... </p>
@@ -276,8 +276,8 @@
 
 <figure id="caja"
         data-15500="top: 1400px;"
-        data-15800="top: 158px;"
-        data-16000=" opacity: 1;top:100px"
+        data-15800="top: 138px;"
+        data-16300=" opacity: 1;top:138px"
         data-16500=" opacity: 0;top:50px"
 
 
@@ -287,10 +287,10 @@
 </figure>
 <div id="parrafos-caja"
      data-0=" opacity: 0;"
-     data-15900=" opacity: 0;top:30px"
-     data-16000=" opacity: 1;top:0"
-     data-16000=" opacity: 1;top:0px"
-     data-16500=" opacity: 0;top:-30px"
+     data-15900=" opacity: 0;top:40px"
+     data-16000=" opacity: 1;top:20px"
+     data-16300=" opacity: 1;top:20px"
+     data-16500=" opacity: 0;top:-10px"
     >
     <p> y la comercializaremos... </p>
 
@@ -299,9 +299,10 @@
 
 <figure id="cajas3"
         data-16000="top: 1400px;"
-        data-16500="top: 158px;"
+        data-16800="top: 158px;"
         data-17000=" opacity: 1;top:158px"
-        data-18500=" opacity: 0;top:135px"
+        data-18500=" opacity: 1;top:158px"
+        data-19000=" opacity: 0;top:135px"
 
     >
 
@@ -310,9 +311,9 @@
 <div id="parrafos-cajas3"
      data-0=" opacity: 0;"
      data-16700=" opacity: 0;top:30px"
-     data-16900=" opacity: 1;top:0"
-     data-17000=" opacity: 1;top:0px"
-     data-17500=" opacity: 0;top:-30px"
+     data-16900=" opacity: 1;top:10px"
+     data-17000=" opacity: 1;top:10px"
+     data-17500=" opacity: 0;top:-5px"
 
     >
     <p>Obtendrás dinero por cada </p>
@@ -323,9 +324,9 @@
 <div id="parrafos-cajas1"
      data-0=" opacity: 0;"
      data-17500=" opacity: 0;top:30px"
-     data-18000=" opacity: 1;top:0"
-     data-18500=" opacity: 1;top:0px"
-     data-19000=" opacity: 0;top:-30px"
+     data-18000=" opacity: 1;top:20px"
+     data-18500=" opacity: 1;top:20px"
+     data-19000=" opacity: 0;top:-5px"
 
     >
     <p> y las personas te conocerán </p>
@@ -335,21 +336,22 @@
 </div>
 <div id="conter"
      data-0=" opacity: 0;"
-     data-16700=" opacity: 0;top:250px"
+     data-16700=" opacity: 0;top:350px"
      data-16900=" opacity: 1;top:300px"
      data-18500=" opacity: 1;top:300px"
      data-19000=" opacity: 0;top:250px"
     >
     <p>$<span id="change">250</span>.000</p>
-
+    <span id="sombra-numeros"></span>
 </div>
 
 
 <figure id="casa"
         data-19500="top: 1400px;"
-        data-20000="top: 158px;"
-        data-20500=" opacity: 1;top:129px"
-        data-21000=" opacity: 0;top:50px"
+        data-20000="top: 158px; opacity: 1"
+        data-21000="top: 158px; opacity: 1"
+        data-21500=" top:130px"
+        data-22000=" opacity: 0;top:50px"
 
     >
 
@@ -357,22 +359,25 @@
 </figure>
 <div id="parrafos-casa"
      data-0=" opacity: 0;"
-     data-19600=" opacity: 0;top:30px"
-     data-20200=" opacity: 1;top:0"
-     data-20500=" opacity: 1;top:0"
-     data-21000=" opacity: 0;top:-30px"
+
+     data-20000=" opacity: 0;top:30px"
+     data-20500=" opacity: 1;top:20px"
+     data-21000=" opacity: 1;top:20px"
+     data-22000=" opacity: 0;top:-15px"
 
     >
-    <p>Ademas te alegrará saber</p>
+    <p>además te alegrará saber</p>
 
-    <p> que tu solucion ayudó a otros </p>
+    <p> que tu solución ayudó a otros </p>
 </div>
 
 <figure id="gato2"
         data-19500="top: 1400px;"
         data-20000="top: 353px;"
-        data-20500=" opacity: 1;top:331px"
-        data-21000=" opacity: 0;top:245px"
+        data-20500=" opacity: 1;top:353px"
+        data-21000=" opacity: 1;top:353px"
+        data-21500=" top:325px"
+        data-22000=" opacity: 0;top:245px"
 
 
     >
@@ -382,8 +387,8 @@
 
 
 <figure id="macpc3"
-        data-21000="top: 1400px;"
-        data-21500="top: 144px;"
+        data-22000="top: 1400px;"
+        data-22500="top: 144px;"
 
     >
 
@@ -391,8 +396,8 @@
 </figure>
 <div id="parrafos-macpc3"
      data-0=" opacity: 0;"
-     data-21400=" opacity: 0;top:30px"
-     data-21900=" opacity: 1;top:0"
+     data-22400=" opacity: 0;top:30px"
+     data-22900=" opacity: 1;top:20px"
 
     >
     <p>si aún no tienes una idea, elige</p>
@@ -402,12 +407,11 @@
 </div>
 
 <figure id="flecha"
-        data-21000="top: 1400px;"
-        data-21500="top: 407px;"
+        data-22000="top: 1400px;"
+        data-22500="top: 390px;"
+ >
 
-    >
-
-    <img src="images/flecha.png " alt="">
+    <img id="flecha-inicio" src="images/flecha.png " alt="" style="position: absolute;z-index: 10000">
 </figure>
 
 

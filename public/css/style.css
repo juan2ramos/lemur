@@ -1343,7 +1343,7 @@ Scrolling
 }
 #pajaro{
 
-	right: 448px;
+	right: 480px;
 	top: 700px;
 
 }
@@ -1352,15 +1352,15 @@ Scrolling
 	top: 700px;
 }
 #pajaroVolar{
-	right: 395px;
-	top:207px;
+	right: 425px;
+	top:167px;
 }
 #pajaroVolar2{
 	right: 275px;
-	top:135px;
+	top:92px;
 }
 #gatoVolar{
-	right: -115px;
+	right: -145px;
 	top:240px;
 }
 #hombre{
@@ -1453,7 +1453,7 @@ Scrolling
 
 #banderin{
 	position: absolute;
-	right: 185px;
+	right: 135px;
 	top: 1400px;
 
 }
@@ -1461,7 +1461,7 @@ Scrolling
 	position: absolute;
 	font-size: 40px;
 	width: 485px;
-	right: 0;
+	right: 10px;
 	top: 0px;
 
 }
@@ -1532,6 +1532,11 @@ Scrolling
 
 }
 
+#gato{
+
+    right:-290px;
+
+}
 #gato2{
 	position: absolute;
 	top:331px;
@@ -1847,6 +1852,21 @@ loading
     position: absolute;
     width: 100%;
     top: 0;
+}
+#sombra-numeros{
+    width: 170px;
+    height: 1px;
+    background: #000 transparent;
+    display: block;
+    box-shadow: 10px 10px 1px rgba(0,0,0,.5);
+    right: 9px;
+    position: absolute;
+    margin-top: 10px
+}
+#flecha{
+    cursor: pointer;
+    position: absolute;
+    z-index: 10000;
 }
 @-moz-keyframes bounceG{
     0%{

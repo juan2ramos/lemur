@@ -126,24 +126,24 @@ $('#productos').on('click',function(e){
         e.preventDefault();
         var action = $(this).attr("id");
         var scroll = $(window).scrollTop(),
-            positionScroll = [0, 1480, 2060 , 3960, 5390, 8000, 9120, 11440, 13810, 15230, 16000, 17000, 18100, 20000, 21898];
+            positionScroll = [0, 1480, 2060 , 3960, 5390, 8000, 9120, 11440, 13810, 15230, 16000, 17000, 18100, 21000, 22900];
 
         for (var i = 0; i < positionScroll.length; i++) {
 
             if (scroll < positionScroll[i]) {
                 console.log(action)
                 if (action == 'up') {
-                    $("body").animate({scrollTop: positionScroll[i - 1]}, '4000');
+                    $("body").animate({scrollTop: positionScroll[i - 1]}, 1000);
 
                 } else {
-                    $("body").animate({scrollTop: positionScroll[i]}, '4000');
+                    $("body").animate({scrollTop: positionScroll[i]}, 1000);
                 }
                 return false
             } else if (scroll == positionScroll[i]) {
                 if (action == 'up') {
-                    $("body").animate({scrollTop: positionScroll[i - 1]}, '4000');
+                    $("body").animate({scrollTop: positionScroll[i - 1]}, 1000);
                 } else {
-                    $("body").animate({scrollTop: positionScroll[i + 1]}, '4000');
+                    $("body").animate({scrollTop: positionScroll[i + 1]}, 1000);
                 }
                 return false
             }
@@ -163,7 +163,7 @@ $('#productos').on('click',function(e){
 });
 var counter = $('#change');
 
-count(counter, 0, 850, 500);
+
 
 function popUps(elements){
     $this = elements;
@@ -188,6 +188,7 @@ function popUps(elements){
 function popUpStart(){
     popUps($('#registra-cuenta'));
 }
+count(counter, 100, 850, 300);
 function count(elem, startnum, endnum, time) {
 
     var curnum = startnum;
@@ -202,12 +203,12 @@ function count(elem, startnum, endnum, time) {
         if (curnum < endnum) {
 
 
-            curnum = curnum + 50;
+            curnum = curnum + 10;
 
             elem.text(curnum);
         } else {
 
-            curnum = 50;
+            curnum = 100;
 
             elem.text(curnum);
         }
@@ -227,6 +228,9 @@ function responseFormRegister(data) {
         }
     }
 }
+$('#flecha').on('click',function(){
+    alert('jajaj');$("body").animate({scrollTop: 0}, 3000);
+});
 function responseFormlogin(data) {
     $('#facebookG').removeClass('show');
     if (data.success == 1){
