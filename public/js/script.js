@@ -80,7 +80,7 @@ $('#productos').on('click',function(e){
             $('#contend-about').addClass('hidden');
             $('.popUp-container').removeClass('show');
             $('.popUp-container').removeClass('about-contend');
-            alert('ka')
+
         });
 
     });

@@ -98,10 +98,14 @@ class IdeasController extends \BaseController
         //$ideas = Ideas::whereRaw('titulo LIKE "%' . Input::get('word') . '%" and estado_publicacion = 1 ')->get();
         $ideas =  DB::table('categorias')
             ->join('ideas', 'categorias.id', '=', 'ideas.id_categorias')
+            ->join('users', 'users.id', '=', 'ideas.id_users')
             ->whereRaw('categorias.estado = 1
             AND NOW() BETWEEN categorias.fecha_inicio AND categorias.fecha_cierre
             AND ideas.estado_publicacion = 1
-                AND ideas.titulo LIKE "%' . Input::get('word') . '%"')
+                AND ideas.titulo LIKE "%' . Input::get('word') . '%" or ideas.descripcion LIKE "%' . Input::get('word')  . '%"'
+            . 'or users.nombre LIKE "%' . Input::get('word')  . '%" or users.email LIKE "%'. Input::get('word')
+                .'%" or users.apellidos LIKE "%'. Input::get('word') .'%"'
+            )
             ->select('ideas.*')
             ->get();
             ;

@@ -5,7 +5,7 @@
 
 <figure id="logo">
 
-    {{ HTML::decode(HTML::link('inicio', HTML::image('images/logo.png','logo'))) }}
+    {{ HTML::decode(HTML::link('/', HTML::image('images/logo.png','logo'))) }}
 </figure>
 <div id="contend-form">
     <a href="#" id="img-registrar" class="popup-link {{$classHidden}}">Regístrate</a>

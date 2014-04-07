@@ -26,68 +26,68 @@
 
                 </li>
 
-                <li>
-                    <div id="signin-button" class="show">
-                        <div class="g-signin"
-                             data-callback="loginFinishedCallback"
-                             data-clientid="798327401166-gkbconqk72a7t73prfp8rd6svpdss9q4.apps.googleusercontent.com"
-                             data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read"
-                             data-height="short"
-                             data-cookiepolicy="single_host_origin"
-                             data-width = "iconOnly"
-                             data-cookiepolicy = "none"
-                             data-accesstype = offline
-                            >
-                        </div>
-                </li>
-            </ul>
+                <!--  <li>
+                     <div id="signin-button" class="show">
+                         <div class="g-signin"
+                              data-callback="loginFinishedCallback"
+                              data-clientid="798327401166-gkbconqk72a7t73prfp8rd6svpdss9q4.apps.googleusercontent.com"
+                              data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read"
+                              data-height="short"
+                              data-cookiepolicy="single_host_origin"
+                              data-width = "iconOnly"
+                              data-cookiepolicy = "none"
+                              data-accesstype = offline
+                             >
+                         </div>
+                 </li> -->
+             </ul>
 
-        </div>
-        {{ Form::close() }}
-    </div>
-    <div id="registra-cuenta" class="hidden">
-        <h2>Regístrate</h2>
+         </div>
+         {{ Form::close() }}
+     </div>
+     <div id="registra-cuenta" class="hidden">
+         <h2>Regístrate</h2>
 
-        {{ Form::open(array('url' => 'register', 'id'=>'form-register')) }}
-            <div class="form">
-                <label for="nombre">Nombre:<span>*</span></label>
-                <input name="nombre" type="text">
-                <label for="apellidos">Apellidos:<span>*</span></label>
-                <input name="apellidos" type="text">
-                <label for="email">Correo electrónico:<span>*</span></label>
-                <input name="email" type="text">
-                <label for="password">contraseña:<span>*</span></label>
-                <input type="password" name="password" >
-                <input type="submit" value="Regístrate" id="sumbit-registro">
-                <p class="term">
-                    Al crear tu cuenta aceptas los
-                    <a href="terminos-y-condiciones"> terminos y condiciones.</a>
-                </p>
-            </div>
-            <div class="form form-net">
-                <p>Regístrate con</p>
-                <ul>
-                    <li>
-                        {{HTML::decode(HTML::link('facebook',
-                        '<img src="images/facebook.png" alt=""/>')
-                        )}}
+         {{ Form::open(array('url' => 'register', 'id'=>'form-register')) }}
+             <div class="form">
+                 <label for="nombre">Nombre:<span>*</span></label>
+                 <input name="nombre" type="text">
+                 <label for="apellidos">Apellidos:<span>*</span></label>
+                 <input name="apellidos" type="text">
+                 <label for="email">Correo electrónico:<span>*</span></label>
+                 <input name="email" type="text">
+                 <label for="password">contraseña:<span>*</span></label>
+                 <input type="password" name="password" >
+                 <input type="submit" value="Regístrate" id="sumbit-registro">
+                 <p class="term">
+                     Al crear tu cuenta aceptas los
+                     <a href="terminos-y-condiciones"> terminos y condiciones.</a>
+                 </p>
+             </div>
+             <div class="form form-net">
+                 <p>Regístrate con</p>
+                 <ul>
+                     <li>
+                         {{HTML::decode(HTML::link('facebook',
+                         '<img src="images/facebook.png" alt=""/>')
+                         )}}
 
-                    </li>
+                     </li>
 
 
 
-                    <li>
-                        <div id="signin-button" class="show">
-                            <div class="g-signin"
-                                 data-callback="loginFinishedCallback"
-                                 data-clientid="798327401166-gkbconqk72a7t73prfp8rd6svpdss9q4.apps.googleusercontent.com"
-                                 data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read"
-                                 data-height="short"
-                                 data-cookiepolicy="single_host_origin"
-                                 data-width = "iconOnly"
-                                >
-                            </div>
-                    </li>
+ <!--                    <li>
+                         <div id="signin-button" class="show">
+                             <div class="g-signin"
+                                  data-callback="loginFinishedCallback"
+                                  data-clientid="798327401166-gkbconqk72a7t73prfp8rd6svpdss9q4.apps.googleusercontent.com"
+                                  data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read"
+                                  data-height="short"
+                                  data-cookiepolicy="single_host_origin"
+                                  data-width = "iconOnly"
+                                 >
+                             </div>
+                     </li> -->
                 </ul>
 
 

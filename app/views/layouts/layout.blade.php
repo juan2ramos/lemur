@@ -35,6 +35,7 @@
 </head>
 <body
 @if(isset($popUp) and $popUp) onload="popUpStart()"; @endif>
+<div id="body"></div>
 <div class="wrapper">
     <header>
         @include('front.includes.header')

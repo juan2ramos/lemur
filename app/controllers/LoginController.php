@@ -64,8 +64,8 @@ class LoginController extends \BaseController
         if ($user) {
             try {
                 $user_profile = $facebook->api('/me');
-                $user = User::where('email', '=', $user_profile['email'])->first();
-
+                $email = (empty($user_profile['email']))?'':$user_profile['email'] ;
+                $user = User::where('email', '=', $email)->first();
                 if (is_null($user)) {
                     $url = 'http://graph.facebook.com/'. $user_profile ['username'].'/picture?type=large';
                     $prefijo = sha1(time());
