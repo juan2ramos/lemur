@@ -133,7 +133,7 @@ class LoginController extends \BaseController
                     'imagen'     => $name
                 ];
                 $user = new User;
-                Mail::send('emails.newUserSocial', $data, function ($message)  {
+                Mail::send('emails.newUserSocial', $data, function ($message) use ($data) {
                     $message->subject('Nuevo usuario plataforma lemur');
                     $message->to($data['email']);
                 });
