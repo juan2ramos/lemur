@@ -104,7 +104,7 @@ class IdeasController extends \BaseController
             AND ideas.estado_publicacion = 1
                 AND (ideas.titulo LIKE "%' . Input::get('word') . '%" or ideas.descripcion LIKE "%' . Input::get('word')  . '%"'
             . 'or users.nombre LIKE "%' . Input::get('word')  . '%" or users.email LIKE "%'. Input::get('word')
-                .'%" or users.apellidos LIKE "%'. Input::get('word') .'%") DESC'
+                .'%" or users.apellidos LIKE "%'. Input::get('word') .'%") order by numero_votos DESC'
             )
             ->select('ideas.*')
             ->get();

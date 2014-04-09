@@ -23,7 +23,7 @@
             ?>
 
             <li>
-                {{HTML::image($path,'')}}
+                {{HTML::image($path,'',['class' => 'imagen-idea'])}}
                 {{HTML::link('votar',$value->numero_votos,
                 ['id' => 'id'.$value->id, 'class' => 'izq', 'data-idea' => $value->id])}}
 
