@@ -1,6 +1,6 @@
 $(function () {
     $('#facebookG').addClass('show');
-    $('body').addClass('no-image');
+
     $('#closeBack').click(function () {
         $('.popUp-container-slide').removeClass('opacity');
       player.stopVideo()
