@@ -1,4 +1,23 @@
 $(function(){
+
+    ratio = 1;
+    var bg = $('#imagen-perfil');
+    screenWidth =  $(bg).width();
+    screenHeight =  $(bg).height();
+
+    if (screenWidth/screenHeight > ratio) {
+        $(bg).height("100%");
+        $(bg).width("auto");
+        left = screenWidth*65/screenHeight - 65;
+        $(bg).css({
+            'position':'absolute',
+            'left': -left
+        });
+    } else {
+        $(bg).width("100% ");
+        $(bg).height("auto");
+    }
+
     $('#imagenUser').on('change',function(){
         for (var i = 0; i < this.files.length; i++) {
             if ((/^image\/(gif|png|jpeg)$/i).test(this.files[i].type)) {

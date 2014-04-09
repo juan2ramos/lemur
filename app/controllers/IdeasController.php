@@ -81,7 +81,7 @@ class IdeasController extends \BaseController
 
         $cierreCategoria = Carbon::parse(Categorias::find($id)->fecha_cierre)->endOfDay();
 
-        $ideas = Ideas::whereRaw('id_categorias = ' . $id . ' and estado_publicacion = 1')->get();
+        $ideas = Ideas::whereRaw('id_categorias = ' . $id . ' and estado_publicacion = 1 order by numero_votos DESC')->get();
 
         if ($ideas->isEmpty())
             return Redirect::to('/categorias');
@@ -102,9 +102,9 @@ class IdeasController extends \BaseController
             ->whereRaw('categorias.estado = 1
             AND NOW() BETWEEN categorias.fecha_inicio AND categorias.fecha_cierre
             AND ideas.estado_publicacion = 1
-                AND ideas.titulo LIKE "%' . Input::get('word') . '%" or ideas.descripcion LIKE "%' . Input::get('word')  . '%"'
+                AND (ideas.titulo LIKE "%' . Input::get('word') . '%" or ideas.descripcion LIKE "%' . Input::get('word')  . '%"'
             . 'or users.nombre LIKE "%' . Input::get('word')  . '%" or users.email LIKE "%'. Input::get('word')
-                .'%" or users.apellidos LIKE "%'. Input::get('word') .'%"'
+                .'%" or users.apellidos LIKE "%'. Input::get('word') .'%") DESC'
             )
             ->select('ideas.*')
             ->get();
@@ -283,11 +283,30 @@ class IdeasController extends \BaseController
 
         if (!$id || $id == 0) {
             $id = 0;
+            //$ideas = Ideas::paginate(20);
             $ideas = Ideas::paginate(20);
+            $ideasArray = [];
+            foreach ($ideas as $idea)
+            {
+
+                $idea['categoriaNombre'] = ($idea->categorias )?$idea->categorias['nombre']:"Sin categoría";
+                $ideasArray[] = $idea ;
+
+            }
+            $ideas = $ideasArray;
             return View::make('admin/ideas/list', compact('ideas', 'categorias', 'id'));
         }
-        $ideas = Ideas::where('id_categorias', '=', $id)->paginate(20);
 
+        $ideas = Ideas::where('id_categorias', '=', $id)->paginate(20);
+        $ideasArray = [];
+        foreach ($ideas as $idea)
+        {
+
+            $idea['categoriaNombre'] = ($idea->categorias )?$idea->categorias['nombre']:"Sin categoría";
+            $ideasArray[] = $idea ;
+
+        }
+        $ideas = $ideasArray;
             return View::make('admin/ideas/list', compact('ideas', 'categorias', 'id'));
 
 

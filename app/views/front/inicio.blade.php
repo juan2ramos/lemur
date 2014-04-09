@@ -17,9 +17,9 @@
 <div id="arrow-contend">
 
     <div id="arrows-slide">
-        <p><a id="up" class="arrows " href="#"><img class="arrows-up" src="images/flecha.png"></a></p>
+        <p><a id="up" class="arrows " href="#"></a></p>
 
-        <p><a id="down" class="arrows " href="#"><img src="images/flecha.png"></a></p>
+        <p><a id="down" class="arrows " href="#"></a></p>
     </div>
 </div>
 
@@ -406,18 +406,20 @@
 
 </div>
 
-<figure id="flecha"
-        data-22000="top: 1400px;"
-        data-22500="top: 390px;"
- >
 
-    <img id="flecha-inicio" src="images/flecha.png " alt="" style="position: absolute;z-index: 10000">
-</figure>
 
 
 </div>
 </section>
+
 </section>
+<figure id="flecha-inicio"
+        data-22000="top: 1400px;"
+        data-22900="top: 590px;"
+    >
+
+    <img  src="images/flecha.png " alt="">
+</figure>
 @stop
 @section ('javascript')
 {{HTML::script('js/publicidad.js')}}

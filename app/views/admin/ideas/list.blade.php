@@ -13,6 +13,7 @@
         <th>descripción</th>
         <th>Votos</th>
         <th>Estado</th>
+        <th>Categoria</th>
         <th>Acciones</th>
     </tr>
     <thead>
@@ -29,6 +30,7 @@
 
 
         </td>
+        <td>{{$idea->categoriaNombre}}</td>
         <td class="center">
             {{HTML::decode(
             HTML::link('admin/ideas/'.$idea->id,'
@@ -49,7 +51,7 @@
 </table>
 
 
-{{ $ideas->links() }}
+
 </section>
 @stop
 

@@ -16,7 +16,7 @@
                     <?php
                         $imageUser = (empty($user['imagen']))?'images/user-profile.png':'upload/'.$user['imagen'];
                     ?>
-                    {{HTML::image($imageUser)}}
+                    {{HTML::image($imageUser,null,['id'=>'imagen-perfil'])}}
                 </figure>
                 <div id="contend-picture">
                     <p id="p-picture">

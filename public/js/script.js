@@ -1,4 +1,6 @@
 $(function () {
+    $('#facebookG').addClass('show');
+    $('body').addClass('no-image');
     $('#closeBack').click(function () {
         $('.popUp-container-slide').removeClass('opacity');
       player.stopVideo()
@@ -121,6 +123,35 @@ $('#productos').on('click',function(e){
             //console.log(data.curTop);
         }
     });
+    $(document).keyup(function(e) {
+        var scroll = $(window).scrollTop(),
+            positionScroll = [0, 1480, 2060 , 3960, 5390, 8000, 9120, 11440, 13810, 15230, 16000, 17000, 18100, 21000, 22900];
+        for (var i = 0; i < positionScroll.length; i++) {
+
+            if (scroll < positionScroll[i]) {
+                console.log(action)
+                if (e.which == 38) {
+                    $("body").animate({scrollTop: positionScroll[i - 1]}, 1000);
+
+                } else if(e.which == 40){
+                    $("body").animate({scrollTop: positionScroll[i]}, 1000);
+                }
+                return false
+            } else if (scroll == positionScroll[i]) {
+                if (e.which == 38) {
+                    $("body").animate({scrollTop: positionScroll[i - 1]}, 1000);
+                } else if(e.which == 40) {
+                    $("body").animate({scrollTop: positionScroll[i + 1]}, 1000);
+                }
+                return false
+            }
+            ;
+
+        }
+        ;
+        alert("Pulsaste la tecla con código: "+e.which);
+
+    });
 
     $('.arrows').on('click', function (e) {
         e.preventDefault();
@@ -163,6 +194,11 @@ $('#productos').on('click',function(e){
 });
 var counter = $('#change');
 
+$(window).load(function(){
+
+    $('#facebookG').removeClass('show');
+    $('body').removeClass('no-image');
+});
 
 
 function popUps(elements){
@@ -228,8 +264,8 @@ function responseFormRegister(data) {
         }
     }
 }
-$('#flecha').on('click',function(){
-    alert('jajaj');$("body").animate({scrollTop: 0}, 3000);
+$('#flecha-inicio').on('click',function(){
+$("body").animate({scrollTop: 0}, 3000);
 });
 function responseFormlogin(data) {
     $('#facebookG').removeClass('show');
@@ -241,8 +277,15 @@ function responseFormlogin(data) {
     }
 }
 
-//files
 
+$( "#files" )
+    .mouseenter(function() {
+        $('#name-file a').css("color","red");
+    })
+    .mouseleave(function() {
+        $('#name-file a').css("color","#F7931E");
+
+    });
 
 //captcha
 

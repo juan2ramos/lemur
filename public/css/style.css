@@ -513,8 +513,10 @@ float: right;
 	height: 150px;
 	opacity: 0;
 	position: absolute;
-	z-index: 1000
+	z-index: 1000;
+    cursor: pointer;
 }
+
 #name-file{
 	z-index: 1;
 	padding: 65px 110px;
@@ -645,9 +647,7 @@ vota por una idea
 .vota-por-una-idea li img{
 
     position: absolute;
-    top:-50%;
-    left: -50%;
-    max-width: 200%
+
 }
 /*=================================================================
 Contacto
@@ -799,11 +799,8 @@ Perfil
 	display: inline-block;
 	vertical-align: top;
 }
-.perfil figure img{
-    max-width: 250%;
-    position: absolute;
-    top: -50%;
-    left:-50%
+#imagen-perfil{
+
 }
 .perfil h3{
 	color: #fff;
@@ -1672,16 +1669,33 @@ Scrolling
 	left: 50%;
 	margin-left: 400px;
 	position: fixed;
-	top: 320px;}
-.arrows  img{
-	max-width: 30px
+	top: 320px;
 }
-
-.arrows-up{
-	-webkit-transform: rotate(180deg);
+#up{
+    background: url("../images/flechaA.png") no-repeat 0 0px;
+    width: 30px;
+    height: 30px;
+    display: block;
+    background-size: 30px ;
 }
-	
+#up:hover{
+    background-position-y: -30px !important;
 
+}
+#down{
+    background: url("../images/flecha.png") no-repeat 0 -30px;
+    width: 30px;
+    height: 30px;
+    display: block;
+    background-size: 30px ;
+}
+#down:hover{
+    background-position-y: 0px !important;
+
+}
+.no-image img{
+    display: none;
+}
 
 /*=================================================================
 State
@@ -1840,6 +1854,10 @@ loading
     opacity: 0;
     position: absolute !important;
     height: 17px !important;
+
+}
+iframe{
+    border: none
 }
 #___signin_0,#___signin_1,#___signin_2{
     font-size:0 !important;
@@ -1868,6 +1886,15 @@ loading
     width: 100%;
     top: 0;
 }
+.current{
+    color: #E47F1C;
+    border-bottom: 1px solid #f8981c;
+
+}
+.current a{
+    color: #E47F1C;
+    background-position: -7px 35px !important;
+}
 #sombra-numeros{
     width: 170px;
     height: 1px;
@@ -1882,6 +1909,12 @@ loading
     cursor: pointer;
     position: absolute;
     z-index: 10000;
+}
+#flecha-inicio{
+    right: 518px;
+    position: fixed;
+    z-index: 10000;
+    cursor: pointer;
 }
 @-moz-keyframes bounceG{
     0%{

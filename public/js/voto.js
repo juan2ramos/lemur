@@ -7,6 +7,30 @@ $(function () {
         $('#facebookG').addClass('show');
         $.post(href, {id: id}, responseFormVotos, 'json');
     });
+    $('.imagen-idea').each(function(indice, elemento) {
+
+        ratio = 1;
+
+        screenWidth =  $(this).width();
+        screenHeight =  $(this).height();
+
+        if (screenWidth/screenHeight > ratio) {
+            $(this).height("100%");
+            $(this).width("auto");
+            left = screenWidth*130/screenHeight - 185;
+            $(this).css({
+                'position':'absolute',
+                'left': -left,
+                'top':0
+            });
+        } else {
+            $(this).width("100% ");
+            $(this).height("auto");
+        }
+
+
+        console.log('El elemento con el índice '+indice+' contiene '+$(elemento).text());
+    });
 });
 function responseFormVotos(data) {
     $('#facebookG').removeClass('show');
