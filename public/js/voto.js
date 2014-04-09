@@ -17,7 +17,7 @@ $(function () {
         if (screenWidth/screenHeight > ratio) {
             $(this).height("100%");
             $(this).width("auto");
-            left = screenWidth*130/screenHeight - 185;
+            left = screenWidth*130/screenHeight - 174;
             $(this).css({
                 'position':'absolute',
                 'left': -left,

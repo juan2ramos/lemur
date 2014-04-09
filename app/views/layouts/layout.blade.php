@@ -18,7 +18,7 @@
     <meta charset="UTF-8"/>
     <meta name="author" content="juan2ramos"/>
     <meta name="description" content="Inicio"/>
-
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     @yield('metas')
 
     <!-- Estilos -->
