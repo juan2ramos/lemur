@@ -23,7 +23,7 @@
     </div>
 </div>
 
-<section id='contend-index'>
+<section id='contend-index' class="hidden">
 
 <section class="slide"
          data-0=" margin:160px auto;opacity: 1;"
@@ -413,7 +413,7 @@
 </section>
 
 </section>
-<figure id="flecha-inicio"
+<figure class="hidden" id="flecha-inicio"
         data-22000="top: 1400px;"
         data-22900="top: 590px;"
     >

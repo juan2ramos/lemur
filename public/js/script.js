@@ -198,6 +198,8 @@ $(window).load(function(){
 
     $('#facebookG').removeClass('show');
     $('body').removeClass('no-image');
+    $('#contend-index').removeClass('hidden');
+    $('#flecha-inicio').removeClass('hidden');
 });
 
 
