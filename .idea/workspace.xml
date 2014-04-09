@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc25e6be-4282-40d6-af5e-352fc8b19c78" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/IdeasController.php" afterPath="$PROJECT_DIR$/app/controllers/IdeasController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/layout.blade.php" afterPath="$PROJECT_DIR$/app/views/layouts/layout.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/front/includes/nav.blade.php" afterPath="$PROJECT_DIR$/app/views/front/includes/nav.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/script.js" afterPath="$PROJECT_DIR$/public/js/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/front/search.blade.php" afterPath="$PROJECT_DIR$/app/views/front/search.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="lemur.iws" />
@@ -37,10 +35,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="script.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="133" column="16" selection-start="3721" selection-end="3721" vertical-scroll-proportion="0.5021834" vertical-offset="2049" max-vertical-offset="5490">
+              <folding>
+                <marker date="1397083599000" expanded="false" signature="454:468" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="inicio.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/front/inicio.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="415" column="40" selection-start="9861" selection-end="9874" vertical-scroll-proportion="-6.7777777" vertical-offset="102" max-vertical-offset="774">
+            <state line="415" column="40" selection-start="9861" selection-end="9874" vertical-scroll-proportion="-8.444445" vertical-offset="12" max-vertical-offset="774">
               <folding>
                 <element signature="tag#section#0" expanded="false" />
               </folding>
@@ -51,16 +60,7 @@
       <file leaf-file-name="IdeasController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/IdeasController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="20" selection-start="3650" selection-end="3650" vertical-scroll-proportion="-3.4096386" vertical-offset="1679" max-vertical-offset="6840">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nav.blade.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/front/includes/nav.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="74" selection-start="109" selection-end="109" vertical-scroll-proportion="0.054545455" vertical-offset="0" max-vertical-offset="660">
+            <state line="109" column="20" selection-start="3650" selection-end="3650" vertical-scroll-proportion="-12.518072" vertical-offset="923" max-vertical-offset="6840">
               <folding />
             </state>
           </provider>
@@ -89,7 +89,7 @@
       <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="649" column="0" selection-start="12566" selection-end="12566" vertical-scroll-proportion="-432.66666" vertical-offset="0" max-vertical-offset="35712">
+            <state line="922" column="18" selection-start="17819" selection-end="17819" vertical-scroll-proportion="-10.962963" vertical-offset="16300" max-vertical-offset="35838">
               <folding />
             </state>
           </provider>
@@ -151,14 +151,14 @@
         <option value="$PROJECT_DIR$/app/views/front/perfil.blade.php" />
         <option value="$PROJECT_DIR$/public/js/updateUser.js" />
         <option value="$PROJECT_DIR$/app/views/front/vota-por-una-idea.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/app/views/front/inicio.blade.php" />
         <option value="$PROJECT_DIR$/public/js/voto.js" />
         <option value="$PROJECT_DIR$/app/views/layouts/layout.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/script.js" />
         <option value="$PROJECT_DIR$/app/controllers/IdeasController.php" />
         <option value="$PROJECT_DIR$/app/views/front/search.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/app/views/front/includes/nav.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/script.js" />
       </list>
     </option>
   </component>
@@ -826,31 +826,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="649" column="0" selection-start="12566" selection-end="12566" vertical-scroll-proportion="-432.66666" vertical-offset="0" max-vertical-offset="35712">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="284" column="46" selection-start="7840" selection-end="7840" vertical-scroll-proportion="0.45454547" vertical-offset="4812" max-vertical-offset="5472">
-          <folding>
-            <marker date="1397075937000" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/inicio.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="415" column="40" selection-start="9861" selection-end="9874" vertical-scroll-proportion="-6.7777777" vertical-offset="102" max-vertical-offset="774">
-          <folding>
-            <element signature="tag#section#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/vota-por-una-idea.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="65" selection-start="772" selection-end="799" vertical-scroll-proportion="-13.333333" vertical-offset="90" max-vertical-offset="864">
@@ -872,17 +847,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/IdeasController.php">
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="20" selection-start="3650" selection-end="3650" vertical-scroll-proportion="-3.4096386" vertical-offset="1679" max-vertical-offset="6840">
+        <state line="922" column="18" selection-start="17819" selection-end="17819" vertical-scroll-proportion="-10.962963" vertical-offset="16300" max-vertical-offset="35838">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/inicio.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="415" column="40" selection-start="9861" selection-end="9874" vertical-scroll-proportion="-8.444445" vertical-offset="12" max-vertical-offset="774">
+          <folding>
+            <element signature="tag#section#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/includes/nav.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="74" selection-start="109" selection-end="109" vertical-scroll-proportion="0.054545455" vertical-offset="0" max-vertical-offset="660">
+        <state line="3" column="20" selection-start="140" selection-end="140" vertical-scroll-proportion="0.08181818" vertical-offset="0" max-vertical-offset="660">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/IdeasController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="20" selection-start="3650" selection-end="3650" vertical-scroll-proportion="-12.518072" vertical-offset="923" max-vertical-offset="6840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="133" column="16" selection-start="3721" selection-end="3721" vertical-scroll-proportion="0.5021834" vertical-offset="2049" max-vertical-offset="5490">
+          <folding>
+            <marker date="1397083599000" expanded="false" signature="454:468" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

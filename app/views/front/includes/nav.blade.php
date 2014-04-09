@@ -1,7 +1,7 @@
 				<ul>
                     <?php
                     $menu = Menu::where('activo', '=', '1 order by id DESC')->get();
-
+                    
                     ?>
                     @foreach($menu as $link)
                     <?php $current = (Request::path() == $link->url)?'current':''?>

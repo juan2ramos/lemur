@@ -123,13 +123,15 @@ $('#productos').on('click',function(e){
             //console.log(data.curTop);
         }
     });
-    $(document).keyup(function(e) {
+    $(document).on('keyup',function(e) {
+
+        console.log("Pulsaste la tecla con código: "+e.which);
         var scroll = $(window).scrollTop(),
             positionScroll = [0, 1480, 2060 , 3960, 5390, 8000, 9120, 11440, 13810, 15230, 16000, 17000, 18100, 21000, 22900];
         for (var i = 0; i < positionScroll.length; i++) {
 
             if (scroll < positionScroll[i]) {
-                console.log(action)
+                
                 if (e.which == 38) {
                     $("body").animate({scrollTop: positionScroll[i - 1]}, 1000);
 
@@ -149,7 +151,6 @@ $('#productos').on('click',function(e){
 
         }
         ;
-        alert("Pulsaste la tecla con código: "+e.which);
 
     });
 

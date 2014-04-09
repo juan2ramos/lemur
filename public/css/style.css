@@ -335,7 +335,7 @@ network
 #network{
 	position: absolute;
 	text-align: right;
-	top:460px;
+    top:490px;
 	width: 220px;
 }
 #network li{
@@ -558,12 +558,15 @@ float: right;
 	height: 35px;
 	font-size: 19px;
 }
-.sube-tu-idea .sumbit:hover{
+.sube-tu-idea .sumbit:hover,#sumbit-inicio:hover{
 	background:  rgba(150, 26, 29, 0.5)
 }
 .sube-tu-idea ::-webkit-input-placeholder {
    color: #fff;
    font-style: italic;
+}
+#sumbit-registro:hover{
+    background:  rgba(228, 127, 28, 0.5)
 }
 
 .sube-tu-idea ::-moz-placeholder { 
@@ -914,6 +917,10 @@ popUp
 }
 #logout{
     width: 150px;
+}
+#logout:hover{
+    background-position: 0 1px;
+    color: #E47F1C
 }
 #popUp-contend h2{
 	margin: 0;
