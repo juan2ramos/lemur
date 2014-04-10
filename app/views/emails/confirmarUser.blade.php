@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
+        {{HTML::image('images/lemur.png')}}
 		<h2>Bienvenido a Lemur</h2>
          <p>Tu resgistro a finalizado </p>
 	</body>

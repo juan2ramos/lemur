@@ -418,7 +418,7 @@
         data-22900="top: 590px;"
     >
 
-    <img  src="images/flechaUp.png " alt="">
+
 </figure>
 @stop
 @section ('javascript')

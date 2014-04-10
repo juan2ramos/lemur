@@ -1918,10 +1918,26 @@ iframe{
     z-index: 10000;
 }
 #flecha-inicio{
-    right: 518px;
+    background: url("../images/flecha.png") no-repeat 0 -64px;
+    right: 508px;
     position: fixed;
     z-index: 10000;
     cursor: pointer;
+    -webkit-transform: rotate(180deg);
+
+    /* Firefox */
+    -moz-transform: rotate(180deg);
+
+    /* Opera */
+    -o-transform: rotate(180deg);
+
+    /* IE 9 */
+    -ms-transform: rotate(180deg);
+    width: 62px;
+    height: 62px;
+}
+#flecha-inicio:hover{
+    background-position:0 0 ;
 }
 @-moz-keyframes bounceG{
     0%{
