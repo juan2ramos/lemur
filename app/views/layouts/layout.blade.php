@@ -75,6 +75,13 @@
             )
             )}}
         </li>
+        <li>
+        <div>
+             <div style="position:relative;width:150px;height:23px;overflow:hidden;margin-top:8px">
+            <div style="position:absolute;top:-50px;">
+             <iframe scrolling="no" frameborder="0" src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Flemurstudio.com.co&amp;width=150px&amp;layout=box_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=65&amp;appId=706814422713940" style="border:none; overflow:hidden; width:150pxpx; height:65px;padding-left:0px; padding-top:10px;" allowtransparency="true"></iframe>
+             </div>
+        </li>
         @show
     </ul>
 </div>
