@@ -24,10 +24,10 @@ function responseFormPass(data) {
     }else {
         template +=
             '<div id="contend-error">' +
-                '<h2>Mensaje enviado </h2><ul style="color: #ffffff">';
-        template += '<li>email enviado</li>'
+                '<h2>Tu mensaje se ha enviado exitosamente! Revisa tu correo. </h2><ul style="color: #ffffff">';
+
     }
-    template += '</ul></div>' ;
+
     $('#popUp-contend').append(template);
     $('.close').on('click', $('body'), function () {
         $popup.removeClass('show');

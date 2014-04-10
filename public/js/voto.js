@@ -44,7 +44,7 @@ function responseFormVotos(data) {
                 '<h2>Error</h2><ul style="color: #ffffff">';
 
 
-            template += '<li>Solo puedes votar por una idea</li>'
+            template += '<li>¡Ups! sólo puedes votar una vez por idea.</li>'
 
         template += '</ul></div>' ;
         $('#popUp-contend').append(template);

@@ -87,7 +87,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         ];
         $mesages = [
             'email.required' => 'El mail es requerido',
-            'email.email' => 'Email invalido',
+            'email.email' => '¡Ups! verifica que tu correo este correcto.',
             'email.unique' => 'este usuario ya existe',
             'nombre.required' => 'Nombre es requerido',
             'nombre.min' => 'el nombre debe ser minimo de 4 caracteres',

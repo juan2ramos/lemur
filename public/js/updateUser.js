@@ -53,8 +53,8 @@ function responseFormUser(data){
         var template = '';
         template +=
             '<div id="contend-error">' +
-                '<h2>Sus datos han sido guardados con éxito!!!</h2><ul style="color: #ffffff">'+
-        '<li>Guardado exitomasamente</li></ul>';
+                '<h2>Tus datos han sido guardados exitosamente! </h2><ul style="color: #ffffff">'+
+        
         $('#popUp-contend').append(template);
         $('.close').on('click', $('body'), function () {
             location.reload();

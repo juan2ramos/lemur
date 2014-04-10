@@ -16,12 +16,10 @@ $('#productos').on('click',function(e){
     var template = '';
     template +=
         '<div id="contend-error">' +
-            '<h2>Muy pronto Productos</h2><ul style="color: #ffffff">';
+            '<h2>¡Muy pronto productos para tí!</h2>';
 
 
-    template += '<li>muy pronto productos</li>'
 
-    template += '</ul></div>' ;
     $('#popUp-contend').append(template);
     $('.close').on('click', $('body'), function () {
         $popup.removeClass('show');
@@ -125,13 +123,12 @@ $('#productos').on('click',function(e){
     });
     $(document).on('keyup',function(e) {
 
-        console.log("Pulsaste la tecla con código: "+e.which);
         var scroll = $(window).scrollTop(),
             positionScroll = [0, 1480, 2060 , 3960, 5390, 8000, 9120, 11440, 13810, 15230, 16000, 17000, 18100, 21000, 22900];
         for (var i = 0; i < positionScroll.length; i++) {
 
             if (scroll < positionScroll[i]) {
-                
+
                 if (e.which == 38) {
                     $("body").animate({scrollTop: positionScroll[i - 1]}, 1000);
 
@@ -163,7 +160,7 @@ $('#productos').on('click',function(e){
         for (var i = 0; i < positionScroll.length; i++) {
 
             if (scroll < positionScroll[i]) {
-                console.log(action)
+
                 if (action == 'up') {
                     $("body").animate({scrollTop: positionScroll[i - 1]}, 1000);
 
@@ -257,12 +254,30 @@ function count(elem, startnum, endnum, time) {
 }
 function responseFormRegister(data) {
     $('#facebookG').removeClass('show');
+    var flag = true;
+    jQuery.each( $('#form-register input:text'), function( i, val ) {
+
+        if($(this).val()){
+            flag = false;
+            return false;
+        }
+
+
+    });
+    console.log(flag)
+    if(flag){
+        $('#registra-cuenta').find('h2').text('Debes diligenciar todos los campos.');
+        return true;
+    }
+
     if (data.success == 1){
-        location.reload();
+        $('#registra-cuenta').find('h2').text('Casi listo! verifica tu correo para completar el registro. ¡Que te diviertas!');
+
+
     }else{
         for (var key in data) {
             $('#registra-cuenta').find('h2').text(data[key]);
-            console.log(data[key])
+
             break;
         }
     }
@@ -276,7 +291,7 @@ function responseFormlogin(data) {
         location.reload();
     }
     else{
-        $('#ingresa-cuenta').find('h2').text('Usuario y/o contraseña incorrecta');
+        $('#ingresa-cuenta').find('h2').text(' ¡Ups! verifica que tus datos estén correctos.');
     }
 }
 

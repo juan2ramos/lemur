@@ -66,7 +66,7 @@ class   Ideas extends Eloquent
             'solucion.max' => 'Tmaxxx',
             'url_video.url' => 'url',
             'id_categorias.numeric' => 'numeric',
-            'captchaSum.same' => 'Suma incorrecta',
+            'captchaSum.same' => '¡Ups! suma incorrecta. ',
             'images.not_in' => 'Imagen requerida',
             'id_categorias.digits_between' => 'digits_between:1,3',
             'titulo.required' => 'atributo requerido',

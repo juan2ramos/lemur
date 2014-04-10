@@ -11,6 +11,48 @@ $(function () {
     });
     function responseForm(r) {
         $('#facebookG').removeClass('show');
+        var flag = true;
+        jQuery.each( $('#form-sube-tu-idea input:text'), function( i, val ) {
+
+            if($(this).val()){
+                flag = false;
+                return false;
+            }
+
+
+        });
+        jQuery.each( $('#form-sube-tu-idea textarea'), function( i, val ) {
+
+            if($(this).val()){
+                flag = false;
+                return false;
+            }
+
+
+        });
+        var $popup = $('.popUp-container');
+        $popup.addClass('show');
+
+        var template = '';
+        template +=
+            '<div id="contend-error">' +
+                '<h2>Error</h2><ul style="color: #ffffff">';
+
+        template += '<li id="Errorli"></li>';
+
+        template += '</ul></div>' ;
+        $('#popUp-contend').append(template);
+        $('.close').on('click', $('body'), function () {
+            $popup.removeClass('show');
+
+            $('#contend-error').remove();
+        });
+        console.log(flag)
+        if(flag){
+            $('#Errorli').text('Debes diligenciar todos los campos.');
+            return true;
+        }
+
         if (r.success == 1) {
 
             var $popup = $('.popUp-container');
@@ -19,7 +61,8 @@ $(function () {
             var template = '';
             template +=
                 '<div id="contend-error">' +
-                    '<h2>tu idea a sido subida exitosamente!!</h2><ul style="color: #ffffff">';
+                    '<h2>Tu idea se ha enviado exitosamente! Dentro de poco la podrás ver y ' +
+                    'decirle a tus amigos que voten por ella! Estaremos en contacto ;)</h2><ul style="color: #ffffff">';
             template += '<li>Gracias</li>';
 
             template += '</ul></div>' ;
