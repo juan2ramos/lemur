@@ -279,35 +279,18 @@ class IdeasController extends \BaseController
     function  adminShow($id = false)
     {
 
-        $categorias = [0 => "Todas las categorías "] + Categorias::all()->lists('nombre', 'id');
+        $categorias = [-1 => "Todas las categorías "] +[0 => "Sin categoría asignada "] + Categorias::all()->lists('nombre', 'id');
 
-        if (!$id || $id == 0) {
-            $id = 0;
-            //$ideas = Ideas::paginate(20);
-            $ideas = Ideas::all();
-            $ideasArray = [];
-            foreach ($ideas as $idea)
-            {
-
-                $idea['categoriaNombre'] = ($idea->categorias )?$idea->categorias['nombre']:"Sin categoría";
-                $ideasArray[] = $idea ;
-
-            }
-            $ideas = $ideasArray;
+        if($id == 0){
+            $ideas = Ideas::where('id_categorias', '=', 0)->paginate(20);
             return View::make('admin/ideas/list', compact('ideas', 'categorias', 'id'));
         }
-
-        $ideas = Ideas::where('id_categorias', '=', $id);
-        $ideasArray = [];
-        foreach ($ideas as $idea)
-        {
-
-            $idea['categoriaNombre'] = ($idea->categorias )?$idea->categorias['nombre']:"Sin categoría";
-            $ideasArray[] = $idea ;
-
-        }
-        $ideas = $ideasArray;
+        if (!$id || $id == -1) {
+            $ideas = Ideas::paginate(20);
             return View::make('admin/ideas/list', compact('ideas', 'categorias', 'id'));
+        }
+        $ideas = Ideas::where('id_categorias', '=', $id)->paginate(20);
+        return View::make('admin/ideas/list', compact('ideas', 'categorias', 'id'));
 
 
     }
