@@ -284,7 +284,7 @@ class IdeasController extends \BaseController
         if (!$id || $id == 0) {
             $id = 0;
             //$ideas = Ideas::paginate(20);
-            $ideas = Ideas::paginate(20);
+            $ideas = Ideas::all();
             $ideasArray = [];
             foreach ($ideas as $idea)
             {
@@ -297,7 +297,7 @@ class IdeasController extends \BaseController
             return View::make('admin/ideas/list', compact('ideas', 'categorias', 'id'));
         }
 
-        $ideas = Ideas::where('id_categorias', '=', $id)->paginate(20);
+        $ideas = Ideas::where('id_categorias', '=', $id);
         $ideasArray = [];
         foreach ($ideas as $idea)
         {

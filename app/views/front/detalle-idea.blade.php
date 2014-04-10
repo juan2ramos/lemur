@@ -129,6 +129,10 @@
     </div>
 </section>
 
+
+<a href="http://hiinternationalstudies.com/wp-content/uploads/2014/03/Email.png"><img class="size-full wp-image-481 alignleft" alt="Email" src="http://hiinternationalstudies.com/wp-content/uploads/2014/03/Email.png" width="48" height="48" /></a> <a href="https://www.facebook.com/pages/Hi-International-Studies-Estudios-en-el-Exterior/759736540737271"target="blank"><img class="size-full wp-image-482 alignleft" alt="Facebook" src="http://hiinternationalstudies.com/wp-content/uploads/2014/03/Facebook.png" width="48" height="48" /></a> <a href="http://hiinternationalstudies.com/wp-content/uploads/2014/03/Twitter.png"><img class="size-full wp-image-483 alignleft" alt="Twitter" src="http://hiinternationalstudies.com/wp-content/uploads/2014/03/Twitter.png" width="48" height="48" /></a> <a href="http://hiinternationalstudies.com/wp-content/uploads/2014/03/Youtube.png"><img class="size-full wp-image-484 alignleft" alt="Youtube" src="http://hiinternationalstudies.com/wp-content/uploads/2014/03/Youtube.png" width="48" height="48" /></a>
+
+
 <script type="text/javascript" src="http://www.youtube.com/player_api"></script>
 <script>
     var msg = encodeURIComponent('Lemur Studio es una plataforma donde puedes sacarle provecho a tus ideas, visítanos y entérate del resto.');
