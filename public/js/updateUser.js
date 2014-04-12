@@ -52,14 +52,31 @@ function responseFormUser(data){
 
         var template = '';
         template +=
-            '<div id="contend-error">' +
-                '<h2>Tus datos han sido guardados exitosamente! </h2><ul style="color: #ffffff">'+
-        
+            '<div id="contend-error"><h2>Tus datos han sido guardados exitosamente! </h2></div>'
+
         $('#popUp-contend').append(template);
         $('.close').on('click', $('body'), function () {
             location.reload();
         });
     }else{
-        console.log(data);
+        var $popup = $('.popUp-container');
+        $popup.addClass('show');
+        var template = '';
+        template +=
+            '<div id="contend-error">' +
+                '<h2>Error</h2><ul style="color: #ffffff">';
+
+        for (var r in data) {
+
+            template += '<li>Campo: ' + r + ' Tipo de error: ' + data[r] +
+                '</li>'
+        }
+        template += '</ul></div>' ;
+        $('#popUp-contend').append(template);
+        $('.close').on('click', $('body'), function () {
+            $popup.removeClass('show');
+            template = "wew";
+            $('#contend-error').remove();
+        });
     }
 }

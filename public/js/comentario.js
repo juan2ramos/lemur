@@ -15,11 +15,11 @@ function responseFormComment(data){
 
     var template = '';
     if(data.success == 1){
-        $('#form-comentario').css('display','none');
+        //$('#form-comentario').css('display','none');
 
         template +=
             '<div id="contend-error">' +
-                '<h2>Comentario enviado Exitosamente</h2><ul style="color: #ffffff">';
+                '<h2>¡Comentario enviado exitosamente!</h2><ul style="color: #ffffff">';
     }else if (data.success == 2) {
         popUps($('#img-ingresar'));
     }else{

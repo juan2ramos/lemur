@@ -5,16 +5,7 @@
     <div class="contacto">
         <h2>Contáctanos</h2>
         <p>¿Quieres contarnos algo? Este espacio es tuyo, cuéntanos lo que quieras.</p>
-        @if ($errors->any())
-        <div class="alert-danger">
-            <strong>Por favor corrige los siguentes errores:</strong>
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
+
         {{ Form::open(array('url' => 'envioContacto','class' => 'contact-form')) }}
             <label>Nombre<span>*</span></label>
             <input type="text" name="nombre">
@@ -30,4 +21,40 @@
         {{ Form::close() }}
     </div>
 </section>
+@stop
+@section('javascript')
+{{HTML::script('js/updateUser.js')}}
+{{HTML::script('js/upload.js')}}
+@if ($errors->any())
+<script>
+
+    var $popup = $('.popUp-container');
+    $popup.addClass('show');
+    console.log(data)
+    var template = '';
+    template +=
+        '<div id="contend-error">' +
+            '<h2>Error</h2><ul style="color: #ffffff">';
+
+    for (var key in $errors->all()) {
+        template += '<li>Campo: ' + key + ' Tipo de error: ' + r[key] +
+            '</li>'
+    }
+    template += '</ul></div>' ;
+    $('#popUp-contend').append(template);
+    $('.close').on('click', $('body'), function () {
+        $popup.removeClass('show');
+        template = "wew";
+        $('#contend-error').remove();
+    });
+</script>
+<div class="alert-danger">
+    <strong>Por favor corrige los siguentes errores:</strong>
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 @stop

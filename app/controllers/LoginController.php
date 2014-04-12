@@ -43,6 +43,8 @@ class LoginController extends \BaseController
                 $message->subject('Restart password');
                 $message->to(Input::get('email'));
             });
+            return Response::json(['success' => 1]);
+
 
         } else {
             return Response::json(['success' => 0]);

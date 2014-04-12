@@ -74,7 +74,7 @@ $(function () {
         else {
             var $popup = $('.popUp-container');
             $popup.addClass('show');
-
+                console.log(data)
             var template = '';
             template +=
                 '<div id="contend-error">' +
