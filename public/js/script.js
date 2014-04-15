@@ -198,6 +198,7 @@ $(window).load(function(){
     $('body').removeClass('no-image');
     $('#contend-index').removeClass('hidden');
     $('#flecha-inicio').removeClass('hidden');
+    resizeImg( $('#info-idea-fig img') );
     $('.imagen-idea').each(function() {
 
         ratio = 1;
@@ -210,7 +211,7 @@ $(window).load(function(){
             if(screenWidth/screenHeight< 1.3){
                 $(this).height("100%");
                 $(this).width("100%");
-                
+
             }else{
                 $(this).height("100%");
                 $(this).width("auto");
@@ -233,7 +234,34 @@ $(window).load(function(){
 
 });
 
+function resizeImg(img){
+    ratio = 1;
 
+    screenWidth =  img.width();
+    screenHeight =  img.height();
+
+    if (screenWidth/screenHeight > ratio) {
+
+        if(screenWidth/screenHeight< 1.3){
+            img.height("100%");
+            img.width("100%");
+
+        }else{
+            img.height("100%");
+            img.width("auto");
+            left = ((screenWidth*45)/(screenHeight))-45;
+            img.css({
+                'position':'absolute',
+                'left': -left,
+                'top':0
+            });
+        }
+
+    } else {
+        img.width("100% ");
+        img.height("auto");
+    }
+}
 function popUps(elements){
     $this = elements;
     $('.popUp-container').addClass('show');

@@ -1106,12 +1106,21 @@ h3{
 	vertical-align: top;
 	width: 165px;
 }
-#info-idea img{
+
+#info-idea-fig{
 	background: rgba(0, 0, 0, 0.5);
-	margin-top: 20px;
-    max-width: 90px;
+	margin: 20px 0 10px 25px;
+
+    width: 90px;
     padding: 10px;
 }
+
+#contend-img-user{
+    position: relative;
+    overflow: hidden;
+    height: 90px;
+}
+
 #info-idea li{
 	display: inline-block;
 	opacity: 0.5;
