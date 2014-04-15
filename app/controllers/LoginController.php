@@ -81,7 +81,7 @@ class LoginController extends \BaseController
                         'email'      => $user_profile['email'],
                         'nombre'     => $user_profile['first_name'],
                         'apellidos'  => $user_profile['last_name'],
-                        'habilitado' => 1,
+                        'activo' => 1,
                         'imagen'     => $name
                     ];
                     $user = new User;
