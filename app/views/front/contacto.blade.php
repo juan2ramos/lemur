@@ -15,7 +15,6 @@
             <span class="message-span">*Estos campos son obligatorios</span>
 
             <input class="text" type="text" name="mensaje" >
-            <span class="message-span width-span">¡Gracias por escribirnos! Te responderemos cuanto antes</span>
 
             <input class="sumbit" type="submit" value="Envíanos tu mensaje">
         {{ Form::close() }}

@@ -30,25 +30,26 @@ $(function () {
 
 
         });
-        var $popup = $('.popUp-container');
-        $popup.addClass('show');
 
-        var template = '';
-        template +=
-            '<div id="contend-error">' +
-                '<h2>Error</h2><ul style="color: #ffffff">';
-
-        template += '<li id="Errorli"></li>';
-
-        template += '</ul></div>' ;
-        $('#popUp-contend').append(template);
-        $('.close').on('click', $('body'), function () {
-            $popup.removeClass('show');
-
-            $('#contend-error').remove();
-        });
         console.log(flag)
         if(flag){
+            var $popup = $('.popUp-container');
+            $popup.addClass('show');
+
+            var template = '';
+            template +=
+                '<div id="contend-error">' +
+                    '<h2>Error</h2><ul style="color: #ffffff">';
+
+            template += '<li id="Errorli"></li>';
+
+            template += '</ul></div>' ;
+            $('#popUp-contend').append(template);
+            $('.close').on('click', $('body'), function () {
+                $popup.removeClass('show');
+
+                $('#contend-error').remove();
+            });
             $('#Errorli').text('Debes diligenciar todos los campos.');
             return true;
         }
@@ -63,7 +64,7 @@ $(function () {
                 '<div id="contend-error">' +
                     '<h2>Tu idea se ha enviado exitosamente! Dentro de poco la podrás ver y ' +
                     'decirle a tus amigos que voten por ella! Estaremos en contacto ;)</h2><ul style="color: #ffffff">';
-            template += '<li>Gracias</li>';
+
 
             template += '</ul></div>' ;
             $('#popUp-contend').append(template);
@@ -74,7 +75,6 @@ $(function () {
         else {
             var $popup = $('.popUp-container');
             $popup.addClass('show');
-                console.log(data)
             var template = '';
             template +=
                 '<div id="contend-error">' +
