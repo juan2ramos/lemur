@@ -198,6 +198,31 @@ $(window).load(function(){
     $('body').removeClass('no-image');
     $('#contend-index').removeClass('hidden');
     $('#flecha-inicio').removeClass('hidden');
+    $('.imagen-idea').each(function() {
+
+        ratio = 1;
+
+        screenWidth =  $(this).width();
+        screenHeight =  $(this).height();
+
+        if (screenWidth/screenHeight > ratio) {
+            $(this).height("100%");
+            $(this).width("auto");
+            left = screenWidth*130/screenHeight - 174;
+            $(this).css({
+                'position':'absolute',
+                'left': -left,
+                'top':0
+            });
+        } else {
+            $(this).width("100% ");
+            $(this).height("auto");
+        }
+
+
+    });
+
+
 });
 
 
