@@ -206,14 +206,22 @@ $(window).load(function(){
         screenHeight =  $(this).height();
 
         if (screenWidth/screenHeight > ratio) {
-            $(this).height("100%");
-            $(this).width("auto");
-            left = screenWidth*130/screenHeight - 174;
-            $(this).css({
-                'position':'absolute',
-                'left': -left,
-                'top':0
-            });
+
+            if(screenWidth/screenHeight< 1.3){
+                $(this).height("100%");
+                $(this).width("100%");
+                
+            }else{
+                $(this).height("100%");
+                $(this).width("auto");
+                left = screenWidth*130/screenHeight - 174;
+                $(this).css({
+                    'position':'absolute',
+                    'left': -left,
+                    'top':0
+                });
+            }
+
         } else {
             $(this).width("100% ");
             $(this).height("auto");

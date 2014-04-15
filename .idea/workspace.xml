@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc25e6be-4282-40d6-af5e-352fc8b19c78" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/front/includes/nav.blade.php" afterPath="$PROJECT_DIR$/app/views/front/includes/nav.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/front/detalle-idea.blade.php" afterPath="$PROJECT_DIR$/app/views/front/detalle-idea.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/script.js" afterPath="$PROJECT_DIR$/public/js/script.js" />
     </list>
     <ignored path="lemur.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,10 +33,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="nav.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="script.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="212" column="16" selection-start="6068" selection-end="6068" vertical-scroll-proportion="0.6069869" vertical-offset="3399" max-vertical-offset="6354">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nav.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/front/includes/nav.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="20" selection-start="622" selection-end="622" vertical-scroll-proportion="0.35454544" vertical-offset="0" max-vertical-offset="660">
+            <state line="13" column="20" selection-start="622" selection-end="622" vertical-scroll-proportion="-8.666667" vertical-offset="0" max-vertical-offset="576">
               <folding />
             </state>
           </provider>
@@ -97,14 +107,14 @@
         <option value="$PROJECT_DIR$/public/js/ideasAdmin.js" />
         <option value="$PROJECT_DIR$/app/views/admin/ideas/form.blade.php" />
         <option value="$PROJECT_DIR$/app/models/Ideas.php" />
-        <option value="$PROJECT_DIR$/app/views/front/detalle-idea.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/LoginController.php" />
         <option value="$PROJECT_DIR$/app/controllers/IdeasController.php" />
         <option value="$PROJECT_DIR$/public/js/voto.js" />
-        <option value="$PROJECT_DIR$/public/js/script.js" />
         <option value="$PROJECT_DIR$/app/views/front/contacto.blade.php" />
         <option value="$PROJECT_DIR$/public/js/ideasForm.js" />
         <option value="$PROJECT_DIR$/app/views/front/includes/nav.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/front/detalle-idea.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/script.js" />
       </list>
     </option>
   </component>
@@ -545,11 +555,6 @@
         <state line="1179" column="29" selection-start="17807" selection-end="17807" vertical-scroll-proportion="1.5671428" vertical-offset="20125" max-vertical-offset="68634" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/vota-por-una-idea.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="65" selection-start="772" selection-end="799" vertical-scroll-proportion="-13.333333" vertical-offset="90" max-vertical-offset="864" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/search.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="65" selection-start="794" selection-end="794" vertical-scroll-proportion="0.6399371" vertical-offset="43" max-vertical-offset="846" />
@@ -617,7 +622,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/layout.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="0" selection-start="3388" selection-end="3388" vertical-scroll-proportion="1.0272727" vertical-offset="1356" max-vertical-offset="2394" />
+        <state line="113" column="0" selection-start="3388" selection-end="3388" vertical-scroll-proportion="1.0272727" vertical-offset="1356" max-vertical-offset="2394">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/mails.php">
@@ -675,11 +682,6 @@
         <state line="83" column="31" selection-start="2694" selection-end="2694" vertical-scroll-proportion="0.990566" vertical-offset="864" max-vertical-offset="2808" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/front/detalle-idea.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="47" selection-start="3289" selection-end="3291" vertical-scroll-proportion="16.222221" vertical-offset="2094" max-vertical-offset="2754" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/countdown.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="792" />
@@ -718,20 +720,6 @@
     <entry file="file://$PROJECT_DIR$/public/js/ideasAdmin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="27" selection-start="337" selection-end="337" vertical-scroll-proportion="0.28285715" vertical-offset="0" max-vertical-offset="700" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/voto.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="4" selection-start="279" selection-end="279" vertical-scroll-proportion="0.23142858" vertical-offset="0" max-vertical-offset="828">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="208" column="35" selection-start="5960" selection-end="5960" vertical-scroll-proportion="5.4418607" vertical-offset="0" max-vertical-offset="6210">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/contacto.blade.php">
@@ -778,9 +766,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/detalle-idea.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="83" selection-start="304" selection-end="304" vertical-scroll-proportion="0.19090909" vertical-offset="0" max-vertical-offset="2754">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/front/vota-por-una-idea.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="12" selection-start="550" selection-end="550" vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="864">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/voto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="275" selection-end="275" vertical-scroll-proportion="0.23142858" vertical-offset="0" max-vertical-offset="828">
+          <folding>
+            <marker date="1397531732000" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/includes/nav.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="20" selection-start="622" selection-end="622" vertical-scroll-proportion="0.35454544" vertical-offset="0" max-vertical-offset="660">
+        <state line="13" column="20" selection-start="622" selection-end="622" vertical-scroll-proportion="-8.666667" vertical-offset="0" max-vertical-offset="576">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="212" column="16" selection-start="6068" selection-end="6068" vertical-scroll-proportion="0.6069869" vertical-offset="3399" max-vertical-offset="6354">
           <folding />
         </state>
       </provider>
