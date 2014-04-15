@@ -279,7 +279,7 @@ class IdeasController extends \BaseController
     function  adminShow($id = 'false')
     {
 
-        $categorias = [-1 => "Todas las ides "] +[0 => "Sin categoría asignada "] + Categorias::all()->lists('nombre', 'id');
+        $categorias = [-1 => "Todas las ideas "] +[0 => "Sin categoría asignada "] + Categorias::all()->lists('nombre', 'id');
 
 
         if ($id == 'false' || $id == -1) {
