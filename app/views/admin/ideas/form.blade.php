@@ -110,7 +110,8 @@
         <td>{{ $comentario['pivot']['created_at']}}</td>
         <?php
         $id = $comentario['pivot']['id'];
-        $check = ($comentario['pivot']['id'] == 1)?'checked':'';
+        $check = ($comentario['pivot']['estado'] == 1)?'checked':'';
+        echo($id);
         ?>
         <td class="center">{{Form::checkbox('estado', 'value', $check ,['class' => 'check','data-id' => $id ])}}</td>
     </tr>

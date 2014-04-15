@@ -30,31 +30,50 @@
 
     var $popup = $('.popUp-container');
     $popup.addClass('show');
-    console.log(data)
-    var template = '';
-    template +=
-        '<div id="contend-error">' +
-            '<h2>Error</h2><ul style="color: #ffffff">';
 
-    for (var key in $errors->all()) {
-        template += '<li>Campo: ' + key + ' Tipo de error: ' + r[key] +
-            '</li>'
-    }
+
+    var template = '';
+    template += '<div id="contend-error">' +  '<h2>Por favor corrige los siguentes errores</h2><ul style="color: #ffffff">';
+
+    @foreach ($errors->all() as $error)
+    template += '<li>' +
+        '{{$error}}' +
+        '</li>';
+    @endforeach
     template += '</ul></div>' ;
     $('#popUp-contend').append(template);
+
     $('.close').on('click', $('body'), function () {
         $popup.removeClass('show');
         template = "wew";
         $('#contend-error').remove();
     });
+
 </script>
-<div class="alert-danger">
-    <strong>Por favor corrige los siguentes errores:</strong>
-    <ul>
-        @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-</div>
+
+@endif
+
+@if ($send == 1)
+<script>
+
+    var $popup = $('.popUp-container');
+    $popup.addClass('show');
+
+
+    var template = '';
+    template += '<div id="contend-error">' +  '<h2>Gracias por escribirnos te responderemos cuanto antes</h2><ul style="color: #ffffff">';
+
+
+    template += '</ul></div>' ;
+    $('#popUp-contend').append(template);
+
+    $('.close').on('click', $('body'), function () {
+        $popup.removeClass('show');
+        template = "wew";
+        $('#contend-error').remove();
+    });
+
+</script>
+
 @endif
 @stop

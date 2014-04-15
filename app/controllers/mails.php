@@ -4,7 +4,7 @@ class mails extends \BaseController{
 
     function contacto(){
         $data = Input::all();
-
+        $send = false;
 
         $rules = [
             'email' => 'required|email',
@@ -21,18 +21,19 @@ class mails extends \BaseController{
         $validator = Validator::make($data, $rules, $mesages);
 
         if ($validator->passes()) {
-            $mensaje = "Mensaje enviado correctamente, gracias!!";
             Mail::send('emails.mensajeContacto', $data, function ($message)  {
                 $message->subject('Contacto lemur plataforma');
                 $message->to('plataforma@lemurstudio.com.co');
             });
-            return View::make('front.mensaje',compact('mensaje'));
+            $send = true;
+            return View::make('front.contacto',compact('send'));
         }
 
         $errors = $validator->errors();
-        return View::make('front.contacto',compact('errors'));
+        return View::make('front.contacto',compact('errors','send'));
     }
     function trabajo(){
+        $send = false;
         $data = Input::all();
         $rules = [
             'email' => 'required|email',
@@ -52,11 +53,11 @@ class mails extends \BaseController{
                 $message->subject('Trabaja lemur plataforma');
                 $message->to('plataforma@lemurstudio.com.co');
             });
-            $mensaje = "Mensaje enviado correctamente, gracias!!";
-            return View::make('front.mensaje',compact('mensaje'));
+            $send = true;
+            return View::make('front.trabaja-en-lemur',compact('success','send'));
         }
 
         $errors = $validator->errors();
-        return View::make('front.trabaja-en-lemur',compact('errors'));
+        return View::make('front.trabaja-en-lemur',compact('errors','send'));
     }
 }

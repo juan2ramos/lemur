@@ -7,11 +7,12 @@ $(function () {
     $('.check').on('click',function(){
         if($(this).is(':checked') == true ){
 
-            data = {'activo' : 1, 'id' : $(this).data('id')};
+            data = {'estado' : 1, 'id' : $(this).data('id')};
         }else{
-            data = {'activo' : 0, 'id' : $(this).data('id')};
+            data = {'estado' : 0, 'id' : $(this).data('id')};
         }
-        $.post( $('#updateMenu').attr('href'), data, function( data ) {
+        console.log($('#comntarioUpdate').attr('href'))
+        $.post( $('#comntarioUpdate').attr('href'), data, function( data ) {
             console.log( 'ok' );
         }, "json");
     });

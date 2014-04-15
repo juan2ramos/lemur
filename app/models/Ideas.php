@@ -107,12 +107,12 @@ class   Ideas extends Eloquent
 
     public function comentarios()
     {
-        return $this->belongsToMany('user', 'comentarios', 'id_idea', 'estado')->withPivot('comentario');
+        return $this->belongsToMany('user', 'comentarios', 'id_idea', 'id_user')->withPivot('comentario','estado');
     }
 
     public function comentariosAll()
     {
-        return $this->belongsToMany('user', 'comentarios', 'id_idea', 'id_user')->withPivot('comentario', 'created_at','id');
+        return $this->belongsToMany('user', 'comentarios', 'id_idea', 'id_user')->withPivot('comentario', 'created_at','id','estado');
     }
 
 }

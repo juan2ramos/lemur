@@ -276,17 +276,19 @@ class IdeasController extends \BaseController
         return Redirect::to('admin/idea');
     }
 
-    function  adminShow($id = false)
+    function  adminShow($id = 'false')
     {
 
-        $categorias = [-1 => "Todas las categorías "] +[0 => "Sin categoría asignada "] + Categorias::all()->lists('nombre', 'id');
+        $categorias = [-1 => "Todas las ides "] +[0 => "Sin categoría asignada "] + Categorias::all()->lists('nombre', 'id');
 
-        if($id == 0){
-            $ideas = Ideas::where('id_categorias', '=', 0)->paginate(20);
+
+        if ($id == 'false' || $id == -1) {
+
+            $ideas = Ideas::paginate(20);
             return View::make('admin/ideas/list', compact('ideas', 'categorias', 'id'));
         }
-        if (!$id || $id == -1) {
-            $ideas = Ideas::paginate(20);
+        if($id == 0){
+            $ideas = Ideas::where('id_categorias', '=', 0)->paginate(20);
             return View::make('admin/ideas/list', compact('ideas', 'categorias', 'id'));
         }
         $ideas = Ideas::where('id_categorias', '=', $id)->paginate(20);
@@ -297,6 +299,7 @@ class IdeasController extends \BaseController
 
     public function comentarios($id)
     {
+
         return Ideas::find($id)->comentarios;
     }
 

@@ -21,7 +21,7 @@
             <ul>
                 <li>
                    {{HTML::decode(HTML::link('facebook',
-                    '<img src="images/facebook.png" alt=""/>')
+                    HTML::image('images/facebook.png','facebook'))
                    )}}
 
                 </li>
@@ -69,7 +69,7 @@
                  <ul>
                      <li>
                          {{HTML::decode(HTML::link('facebook',
-                         '<img src="images/facebook.png" alt=""/>')
+                         HTML::image('images/facebook.png','facebook'))
                          )}}
 
                      </li>

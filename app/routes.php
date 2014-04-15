@@ -95,9 +95,9 @@ Route::get('/', function(){
     return View::make('front.inicio',compact('publicidad','popUpPublicidad'));
 });
 Route::get('preguntas', function(){return View::make('front.preguntas');});
-Route::get('contacto', function(){return View::make('front.contacto');});
+Route::get('contacto', function(){return View::make('front.contacto',['send' => false]);});
 Route::get('servicios', function(){return View::make('front.servicios');});
-Route::get('trabaja-en-lemur', function(){return View::make('front.trabaja-en-lemur');});
+Route::get('trabaja-en-lemur', function(){return View::make('front.trabaja-en-lemur',['send' => false]);});
 Route::get('terminos-y-condiciones', function(){return View::make('front.terminos');});
 Route::get('mensajes', function(){return View::make('front.mensaje',['mensaje' => '']);});
 

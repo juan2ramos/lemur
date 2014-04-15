@@ -13,16 +13,7 @@
         <p>
             ¿Te gustaría pertenecer a nuestro equipo? Envíanos tus datos, estaremos en contacto contigo.
         </p>
-        @if ($errors->any())
-        <div class="alert-danger">
-            <strong>Por favor corrige los siguentes errores:</strong>
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
+
         {{ Form::open(array('url' => 'envioTrabajo','class' => 'contact-form')) }}
             <label>Nombre<span>*</span></label>
             <input type="text" name="nombre">
@@ -34,4 +25,54 @@
         {{ Form::close() }}
     </div>
 </section>
+@stop
+@section('javascript')
+
+@if ($errors->any())
+<script>
+
+    var $popup = $('.popUp-container');
+    $popup.addClass('show');
+
+
+    var template = '';
+    template += '<div id="contend-error">' +  '<h2>Por favor corrige los siguentes errores</h2><ul style="color: #ffffff">';
+
+    @foreach ($errors->all() as $error)
+    template += '<li>' +
+        '{{$error}}' +
+        '</li>';
+    @endforeach
+    template += '</ul></div>' ;
+    $('#popUp-contend').append(template);
+
+    $('.close').on('click', $('body'), function () {
+        $popup.removeClass('show');
+        template = "wew";
+        $('#contend-error').remove();
+    });
+</script>
+
+@endif
+@if ($send == 1)
+<script>
+
+    var $popup = $('.popUp-container');
+    $popup.addClass('show');
+
+
+    var template = '';
+    template += '<div id="contend-error">' +  '<h2>Gracias por escribirnos te responderemos cuanto antes</h2><ul style="color: #ffffff">';
+
+    template += '</ul></div>' ;
+    $('#popUp-contend').append(template);
+
+    $('.close').on('click', $('body'), function () {
+        $popup.removeClass('show');
+        template = "wew";
+        $('#contend-error').remove();
+    });
+</script>
+
+@endif
 @stop
