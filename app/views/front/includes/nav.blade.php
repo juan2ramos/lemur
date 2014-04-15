@@ -9,8 +9,11 @@
                     ?>
                     @foreach($menu as $link)
                     <?php
+                    if(!$sub)
                         $current = (Request::path() == $link->url)?'current':'';
+                    else
                         $current = ($sub == $link->url)?'current':'';
+
 
                     ?>
                     <li class="{{$link->id_html}}-class {{$current}}">
