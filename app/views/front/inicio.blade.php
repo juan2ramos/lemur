@@ -167,7 +167,7 @@
 
     >
 
-    <img src="images/mac2.png " alt="">
+    <img src="images/mac2.gif " alt="">
 </figure>
 <div id="parrafos-mac"
      data-0=" opacity: 0;"
@@ -191,7 +191,7 @@
         data-10500="top: 90px;opacity: 0;"
     >
 
-    <img src="images/mac.png " alt="">
+    <img src="images/mac.gif " alt="">
 </figure>
 <div id="parrafos-mac2"
      data-0=" opacity: 0;"
