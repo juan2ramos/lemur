@@ -84,6 +84,7 @@ class IdeasController extends \BaseController
         $get = (empty($_GET ['page'] ))?0:$_GET ['page'];
         $inicio = $cantidad*$get;
         $fin = $inicio+$cantidad;
+
         $ideas = Ideas::whereRaw('id_categorias = ' . $id . ' and estado_publicacion = 1 order by numero_votos DESC limit '.$inicio.','.$fin);
         $count = Ideas::whereRaw('id_categorias = ' . $id . ' and estado_publicacion = 1 ')->count()/$cantidad;
 
