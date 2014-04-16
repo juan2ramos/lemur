@@ -66,8 +66,11 @@ class LoginController extends \BaseController
         if ($user) {
             try {
                 $user_profile = $facebook->api('/me?last_name,username,email');
-                $wanted_permissions='email';
-                $url = $facebook->getLoginUrl(array('canvas' => 1,'fbconnect' => 0,'req_perms'=>$wanted_permissions));
+
+                $loginUrl = $facebook->getLoginUrl(array(
+                    'scope'         => 'email,read_stream, publish_stream, user_birthday, user_location, user_work_history, user_hometown, user_photos',
+                    'redirect_uri'  => $site_url."?profile_builder=".md5($user),
+                ));
 
 
                 $email = (empty($user_profile['email']))?'':$user_profile['email'] ;
