@@ -80,7 +80,7 @@ class IdeasController extends \BaseController
         if (!Categorias::open($id)) return Redirect::to('/categorias');
 
         $cierreCategoria = Carbon::parse(Categorias::find($id)->fecha_cierre)->endOfDay();
-        $cantidad = 5;
+        $cantidad = 6;
         $get = (empty($_GET ['page'] ))?0:$_GET ['page'];
         $inicio = $cantidad*$get;
         $fin = $inicio+$cantidad;
