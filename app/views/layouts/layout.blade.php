@@ -10,7 +10,7 @@
 <head>
 
     <title>@section('title')
-        Lemur
+        Lemur Studio
         @show
     </title>
 

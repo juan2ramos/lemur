@@ -80,16 +80,21 @@ class IdeasController extends \BaseController
         if (!Categorias::open($id)) return Redirect::to('/categorias');
 
         $cierreCategoria = Carbon::parse(Categorias::find($id)->fecha_cierre)->endOfDay();
+        $cantidad = 5;
+        $get = (empty($_GET ['page'] ))?0:$_GET ['page'];
+        $inicio = $cantidad*$get;
+        $fin = $inicio+$cantidad;
+        $ideas = Ideas::whereRaw('id_categorias = ' . $id . ' and estado_publicacion = 1 order by numero_votos DESC limit '.$inicio.','.$fin);
+        $count = Ideas::whereRaw('id_categorias = ' . $id . ' and estado_publicacion = 1 ')->count()/$cantidad;
 
-        $ideas = Ideas::whereRaw('id_categorias = ' . $id . ' and estado_publicacion = 1 order by numero_votos DESC')->get();
-
+        $ideas = $ideas->get();
         if ($ideas->isEmpty())
             return Redirect::to('/categorias');
         $ideasImage = $this->imagenesForideas($ideas);
         $categoria = Categorias::find($id);
         $crono = true;
 
-        return View::make('front.vota-por-una-idea', compact('categoria','ideasImage', 'crono', 'cierreCategoria'));
+        return View::make('front.vota-por-una-idea', compact('get','id','count','categoria','ideasImage', 'crono', 'cierreCategoria'));
 
     }
 
@@ -202,12 +207,19 @@ class IdeasController extends \BaseController
         $UserIdea['nombre'] = $user['nombre'];
         $video = (empty($idea[0]->url_video)) ? false : $idea[0]->url_video;
         if ($video) {
-            $url = explode("=", $video);
-            $video = (empty($url[1])) ? false : $url[1];
+            if (strchr($video ,"youtube")){
+                $url = explode("=", $video);
+                $video = (empty($url[1])) ? false : $url[1];
+                $gestor = 'youtube';
+            }else{
+                $gestor = 'vimeo';
+            }
+
+
         }
         $crono = true;
         $comentarios = $this->comentarios($id);
-        return View::make('front.detalle-idea', compact('video', 'idea', 'images', 'UserIdea', 'comentarios', 'crono', 'cierreCategoria'));
+        return View::make('front.detalle-idea', compact('gestor','video', 'idea', 'images', 'UserIdea', 'comentarios', 'crono', 'cierreCategoria'));
 
     }
 

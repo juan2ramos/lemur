@@ -47,8 +47,8 @@
         </div>
 
         <div class="input-contend">
-            <span>youtube</span>
-            {{ Form::label('url_video', 'Agrega el vínculo de tu video') }}
+            <span>youtube - vimeo</span>
+            {{ Form::label('url_video', 'Agrega vínculos de video') }}
             {{ Form::text('url_video', null, array('placeholder' => 'http://')) }}
         </div>
         {{ Form::hidden('captchaSum', null,array('id'=> 'captcha')) }}

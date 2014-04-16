@@ -6,6 +6,16 @@
                     if(!empty($pieces[0])){
                         $sub = ($pieces[0] == 'vota-por-una-idea' || $pieces[0] == 'detalle-idea')?'categorias':false;
                     }
+                    if($pieces[0] == 'envioTrabajo'){
+                        $sub = 'trabaja-en-lemur';
+                    }
+                    if($pieces[0] == 'envioContacto'){
+                        $sub = 'contacto';
+                    }
+                    if($pieces[0] == 'registro'){
+                        $sub = '/';
+                    }
+
                     ?>
                     @foreach($menu as $link)
                     <?php

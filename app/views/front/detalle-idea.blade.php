@@ -124,10 +124,18 @@
                     @if($video)
 
                     <li>
+                        @if($gestor == 'youtube')
                         <iframe id="player" width="500" height="315"
                                 src="http://www.youtube.com/embed/{{$video}}?rel=0&amp;enablejsapi=1"></iframe>
                         <br>
+                        @endif
+                        @if($gestor == 'vimeo')
+                        <iframe src="//player.vimeo.com/video/91928597" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
 
+                        </iframe>
+
+                        <br>
+                        @endif
                     </li>
 
                     @endif

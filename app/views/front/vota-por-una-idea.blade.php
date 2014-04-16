@@ -18,8 +18,8 @@
             @foreach($ideasImage as $value)
 
             <?php
-            $path = $value['imagen'] ;
-            $url = 'detalle-idea/'.$value['id']
+            $path = $value['imagen'];
+            $url = 'detalle-idea/' . $value['id']
             ?>
 
             <li>
@@ -34,6 +34,15 @@
 
         </ul>
     </div>
+    <ul id="paginacion">
+
+        <?php if($count>1):for ($i = 0; $i < $count; $i++):
+            if ($get == $i):
+                $print = $i + 1;echo('<li>'.$print.'</li>');
+            else:?>
+            <li> {{HTML::link('vota-por-una-idea/'.$id.'?page='.$i,$i+1)}}</li>
+        <?php endif;endfor;endif; ?>
+    </ul>
 </section>
 @stop
 

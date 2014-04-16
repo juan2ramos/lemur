@@ -652,6 +652,18 @@ vota por una idea
     position: absolute;
 
 }
+#paginacion{
+    width: 100%;
+    text-align: center;
+}
+#paginacion li{
+    display: inline-block;
+
+}
+#paginacion a{
+    color: red;
+
+}
 /*=================================================================
 Contacto
 ===================================================================*/
