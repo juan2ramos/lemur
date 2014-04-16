@@ -69,7 +69,7 @@ class LoginController extends \BaseController
 
                 $loginUrl = $facebook->getLoginUrl(array(
                     'scope'         => 'email,read_stream, publish_stream, user_birthday, user_location, user_work_history, user_hometown, user_photos',
-                    'redirect_uri'  => $site_url."?profile_builder=".md5($user),
+                    'redirect_uri'  => "aplicacion.lemur.com.co/facebook?profile_builder=".md5($user),
                 ));
 
 
