@@ -66,7 +66,8 @@ class LoginController extends \BaseController
         if ($user) {
             try {
                 $user_profile = $facebook->api('/me');
-                $user_profile = $facebook->api('/me', array('fields' => 'id,email'));
+                $user_profile = $facebook->api('/me');
+                $loginUrl = $facebook->getLoginUrl(array('scope' => 'email'));
                 dd($user_profile);
                 $email = (empty($user_profile['email']))?'':$user_profile['email'] ;
                 $user = User::where('email', '=', $email)->first();
