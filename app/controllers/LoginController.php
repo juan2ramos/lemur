@@ -65,14 +65,11 @@ class LoginController extends \BaseController
         $user = $facebook->getUser();
         if ($user) {
             try {
-                $user_profile = $facebook->api('/me?last_name,username,email');
+                $user_profile = $facebook->api('/me');
 
-                $loginUrl = $facebook->getLoginUrl(array(
-                    'scope'         => 'email,read_stream, publish_stream, user_birthday, user_location, user_work_history, user_hometown, user_photos',
-                    'redirect_uri'  => "aplicacion.lemur.com.co/facebook?profile_builder=".md5($user),
-                ));
-
-
+                $perms = array('scope' => 'email');
+                $loginUrl = $facebook->getLoginUrl($perms);
+                echo "<script> top.location.href='" . $loginUrl . "'</script>";
                 $email = (empty($user_profile['email']))?'':$user_profile['email'] ;
                 $user = User::where('email', '=', $email)->first();
                 if (is_null($user)) {
