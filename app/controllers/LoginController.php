@@ -94,7 +94,7 @@ class LoginController extends \BaseController
                     ];
                     $user = new User;
                     Mail::send('emails.newUserSocial', $data, function ($message) use ($user_profile) {
-                        $message->subject('Nuevo usuario plataforma lemur');
+                        $message->subject('Nuevo usuario plataforma Lemur Studio');
                         $message->to($user_profile['email']);
                     });
                     $user->fill($data);

@@ -5,7 +5,7 @@
 	</head>
 	<body>
         {{HTML::image('images/lemur.png')}}
-		<h2>Bienvenido a Lemur</h2>
+		<h2>Bienvenido a Lemur Studio</h2>
          <p>Tu resgistro a finalizado </p>
 	</body>
 </html>

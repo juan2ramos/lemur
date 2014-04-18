@@ -22,7 +22,7 @@ class mails extends \BaseController{
 
         if ($validator->passes()) {
             Mail::send('emails.mensajeContacto', $data, function ($message)  {
-                $message->subject('Contacto lemur plataforma');
+                $message->subject('Contacto Lemur Studio plataforma');
                 $message->to('plataforma@lemurstudio.com.co');
             });
             $send = true;
@@ -50,7 +50,7 @@ class mails extends \BaseController{
 
         if ($validator->passes()) {
             Mail::send('emails.mensajeTrabaja', $data, function ($message)  {
-                $message->subject('Trabaja lemur plataforma');
+                $message->subject('Trabaja Lemur Studio plataforma');
                 $message->to('plataforma@lemurstudio.com.co');
             });
             $send = true;

@@ -352,7 +352,7 @@ class IdeasController extends \BaseController
             $user = User::find($idea['id_users']);
             Mail::send('emails.ideaAprobada', $data, function ($message) use ($user){
 
-                $message->subject('Idea Aprobada');
+                $message->subject('Idea Aprobada Lemur Studio');
                 $message->to($user['email']);
             });
         }
