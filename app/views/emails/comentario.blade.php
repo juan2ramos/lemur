@@ -5,7 +5,9 @@
 	</head>
 	<body>
     {{HTML::image('images/lemur.png')}}
-		<h2>Bienvenido a Lemur</h2>
-         <p>Para finalizar tu registro da click {{HTML::link('finalizarRegistro/'.$key)}} e ingresa. </p>
+		<h2>Nuevo comentario</h2>
+         <p>Link idea  {{HTML::link('admin/ideas/'.$id_idea)}}  </p>
+        <h3>Comentario :</h3>
+        <p>{{$comentario}}</p>
 	</body>
 </html>

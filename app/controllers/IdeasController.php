@@ -82,11 +82,12 @@ class IdeasController extends \BaseController
         $cierreCategoria = Carbon::parse(Categorias::find($id)->fecha_cierre)->endOfDay();
         $cantidad = 6;
         $get = (empty($_GET ['page'] ))?0:$_GET ['page'];
-        $inicio = $cantidad*$get;
-        $fin = $inicio+$cantidad;
 
-        $ideas = Ideas::whereRaw('id_categorias = ' . $id . ' and estado_publicacion = 1 order by numero_votos DESC limit '.$inicio.','.$fin);
-        $count = Ideas::whereRaw('id_categorias = ' . $id . ' and estado_publicacion = 1 ')->count()/$cantidad;
+        $inicio = $cantidad*$get;
+
+
+        $ideas = Ideas::whereRaw('id_categorias = ' . $id . ' and estado_publicacion = 1 order by numero_votos DESC limit '.$inicio.','.$cantidad);
+        $count = ceil(Ideas::whereRaw('id_categorias = ' . $id . ' and estado_publicacion = 1 ')->count()/$cantidad);
 
         $ideas = $ideas->get();
         if ($ideas->isEmpty())

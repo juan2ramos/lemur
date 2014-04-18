@@ -34,15 +34,23 @@
 
         </ul>
     </div>
-    <ul id="paginacion">
+    <div id="paginacion">
+        <?php $prev = ($get == 0)?'Anterior':HTML::link('vota-por-una-idea/'.$id.'?page='.($get-1),'Anterior');?>
+        <div class="prev">{{$prev}}</div>
+        <ul>
 
-        <?php if($count>1):for ($i = 0; $i < $count; $i++):
-            if ($get == $i):
-                $print = $i + 1;echo('<li>'.$print.'</li>');
-            else:?>
-            <li> {{HTML::link('vota-por-una-idea/'.$id.'?page='.$i,$i+1)}}</li>
-        <?php endif;endfor;endif; ?>
-    </ul>
+            <?php if ($count > 1):for ($i = 0; $i < $count; $i++):
+                if ($get == $i):
+                    $print = $i + 1;
+                    echo('<li class="inactive">' . $print . '</li>');
+                else:?>
+                    <li> {{HTML::link('vota-por-una-idea/'.$id.'?page='.$i,$i+1)}}</li>
+                <?php endif;endfor;endif; ?>
+
+        </ul>
+        <?php $next = ($get+1 == $count)?'Siguiente':HTML::link('vota-por-una-idea/'.$id.'?page='.($get+1),'Siguiente');?>
+        <div class="next">{{$next}}</div>
+    </div>
 </section>
 @stop
 

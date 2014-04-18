@@ -19,6 +19,11 @@ class ComentariosController extends  \BaseController{
         if($comemtario->isValid($data)){
             $comemtario->fill($data);
             $comemtario->save();
+
+            Mail::send('emails.comentario', $data, function ($message) use ($user_profile) {
+                $message->subject('Nuevo Comentario plataforma lemur');
+                $message->to('plataforma@lemurstudio.com.co');
+            });
             return Response::json(['success' => 1]);
         }else{
             return Response::json($comemtario->getErrors());

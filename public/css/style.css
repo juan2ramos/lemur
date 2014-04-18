@@ -653,16 +653,52 @@ vota por una idea
 
 }
 #paginacion{
-    width: 100%;
+    color: #971F19;
     text-align: center;
+    margin: 10px 0 40px
+
 }
-#paginacion li{
+#paginacion li a, .inactive{
+    display: block;
+    background:#E47F1C;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    line-height: 30px;
+
+    margin-left: 3px;
+}
+#paginacion li a:hover{
+    background: #971F19;
+}
+#paginacion .inactive{
+    background:#971F19;
+}
+
+#paginacion ul{
+    width: 400px;
+}
+#paginacion .next,#paginacion .prev,#paginacion li,#paginacion ul{
     display: inline-block;
 
 }
+#paginacion .next{
+    width: 90px;
+    text-align: right;
+}
+#paginacion .prev{
+    width: 75px;
+}
 #paginacion a{
-    color: red;
+    color: #fff;
+    text-decoration: none;
 
+}
+#paginacion .next a:hover, #paginacion .prev a:hover{
+    color : #971F19;
+}
+#paginacion .next a, #paginacion .prev a{
+    color : #E47F1C;
 }
 /*=================================================================
 Contacto
@@ -1153,7 +1189,7 @@ h3{
 	text-align: center;
 	width: 165px;
 }
-#slide{
+#slide,#empty{
 	background: url("../images/more-back.png") center center no-repeat;
 	background-color: rgba( 0, 0, 0, 0.7);
 	cursor: pointer;
@@ -1162,6 +1198,9 @@ h3{
 	overflow: hidden;
 	position: relative;
 	width: 400px;
+}
+#empty{
+    background: url("../images/ideaback.jpg") center center no-repeat;;
 }
 #slide .flex-next,#slide .flex-prev{
 	display: none;
@@ -2020,3 +2059,12 @@ iframe{
         opacity:0.1}
 
 }
+@media all and (max-width:780px) {
+
+    nav{
+        display: none;
+    }
+
+
+}
+

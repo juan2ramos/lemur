@@ -29,9 +29,15 @@
         <p>
             {{$idea[0]['descripcion']}}
         </p>
-
-        <div id="slide">
+        <?php $slide = (count($images)>0)?'slide':'empty' ;?>
+        <div id="{{$slide}}">
             <ul class="slides">
+                @if($video)
+                <li>
+                    {{HTML::image('images/play.jpg')}}
+                </li>
+
+                @endif
                 @foreach($images as $value)
 
                 <li>
@@ -41,12 +47,7 @@
                    </span>
                 </li>
                 @endforeach
-                @if($video)
-                <li>
-                    {{HTML::image('images/play.jpg')}}
-                </li>
 
-                @endif
             </ul>
         </div>
 
