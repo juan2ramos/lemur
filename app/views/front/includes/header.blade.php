@@ -7,6 +7,48 @@
 
     {{ HTML::decode(HTML::link('/', HTML::image('images/logo.png','logo'))) }}
 </figure>
+
+<ul class="menu-responsive">
+    <?php
+    $menu = Menu::where('activo', '=', '1 order by id DESC')->get();
+    $pieces = explode('/', Request::path());
+    $sub = '';
+    if(!empty($pieces[0])){
+        $sub = ($pieces[0] == 'vota-por-una-idea' || $pieces[0] == 'detalle-idea')?'categorias':false;
+    }
+    if($pieces[0] == 'envioTrabajo'){
+        $sub = 'trabaja-en-lemur';
+    }
+    if($pieces[0] == 'envioContacto'){
+        $sub = 'contacto';
+    }
+    if($pieces[0] == 'registro'){
+        $sub = '/';
+    }
+
+    ?>
+    @foreach($menu as $link)
+    <?php
+    if(!$sub)
+        $current = (Request::path() == $link->url)?'current':'';
+    else
+        $current = ($sub == $link->url)?'current':'';
+
+
+    ?>
+    <li class="">
+
+        {{ HTML::decode(HTML::link($link->url, '<p>' .$link->texto. '</p>')) }}
+
+    </li>
+    @endforeach
+
+</ul>
+
+
+<button class="button-responsive">
+    <span class="nav-bar"></span>
+</button>
 <div id="contend-form">
     <a href="#" id="img-registrar" class="popup-link {{$classHidden}}">Regístrate</a>
     <a href="#" id="img-ingresar" class="popup-link {{$classHidden}}">Ingresa</a>
@@ -41,6 +83,7 @@
             </dl>
             @endif
         </div>
+
         <div id="user-info" class ='{{ $classShow }}' >
             <p>@if(Auth::user()) {{Auth::user()->nombre}} @endif </p>
             {{HTML::decode(HTML::link('perfil','<span id="engranaje"></span>'))}}

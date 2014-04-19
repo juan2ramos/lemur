@@ -2059,12 +2059,109 @@ iframe{
         opacity:0.1}
 
 }
-@media all and (max-width:780px) {
 
+#contend-index-mobile{
+    display: none;
+}
+@media all and (max-width:780px) {
+    #contend-index-mobile{
+        display: block;
+    }
+    #contend-index-mobile img{
+        width: 100%;
+    }
     nav{
         display: none;
     }
+    .wrapper{
+        left:50%;
+        margin-left:-339px;
+        padding: 0 10px;
+        position: fixed;
+        width: 658px;
+    }
+    #contend-form{
+        width: 667px;
+    }
+    #network,#contend-index,#flecha-inicio{
+        display: none;
+    }
+    #contend{
+        margin: 0;
+    }
+    body{
+        height: auto !important;
+    }
+    .nav-bar{
+        margin: 40px 10px;
+        padding: 0;
+    }
+    .button-responsive:focus{
+        outline:0;
+    }
+    .nav-bar, .nav-bar:before, .nav-bar:after{
+        background: #fff;
+        display: block;
+        height: 3px;
+        position: relative;
+        width: 30px;
+    }
 
+    .nav-bar:before{
+        content: '';
+        top:-8px;
+    }
+    .nav-bar:after{
+        content: '';
+        top: 5px;
+    }
+    .button-responsive{
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: none;
+        float: right;
+        display: block !important;
 
+    }
+    ul.menu-responsive{
+        background: #1f1f1f;
+        display: block !important;
+        text-align: left;
+        max-height: 0;
+        overflow: hidden;
+        position: absolute;
+        transition: max-height .4s;
+        width: 658px;
+        z-index: 1000;
+
+    }
+    .menu-responsive li:first-child{
+        border-top: 1px solid #383838;
+    }
+    .menu-responsive li{
+        border-bottom: 1px solid #383838;
+        width: 100%;
+    }
+    .menu-responsive li a{
+        color: #f0f0f0;
+        display: block;
+        padding: 1px 30px;
+        text-decoration: none;
+        width: 100%;
+    }
+    .menu-responsive li a:hover{
+        color: #E47F1C;
+    }
+    ul.open-menu{
+        max-height: 410px;
+        transition: max-height .4s;
+    }
 }
 
+
+
+ul.menu-responsive,.button-responsive{
+    display: none;
+
+}

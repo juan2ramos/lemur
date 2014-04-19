@@ -22,7 +22,9 @@
         <p><a id="down" class="arrows " href="#"></a></p>
     </div>
 </div>
-
+<section id="contend-index-mobile">
+    {{HTML::image('images/imagen_cel.png','')}}
+</section>
 <section id='contend-index' class="hidden">
 
 <section class="slide"

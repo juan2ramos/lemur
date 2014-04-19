@@ -1,4 +1,11 @@
 $(function () {
+
+    $('.button-responsive ').on("click", function () {
+
+        $('.menu-responsive').toggleClass('open-menu');
+
+    });
+
     $('#facebookG').addClass('show');
 
     $('#closeBack').click(function () {
