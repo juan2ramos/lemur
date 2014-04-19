@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc25e6be-4282-40d6-af5e-352fc8b19c78" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ComentariosController.php" afterPath="$PROJECT_DIR$/app/controllers/ComentariosController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/IdeasController.php" afterPath="$PROJECT_DIR$/app/controllers/IdeasController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/LoginController.php" afterPath="$PROJECT_DIR$/app/controllers/LoginController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/emails/confirmarUser.blade.php" afterPath="$PROJECT_DIR$/app/views/emails/confirmarUser.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/mails.php" afterPath="$PROJECT_DIR$/app/controllers/mails.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/emails/newUser.blade.php" afterPath="$PROJECT_DIR$/app/views/emails/newUser.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/emails/newUserSocial.blade.php" afterPath="$PROJECT_DIR$/app/views/emails/newUserSocial.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="lemur.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +32,17 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="LoginController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="102" column="53" selection-start="3402" selection-end="3402" vertical-scroll-proportion="0.37272727" vertical-offset="1590" max-vertical-offset="3006">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -96,11 +101,11 @@
         <option value="$PROJECT_DIR$/app/views/emails/comentario.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/ComentariosController.php" />
         <option value="$PROJECT_DIR$/app/controllers/IdeasController.php" />
-        <option value="$PROJECT_DIR$/app/controllers/LoginController.php" />
         <option value="$PROJECT_DIR$/app/controllers/mails.php" />
         <option value="$PROJECT_DIR$/app/views/emails/newUserSocial.blade.php" />
         <option value="$PROJECT_DIR$/app/views/emails/newUser.blade.php" />
         <option value="$PROJECT_DIR$/app/views/emails/confirmarUser.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/LoginController.php" />
       </list>
     </option>
   </component>
@@ -542,7 +547,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32784638" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2537723" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -550,7 +555,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32784638" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32909605" sideWeight="0.5" order="12" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960254" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19554849" sideWeight="0.49848485" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19554849" sideWeight="0.49848485" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2718601" sideWeight="0.50151515" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -834,13 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="29" selection-start="4993" selection-end="4993" vertical-scroll-proportion="0.33254156" vertical-offset="2470" max-vertical-offset="2952">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/IdeasController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="355" column="37" selection-start="11048" selection-end="11048" vertical-scroll-proportion="0.33254156" vertical-offset="6250" max-vertical-offset="6840">
@@ -907,6 +905,13 @@
     <entry file="file://$PROJECT_DIR$/app/views/emails/comentario.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="7" selection-start="300" selection-end="300" vertical-scroll-proportion="0.32095096" vertical-offset="0" max-vertical-offset="673">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="53" selection-start="3402" selection-end="3402" vertical-scroll-proportion="0.37272727" vertical-offset="1590" max-vertical-offset="3006">
           <folding />
         </state>
       </provider>
