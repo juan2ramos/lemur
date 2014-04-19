@@ -61,33 +61,33 @@ class LoginController extends \BaseController
         $facebook = new Facebook([
             'appId' => '706814422713940',
             'secret' => '63c665eb7f5a117fede882be74fd1cdf',
+            'cookie' => true,
         ]);
-        $user = $facebook->getUser();
+        $user       = $facebook->getUser();
+
         if ($user) {
+
             try {
                 $user_profile = $facebook->api('/me');
 
-                $perms = array('scope' => 'email');
-                $loginUrl = $facebook->getLoginUrl($perms);
-                echo "<script> top.location.href='" . $loginUrl . "'</script>";
-                $email = (empty($user_profile['email']))?'':$user_profile['email'] ;
+
+                $email = (empty($user_profile['email'])) ? '' : $user_profile['email'];
                 $user = User::where('email', '=', $email)->first();
                 if (is_null($user)) {
-                    dd($user_profile);
-                    $url = 'http://graph.facebook.com/'. $user_profile['username'].'/picture?type=large';
+                    $url = 'http://graph.facebook.com/' . $user_profile['username'] . '/picture?type=large';
                     $prefijo = sha1(time());
-                    $name = $prefijo.$user_profile['username'].'.jpg';
-                    $img =  "upload/".$name;
+                    $name = $prefijo . $user_profile['username'] . '.jpg';
+                    $img = "upload/" . $name;
 
                     file_put_contents($img, file_get_contents($url));
 
 
                     $data = [
-                        'email'      => $user_profile['email'],
-                        'nombre'     => $user_profile['first_name'],
-                        'apellidos'  => $user_profile['last_name'],
+                        'email' => $user_profile['email'],
+                        'nombre' => $user_profile['first_name'],
+                        'apellidos' => $user_profile['last_name'],
                         'activo' => 1,
-                        'imagen'     => $name
+                        'imagen' => $name
                     ];
                     $user = new User;
                     Mail::send('emails.newUserSocial', $data, function ($message) use ($user_profile) {
@@ -97,6 +97,11 @@ class LoginController extends \BaseController
                     $user->fill($data);
                     // Guardamos el usuario
                     $user->save();
+                } else {
+                    $loginUrl = $facebook->getLoginUrl(
+                        array(
+                            'scope'         => 'email,publish_stream,user_birthday,user_location,user_work_history,user_about_me,user_hometown'
+                        ));
                 }
 
                 Auth::login($user);
@@ -111,7 +116,9 @@ class LoginController extends \BaseController
             $logoutUrl = $facebook->getLogoutUrl(array('next' => 'https://www.myapp.com/after_logout'));
         } else {
             $statusUrl = $facebook->getLoginStatusUrl();
-            $loginUrl = $facebook->getLoginUrl();
+            $loginUrl = $facebook->getLoginUrl(            array(
+                'scope'         => 'email,publish_stream,user_birthday,user_location,user_work_history,user_about_me,user_hometown'
+            ));
             return Redirect::to($loginUrl);
         }
 
@@ -121,7 +128,6 @@ class LoginController extends \BaseController
     }
 
 
-
     public function Google()
     {
         if (!Auth::check()) {
@@ -129,15 +135,15 @@ class LoginController extends \BaseController
             if (is_null($user)) {
                 $url = Input::get('image');
                 $prefijo = sha1(time());
-                $name = $prefijo.Input::get('username').'.jpg';
-                $img =  "upload/".$name;
+                $name = $prefijo . Input::get('username') . '.jpg';
+                $img = "upload/" . $name;
 
                 file_put_contents($img, file_get_contents($url));
                 $data = [
                     'email' => Input::get('email'),
                     'nombre' => Input::get('username'),
                     'habilitado' => 1,
-                    'imagen'     => $name
+                    'imagen' => $name
                 ];
                 $user = new User;
                 Mail::send('emails.newUserSocial', $data, function ($message) use ($data) {
