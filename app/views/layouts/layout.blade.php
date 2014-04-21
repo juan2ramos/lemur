@@ -13,7 +13,6 @@
         Lemur Studio
         @show
     </title>
-    <meta name="viewport" content="width=device-width"/>
     <!-- Meta -->
     <meta charset="UTF-8"/>
     <meta name="author" content="juan2ramos"/>
