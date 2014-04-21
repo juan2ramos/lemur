@@ -169,7 +169,17 @@
 
     >
 
-    <img src="images/mac2.gif " alt="">
+    <img src="images/carga00.png " alt="">
+</figure>
+<figure id="mac2gif"
+        data-6500="top: 1400px;"
+        data-7000="top: 147px;"
+        data-8000="top: 147px;opacity: 1;"
+        data-8500="top: 107px;opacity: 0;"
+    >
+
+    <img src="images/carga02.gif " alt="">
+
 </figure>
 <div id="parrafos-mac"
      data-0=" opacity: 0;"
@@ -193,7 +203,19 @@
         data-10500="top: 90px;opacity: 0;"
     >
 
-    <img src="images/mac.gif " alt="">
+    <img src="images/carga00.png " alt="">
+
+</figure>
+<figure id="mac2gif"
+        data-8000="top: 147px;opacity: 0;"
+        data-8300="top: 147px;opacity: 1;"
+
+        data-10000="top: 147px;opacity: 1;"
+        data-10500="top: 107px;opacity: 0;"
+    >
+
+    <img src="images/carga01.gif " alt="">
+
 </figure>
 <div id="parrafos-mac2"
      data-0=" opacity: 0;"

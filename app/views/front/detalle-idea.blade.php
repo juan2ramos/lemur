@@ -29,7 +29,7 @@
         <p>
             {{$idea[0]['descripcion']}}
         </p>
-        <?php $slide = (count($images)>0 && !$video)?'slide':'empty' ;?>
+        <?php $slide = (count($images)>0 || $video)?'slide':'empty' ;?>
         <div id="{{$slide}}">
             <ul class="slides">
                 @if($video)

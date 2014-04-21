@@ -1492,8 +1492,15 @@ Scrolling
 }
 #mac2{
 	position: absolute;
-	right: 0;
-	top: 130px;
+	right: 0px;
+	top: 140px;
+
+}
+
+#mac2gif{
+    position: absolute;
+    right: 62px;
+    top: 140px;
 
 }
 #parrafos-mac2{
