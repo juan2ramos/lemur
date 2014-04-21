@@ -70,7 +70,7 @@ class LoginController extends \BaseController
             try {
                 $user_profile = $facebook->api('/me');
 
-
+                dd($user_profile);
                 $email = (empty($user_profile['email'])) ? '' : $user_profile['email'];
                 $user = User::where('email', '=', $email)->first();
                 if (is_null($user)) {
