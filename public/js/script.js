@@ -10,7 +10,18 @@ $(function () {
 
     $('#closeBack').click(function () {
         $('.popUp-container-slide').removeClass('opacity');
-      player.stopVideo()
+        var youtube = jQuery('iframe[src*="youtube"]');
+        var vimeo = jQuery('iframe[src*="vimeo"]');
+        if ( youtube.length > 0 || vimeo.length > 0 ){
+
+            var src = youtube.attr('src');
+            youtube.attr('src', '');
+            youtube.attr('src', src);
+            var srcvimeo = vimeo.attr('src');
+            vimeo.attr('src', '');
+            vimeo.attr('src', srcvimeo);
+        }
+
 
     });
 
@@ -115,8 +126,20 @@ $('#productos').on('click',function(e){
     $('#slide img').click(function () {
         $('.popUp-container-slide').addClass('opacity');
         $('#close').click(function () {
-            $('.popUp-container-slide').removeClass('opacity');
 
+            var youtube = jQuery('iframe[src*="youtube"]');
+            var vimeo = jQuery('iframe[src*="vimeo"]');
+            if ( youtube.length > 0 || vimeo.length > 0 ){
+
+                var src = youtube.attr('src');
+                youtube.attr('src', '');
+                youtube.attr('src', src);
+                var srcvimeo = vimeo.attr('src');
+                vimeo.attr('src', '');
+                vimeo.attr('src', srcvimeo);
+            }
+
+            $('.popUp-container-slide').removeClass('opacity');
         });
 
     });
