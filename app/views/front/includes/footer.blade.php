@@ -13,3 +13,14 @@
                         )
                     )
                 }}
+                <p> y </p> 
+                {{
+                    HTML::decode(
+                        HTML::link('http://mouseinteractivo.com',
+                            HTML::image(
+                                'images/mouseint.png','Mouse Intercativo'
+                            ),
+                            ['target' => '_blank','title' => 'Diseño Web Bogotá']
+                        )
+                    )
+                }}
