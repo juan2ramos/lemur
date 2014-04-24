@@ -5,24 +5,7 @@
 
 */
 
-body{
 
-	background: #971F19 url("../images/background.jpg") no-repeat center top fixed ;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover
-;
-	font-family: 'Lato', sans-serif;
-	font-size: 15px;
-}
-#body{
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    background: url("../images/pattern_3.png") repeat;
-    z-index: -1000;
-}
 body,h2,h3,h4,p{
 	font-weight: 300
 }
