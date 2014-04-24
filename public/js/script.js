@@ -141,7 +141,11 @@ $(function () {
     });
 
 
+   skrollr.init({
+        render: function (data) {
 
+        }
+    });
     $(document).on('keyup', function (e) {
 
         var scroll = $(window).scrollTop(),
