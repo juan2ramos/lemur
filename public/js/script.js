@@ -100,43 +100,54 @@ $(function () {
     });
 
 
-    
+    if ($('.slider').length > 0) {
+        $('.slider').flexslider({
+            animation: "slide",
+            slideshow: true,
+            prevText: "<",
+            nextText: ">",
+            smoothHeight: true
+
+
+        });
+    }
+    $('#slide').flexslider({
+        animation: "slide",
+        slideshow: true,
+        prevText: "<",
+        nextText: ">"
+
+
+    });
+    $('#slide img').click(function () {
+        $('.popUp-container-slide').addClass('opacity');
+        $('#close').click(function () {
+
+            var youtube = jQuery('iframe[src*="youtube"]');
+            var vimeo = jQuery('iframe[src*="vimeo"]');
+            if (youtube.length > 0 || vimeo.length > 0) {
+
+                var src = youtube.attr('src');
+                youtube.attr('src', '');
+                youtube.attr('src', src);
+                var srcvimeo = vimeo.attr('src');
+                vimeo.attr('src', '');
+                vimeo.attr('src', srcvimeo);
+            }
+
+            $('.popUp-container-slide').removeClass('opacity');
+        });
+
+    });
+
+
     var s = skrollr.init({
         render: function (data) {
             //Debugging - Log the current scroll position.
             //console.log(data.curTop);
         }
     });
-    $(document).on('keyup', function (e) {
-
-        var scroll = $(window).scrollTop(),
-            positionScroll = [0, 1480, 2060 , 3960, 5390, 8000, 9120, 11440, 13810, 15230, 16000, 17000, 18100, 21000, 22900];
-        for (var i = 0; i < positionScroll.length; i++) {
-
-            if (scroll < positionScroll[i]) {
-
-                if (e.which == 38) {
-                    $("body").animate({scrollTop: positionScroll[i - 1]}, 1000);
-
-                } else if (e.which == 40) {
-                    $("body").animate({scrollTop: positionScroll[i]}, 1000);
-                }
-                return false
-            } else if (scroll == positionScroll[i]) {
-                if (e.which == 38) {
-                    $("body").animate({scrollTop: positionScroll[i - 1]}, 1000);
-                } else if (e.which == 40) {
-                    $("body").animate({scrollTop: positionScroll[i + 1]}, 1000);
-                }
-                return false
-            }
-            ;
-
-        }
-        ;
-
-    });
-
+    
     $('.arrows').on('click', function (e) {
         e.preventDefault();
         var action = $(this).attr("id");
