@@ -1,5 +1,8 @@
 $(function () {
 
+
+   else
+      document.write ("Grande")
     $('.button-responsive ').on("click", function () {
 
         $('.menu-responsive').toggleClass('open-menu');
