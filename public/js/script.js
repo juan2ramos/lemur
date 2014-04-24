@@ -100,7 +100,74 @@ $(function () {
     });
 
 
-   
+    
+    var s = skrollr.init({
+        render: function (data) {
+            //Debugging - Log the current scroll position.
+            //console.log(data.curTop);
+        }
+    });
+    $(document).on('keyup', function (e) {
+
+        var scroll = $(window).scrollTop(),
+            positionScroll = [0, 1480, 2060 , 3960, 5390, 8000, 9120, 11440, 13810, 15230, 16000, 17000, 18100, 21000, 22900];
+        for (var i = 0; i < positionScroll.length; i++) {
+
+            if (scroll < positionScroll[i]) {
+
+                if (e.which == 38) {
+                    $("body").animate({scrollTop: positionScroll[i - 1]}, 1000);
+
+                } else if (e.which == 40) {
+                    $("body").animate({scrollTop: positionScroll[i]}, 1000);
+                }
+                return false
+            } else if (scroll == positionScroll[i]) {
+                if (e.which == 38) {
+                    $("body").animate({scrollTop: positionScroll[i - 1]}, 1000);
+                } else if (e.which == 40) {
+                    $("body").animate({scrollTop: positionScroll[i + 1]}, 1000);
+                }
+                return false
+            }
+            ;
+
+        }
+        ;
+
+    });
+
+    $('.arrows').on('click', function (e) {
+        e.preventDefault();
+        var action = $(this).attr("id");
+        var scroll = $(window).scrollTop(),
+            positionScroll = [0, 1480, 2060 , 3960, 5390, 8000, 9120, 11440, 13810, 15230, 16000, 17000, 18100, 21000, 22900];
+
+        for (var i = 0; i < positionScroll.length; i++) {
+
+            if (scroll < positionScroll[i]) {
+
+                if (action == 'up') {
+                    $("body").animate({scrollTop: positionScroll[i - 1]}, 1000);
+
+                } else {
+                    $("body").animate({scrollTop: positionScroll[i]}, 1000);
+                }
+                return false
+            } else if (scroll == positionScroll[i]) {
+                if (action == 'up') {
+                    $("body").animate({scrollTop: positionScroll[i - 1]}, 1000);
+                } else {
+                    $("body").animate({scrollTop: positionScroll[i + 1]}, 1000);
+                }
+                return false
+            }
+            ;
+
+        }
+        ;
+
+    });
 
     var num1 = Math.floor((Math.random() * 100) + 1),
         num2 = Math.floor((Math.random() * 100) + 1),
