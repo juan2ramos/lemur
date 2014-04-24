@@ -41,7 +41,7 @@ ul{
 	left:50%;
     margin-left:-480px;
     padding: 0 10px;
-    position: fixed;
+    position: relative;
 	width: 960px;
 }
 /*=================================================================
