@@ -15,7 +15,7 @@
     </title>
     <!-- Meta -->
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=300, initial-scale=.5">
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
     <meta name="author" content="juan2ramos"/>
     <meta name="description" content="Inicio"/>
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
