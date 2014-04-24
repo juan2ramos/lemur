@@ -7,7 +7,7 @@
 
 body{
 
-	background: #971F19 url("../images/background.jpg") no-repeat center top fixed ;
+	background: #971F19 url("../images/background.jpg") no-repeat center top relative ;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
@@ -17,7 +17,7 @@ body{
 	font-size: 15px;
 }
 #body{
-    position: fixed;
+    position: relative;
     height: 100%;
     width: 100%;
     background: url("../images/pattern_3.png") repeat;
@@ -41,7 +41,7 @@ ul{
 	left:50%;
     margin-left:-480px;
     padding: 0 10px;
-    position: fixed;
+    position: relative;
 	width: 960px;
 }
 /*=================================================================
@@ -357,7 +357,7 @@ footer{
 	left:50%;
     margin-left:-480px;
     padding: 3px 10px;
-    position: fixed;
+    position: relative;
 	width: 960px;
 }
 footer a{
@@ -959,7 +959,7 @@ popUp
 	height: auto;
 	left: 50%;
 	margin: -145px -330px;
-	position: fixed;
+	position: relative;
 	top: 50%;
 	width: 660px;
 }
@@ -988,7 +988,7 @@ popUp
 	left: 0;
 	min-height: 100%;
 	min-width: 100%;
-	position: fixed;
+	position: relative;
 	top: 0;
 	z-index: 1000;
 }
@@ -1367,7 +1367,7 @@ Slider
 	left: 0;
 	min-height: 100%;
 	min-width: 100%;
-	position: fixed;
+	position: relative;
 	top: 0;
 	z-index: -1000
 }	
@@ -1378,7 +1378,7 @@ Scrolling
 	background: none;
 	height: 100%;
 	margin: 0;
-	position: fixed;
+	position: relative;
 	width: 100%;
 } 
 .slide, .slide1,.slide3,.slide3,.slide4{
@@ -1742,7 +1742,7 @@ Scrolling
 #arrows-slide{
 	left: 50%;
 	margin-left: 400px;
-	position: fixed;
+	position: relative;
 	top: 320px;
 }
 #up{
@@ -1812,7 +1812,7 @@ loading
 #facebookG{
     display: none;
     left: 50%;
-    position: fixed;
+    position: relative;
     top: 50%;
     width:60px;
     z-index: 10000;
@@ -1893,7 +1893,7 @@ loading
     left: 50%;
     margin: -145px -330px;
     padding: 35px;
-    position: fixed;
+    position: relative;
     top: 50%;
     width: 660px;
 }
@@ -1987,7 +1987,7 @@ iframe{
 #flecha-inicio{
     background: url("../images/flecha.png") no-repeat 0 -64px;
     right: 508px;
-    position: fixed;
+    position: relative;
     z-index: 10000;
     cursor: pointer;
     -webkit-transform: rotate(180deg);
@@ -2084,7 +2084,7 @@ iframe{
         left:50%;
         margin-left:-339px;
         padding: 0 10px;
-        position: fixed;
+        position: relative;
         width: 658px;
     }
     #contend-form{
