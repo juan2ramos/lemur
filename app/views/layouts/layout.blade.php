@@ -105,6 +105,7 @@
 <?php echo HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') ?>
 <?php echo HTML::script('js/jquery.flexslider-min.js') ?>
 <?php echo HTML::script('js/skrollr.min.js') ?>
+<?php echo HTML::script('js/script.js') ?>
 <?php echo HTML::script('js/jquery.mCustomScrollbar.concat.min.js') ?>
 @yield('javascript')
 @if (!Auth::check())
