@@ -588,7 +588,7 @@ vota por una idea
 	z-index: 1000;
 }
 .back a{
-	background: rgba(0,0,0,0.5);
+	background: rgba(0,0,0,0.8);
 	margin-top:  10px;
 	color: #fff;
 	display: block;
@@ -1362,7 +1362,7 @@ Slider
 	left: 555px;
 }
 .popUp-container-slide{
-	background: rgba(0,0,0,.5);
+	background: rgba(0,0,0,.8);
 	opacity: 0;
 	left: 0;
 	min-height: 100%;
