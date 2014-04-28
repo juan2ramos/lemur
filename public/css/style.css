@@ -38,12 +38,11 @@ ul{
 	padding: 0;
 }
 .wrapper{
-/*left:50%;
+left:50%;
 margin-left:-480px;
 padding: 0 10px;
-position: fixed;*/
-width: 960px;
-    margin: 0 auto;
+position: fixed;
+
 }
 /*=================================================================
 header

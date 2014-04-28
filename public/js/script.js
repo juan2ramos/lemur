@@ -147,7 +147,16 @@ $(function () {
             render: function (data) {
 
             }
-        });alert('jajaj');
+        });
+    }else{
+        $(".wrapper").css("width","960");
+        $(".wrapper").css("margin","auto");
+        $(".wrapper").css("position","fixed");
+        /*left:50%;
+         margin-left:-480px;
+         padding: 0 10px;
+         position: fixed;*/
+
     }
 
     $(document).on('keyup', function (e) {
