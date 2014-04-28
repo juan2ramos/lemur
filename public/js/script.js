@@ -140,7 +140,7 @@ $(function () {
 
     });
 
-    if ((screen.width>=500) )
+    if ((screen.width>=500) ){
         $(".wrapper").css("left","50%");
          $(".wrapper").css("margin-left","480");
         $(".wrapper").css("padding","0 10px");
@@ -156,7 +156,7 @@ $(function () {
     }else{
         $(".wrapper").css("width","960");
         $(".wrapper").css("margin","auto");
-        $(".wrapper").css("position","relative");
+        $(".wrapper").css("position","static");
         /*left:50%;
          margin-left:-480px;
          padding: 0 10px;
