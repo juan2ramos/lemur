@@ -157,9 +157,9 @@ $(function () {
         $(".wrapper").css("width","960");
         $(".wrapper").css("margin","auto");
         $(".wrapper").css("position","static");
-        $("body").css("background","none");
-        $("contend-index-mobile").css("display","block");
-        $("contend-index").css("display","none");
+        $("body").css("background","#971F19");
+        $(".contend-index-mobile").css("display","block");
+        $(".contend-index").css("display","none");
         /*left:50%;
          margin-left:-480px;
          padding: 0 10px;
