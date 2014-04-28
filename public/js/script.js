@@ -140,7 +140,15 @@ $(function () {
 
     });
 
+    if ((screen.width>=500) )
+    {
 
+        skrollr.init({
+            render: function (data) {
+
+            }
+        });alert('jajaj');
+    }
 
     $(document).on('keyup', function (e) {
 
