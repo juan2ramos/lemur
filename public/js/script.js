@@ -155,13 +155,14 @@ $(function () {
         });
     }else{
         $(".wrapper").css("width","960");
-        $(".wrapper").css("margin","auto");
+        $(".wrapper").css("margin","-290px auto");
         $(".wrapper").css("position","static");
         $("body").css("background","#971F19");
         $("body").css("height","auto !important");
-      
+
         $("#contend-index-mobile").css("display","block");
         $("#contend-index").css("display","none");
+        $("#arrows-slide").css("display","none");
         /*left:50%;
          margin-left:-480px;
          padding: 0 10px;
