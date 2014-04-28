@@ -158,8 +158,10 @@ $(function () {
         $(".wrapper").css("margin","auto");
         $(".wrapper").css("position","static");
         $("body").css("background","#971F19");
-        $(".contend-index-mobile").css("display","block");
-        $(".contend-index").css("display","none");
+        $("body").css("height","auto !important");
+      
+        $("#contend-index-mobile").css("display","block");
+        $("#contend-index").css("display","none");
         /*left:50%;
          margin-left:-480px;
          padding: 0 10px;
