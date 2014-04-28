@@ -155,7 +155,7 @@ $(function () {
         });
     }else{
         $(".wrapper").css("width","960");
-        $(".wrapper").css("margin","-290px auto");
+        $(".wrapper").css("margin","auto");
         $(".wrapper").css("position","static");
         $("body").css("background","#971F19");
         $("body").css("height","auto !important");

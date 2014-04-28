@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bc25e6be-4282-40d6-af5e-352fc8b19c78" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/script.js" afterPath="$PROJECT_DIR$/public/js/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="lemur.iws" />
@@ -33,19 +34,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="635" selection-end="635" vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="39222">
+            <state line="2071" column="18" selection-start="36166" selection-end="36166" vertical-scroll-proportion="0.38632986" vertical-offset="37018" max-vertical-offset="39258">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="script.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="script.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="145" column="43" selection-start="4235" selection-end="4235" vertical-scroll-proportion="0.3930131" vertical-offset="2340" max-vertical-offset="7632">
+            <state line="157" column="36" selection-start="4467" selection-end="4467" vertical-scroll-proportion="0.0" vertical-offset="2394" max-vertical-offset="7740">
               <folding />
             </state>
           </provider>
@@ -113,8 +114,8 @@
         <option value="$PROJECT_DIR$/app/views/front/detalle-idea.blade.php" />
         <option value="$PROJECT_DIR$/app/views/layouts/layout.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/IdeasController.php" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/public/js/script.js" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
       </list>
     </option>
   </component>
@@ -752,16 +753,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+    <entry file="file://$PROJECT_DIR$/public/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="635" selection-end="635" vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="39222">
+        <state line="157" column="36" selection-start="4467" selection-end="4467" vertical-scroll-proportion="0.0" vertical-offset="2394" max-vertical-offset="7740">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/script.js">
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="43" selection-start="4235" selection-end="4235" vertical-scroll-proportion="0.3930131" vertical-offset="2340" max-vertical-offset="7632">
+        <state line="2071" column="18" selection-start="36166" selection-end="36166" vertical-scroll-proportion="0.38632986" vertical-offset="37018" max-vertical-offset="39258">
           <folding />
         </state>
       </provider>

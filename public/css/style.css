@@ -2069,7 +2069,7 @@ iframe{
 
 #contend-index-mobile{
     display: none;
-    margin: 0 auto;
+    margin: -290px auto;
     width: 440px
 }
 @media all and (max-width:780px) {
