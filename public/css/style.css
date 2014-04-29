@@ -335,7 +335,7 @@ network
 #network{
 	position: absolute;
 	text-align: right;
-    top:474px;
+    	top:auto;
 	width: 220px;
 }
 #network li{
