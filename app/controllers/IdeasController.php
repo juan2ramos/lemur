@@ -221,7 +221,7 @@ class IdeasController extends \BaseController
         }
         $crono = true;
         $comentarios = $this->comentarios($id);
-        return View::make('front.detalle-idea', compact('gestor','video', 'idea', 'images', 'UserIdea', 'comentarios', 'crono', 'cierreCategoria'));
+            return View::make('front.detalle-idea', compact('gestor','video', 'idea', 'images', 'UserIdea', 'comentarios', 'crono', 'cierreCategoria'));
 
     }
 

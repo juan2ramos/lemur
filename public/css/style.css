@@ -38,11 +38,11 @@ ul{
 	padding: 0;
 }
 .wrapper{
-	left:50%;
-    margin-left:-480px;
-    padding: 0 10px;
-    position: fixed;
-	width: 960px;
+left:50%;
+margin-left:-480px;
+padding: 0 10px;
+position: fixed;
+
 }
 /*=================================================================
 header
@@ -103,7 +103,7 @@ header dd, header dt {
 
 }
 #contend-form input[type="text"]{
-	border: none;	
+	border: none;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	font-size: 0.7em;
@@ -115,8 +115,8 @@ header dd, header dt {
 }
 #contend-form input[type="submit"]{
 	background: url("../images/search.jpg") ;
-	border: none;	
-	box-sizing: border-box;	
+	border: none;
+	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	height: 15px;
 	margin: 2px 0 0 -3px ;
@@ -289,7 +289,7 @@ nav p{
 	background: url("../images/vota.png") -7px 34px
 
 }
-.preguntas-active .preguntas-class a, 
+.preguntas-active .preguntas-class a,
 .sube-tu-idea-active .sube-class a,
 .categorias-active .categorias-class a ,
 .contacto-active .contacto-class a,
@@ -298,7 +298,7 @@ nav p{
 .vota-por-una-idea-active .categorias-class a{
 	color: #E47F1C;
 }
-.preguntas-active .preguntas-class, 
+.preguntas-active .preguntas-class,
 .sube-tu-idea-active .sube-class ,
 .categorias-active .categorias-class ,
 .contacto-active .contacto-class ,
@@ -311,7 +311,7 @@ nav p{
 
 .preguntas-active .preguntas-class a {
 	background: url("../images/preguntas.png") -8px 34px  !important
-} 
+}
 .sube-tu-idea-active .sube-class a{
 	background: url("../images/sube.png") -7px 34px !important
 }
@@ -335,7 +335,7 @@ network
 #network{
 	position: absolute;
 	text-align: right;
-    top:474px;
+    	top:auto;
 	width: 220px;
 }
 #network li{
@@ -385,7 +385,7 @@ Contend
 #contend, #contend-index{
 	background-color: rgba(0, 0, 0, 0.5);
 	display: inline-block;
-	box-sizing: border-box;	
+	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	height: 488px;
 	margin-left:20px;
@@ -398,7 +398,7 @@ Contend
 #contend h2{
 	color: #FFFFFF;
 	font-size: 2.05em;
-}	
+}
 #contend p{
 	color: #FFFFFF;
 	font-size: 1.1em;
@@ -441,7 +441,7 @@ Categorias
 }
 #contend .contend-img, #contend .contend-p {
 	display: inline-block;
-	height: 75px;	
+	height: 75px;
 	vertical-align: middle;
 }
 .activa{
@@ -459,7 +459,7 @@ sube tu idea
 .input-contend span{
 	color: rgb(256, 256, 256);
 	font-size: .8em;
-	font-style: italic;    
+	font-style: italic;
     margin: 16px 30px 8px 7px;
 float: right;
 }
@@ -540,7 +540,7 @@ float: right;
 	vertical-align: baseline;
 	-webkit-box-sizing: border-box;
 		   -moz-box-sizing: border-box;
-		        box-sizing: border-box;	
+		        box-sizing: border-box;
 }
 .show-captcha{
 	font-size: 1.5em;
@@ -569,14 +569,14 @@ float: right;
     background:  rgba(228, 127, 28, 0.5)
 }
 
-.sube-tu-idea ::-moz-placeholder { 
-   color: #fff;  
+.sube-tu-idea ::-moz-placeholder {
+   color: #fff;
    font-style: italic;
 }
 
-.sube-tu-idea :-ms-input-placeholder {  
-   color: #fff; 
-   font-style: italic; 
+.sube-tu-idea :-ms-input-placeholder {
+   color: #fff;
+   font-style: italic;
 }
 /*=================================================================
 vota por una idea
@@ -588,7 +588,7 @@ vota por una idea
 	z-index: 1000;
 }
 .back a{
-	background: rgba(0,0,0,0.5);
+	background: rgba(0,0,0,0.8);
 	margin-top:  10px;
 	color: #fff;
 	display: block;
@@ -605,11 +605,11 @@ vota por una idea
 }
 .der:hover,.izq:hover{
 	background-color: rgba(150, 26, 29, 0.8);
-}	
+}
 .izq{
 	background: rgba(248, 152, 28, 0.8) url("../images/vota2.png") no-repeat left top;
 }
-.izq, .der{	
+.izq, .der{
 	color: #FFFFFF;
 	cursor: pointer;
 	display: inline-block;
@@ -721,7 +721,7 @@ Contacto
 	color: #fff;
 	display: inline-block;
 	font-size: 1.1em;
-	margin-bottom: 12px;	
+	margin-bottom: 12px;
 	width: 183px;
 }
 
@@ -736,10 +736,10 @@ Contacto
 .contact-form .text{
 	background: rgba(255,255,255,0.1);
 	border: none;
-    height: 90px;    
+    height: 90px;
 	width: 560px;
 }
-.contact-form .width-span{	   
+.contact-form .width-span{
 	margin-top: 5px;
 	font-size: 14px;
 	width: 560px;
@@ -753,11 +753,11 @@ Contacto
 	font-size: 17px;
 	left: 360px;
 	margin: 25px 0;
-	padding: 3px;	
+	padding: 3px;
 	position: relative;
 	width: 200px;
 }
-.contact-form input[type="submit"]:hover{	
+.contact-form input[type="submit"]:hover{
 	background: rgba(150, 26, 29, 0.4);
 }
 /*=================================================================
@@ -784,10 +784,10 @@ Servicios
 Trabaja en lemur
 ===================================================================*/
 .trabaja-en-lemur{
-	padding: 10px 0 20px 40px;	
+	padding: 10px 0 20px 40px;
 }
 .trabaja-en-lemur input{
-	width: 250px	
+	width: 250px
 }
 /*=================================================================
 Perfil
@@ -837,7 +837,7 @@ Perfil
 }
 
 .perfil{
-	padding: 10px 0 20px 40px;	
+	padding: 10px 0 20px 40px;
 }
 .perfil figure{
  	background: rgba(255, 255, 255, 0.5);
@@ -895,7 +895,7 @@ Perfil
 	padding: 3px;
 	position: relative;
 	width: 150px;
-	text-align: center;	
+	text-align: center;
 }
 
 
@@ -909,20 +909,20 @@ p#p-picture{
    font-style: italic;
 }
 
-.perfil ::-moz-placeholder { 
-   color: #fff;  
+.perfil ::-moz-placeholder {
+   color: #fff;
    font-style: italic;
 }
 
-.perfil :-ms-input-placeholder {  
-   color: #fff; 
-   font-style: italic; 
+.perfil :-ms-input-placeholder {
+   color: #fff;
+   font-style: italic;
 }
 /*=================================================================
 preguntas
 ===================================================================*/
 .preguntas{
-	padding: 10px 0 20px 40px;	
+	padding: 10px 0 20px 40px;
 }
 .preguntas a{
 	background: url(../images/more.png) no-repeat 0 0;
@@ -935,19 +935,19 @@ preguntas
 	color: #fff;
 	display: block;
 	margin: 5px 20px;
-	text-align: justify;	
+	text-align: justify;
 }
 .preguntas dt{
 
 	padding: 10px 0;
-	
+
 }
 
 /*=================================================================
 terminos y condiciones
 ===================================================================*/
 .terminos-y-condiciones{
-	padding: 10px 0 20px 40px;	
+	padding: 10px 0 20px 40px;
 }
 /*=================================================================
 popUp
@@ -973,7 +973,7 @@ popUp
 #popUp-contend h2{
 	margin: 0;
 	color: #fff;
-	font-size: 2.1em;	
+	font-size: 2.1em;
 }
 .close{
 	cursor: pointer;
@@ -1146,7 +1146,7 @@ h3{
 }
 #info-idea{
 	background: rgba(0, 0, 0, 0.47);
-	color: #fff;	
+	color: #fff;
 	display: inline-block;
 	height: 235px;
 	margin-left: -3px;
@@ -1178,10 +1178,10 @@ h3{
 	opacity: 1;
 }
 #info-idea li img{
-	background: no-repeat;	
+	background: no-repeat;
 	margin: 0 5px;
 	padding: 0;
-}	
+}
 #info-idea p{
 	color: rgba(255,255,255,.5);
 	font-size: 1em;
@@ -1220,7 +1220,7 @@ h3{
 	font-size: 0;
 	margin-right: 5px;
 	padding: 5px;
-	
+
 }
 #slide ol a:hover {
 	background: #000
@@ -1262,7 +1262,7 @@ h3{
 	padding: 5px 12px 4px 40px;
 	width: auto;
 	font-size: 19px;
-}	
+}
 
 .detalle-idea input[type='submit']{
 	background: rgba(0, 0, 0, 0.5);
@@ -1329,7 +1329,7 @@ Slider
 	right: 40px;
 }
 .contend-slider{
-	
+
 	margin: 70px auto;
 	padding: 50px;
 	position: relative;
@@ -1352,7 +1352,7 @@ Slider
 	cursor: pointer;
 	font-size: 3.5em;
 	left: 10px;
-	margin-top: -35px; 
+	margin-top: -35px;
 	position: absolute;
 	text-indent: -100;
 	top: 50%;
@@ -1362,7 +1362,7 @@ Slider
 	left: 555px;
 }
 .popUp-container-slide{
-	background: rgba(0,0,0,.5);
+	background: rgba(0,0,0,.8);
 	opacity: 0;
 	left: 0;
 	min-height: 100%;
@@ -1370,7 +1370,7 @@ Slider
 	position: fixed;
 	top: 0;
 	z-index: -1000
-}	
+}
 /*=================================================================
 Scrolling
 ===================================================================*/
@@ -1380,18 +1380,18 @@ Scrolling
 	margin: 0;
 	position: fixed;
 	width: 100%;
-} 
+}
 .slide, .slide1,.slide3,.slide3,.slide4{
 	margin: 160px auto;
 	position: relative;
 	width: 900px;
-} 
+}
 .slide p{
 	color: #fff;
 	font-size: 49px;
 	line-height: 49px;
 	margin: 0;
-}	
+}
 .slide figure{
 	margin-top: 60px;
 	padding-right: 200px;
@@ -1403,14 +1403,14 @@ Scrolling
 	right: 100px
 
 }
-.slide-2 { 
+.slide-2 {
 	color: #fff;
 	top: 50px;
 
 }
 
-.slide-2 p{ 
-	font-size: 40px;	
+.slide-2 p{
+	font-size: 40px;
 	margin: 0;
 }
 .slide-2  figure{
@@ -1593,7 +1593,7 @@ Scrolling
 #parrafos-cajas3 p{
 	margin: 0;
 	color: #fff
-	
+
 
 }
 
@@ -1614,7 +1614,7 @@ Scrolling
 #parrafos-casa p{
 	margin: 0;
 	color: #fff
-	
+
 
 }
 
@@ -1640,7 +1640,7 @@ Scrolling
 #parrafos-gato2 p{
 	margin: 0;
 	color: #fff
-	
+
 
 }
 
@@ -1683,7 +1683,7 @@ Scrolling
 #parrafos-macpc3 p{
 	margin: 0;
 	color: #fff
-	
+
 
 }
 #flecha{
@@ -1704,7 +1704,7 @@ Scrolling
 #parrafos-flecha p{
 	margin: 0;
 	color: #fff
-	
+
 }
 #parrafos-cajas1{
 	margin: 0;
@@ -1718,12 +1718,12 @@ Scrolling
 #parrafos-cajas1 p{
 	margin: 0;
 	color: #fff
-	
+
 }
 #parrafos-conter p{
 	margin: 0;
 	color: #fff
-	
+
 }
 
 #conter{
@@ -2069,6 +2069,8 @@ iframe{
 
 #contend-index-mobile{
     display: none;
+    margin: -290px auto;
+    width: 440px
 }
 @media all and (max-width:780px) {
     #contend-index-mobile{
