@@ -2072,6 +2072,15 @@ iframe{
     margin: -290px auto;
     width: 440px
 }
+@media all and (max-width:980px) {
+	#arrows-slide{
+		display: none
+	}
+	#skrollable{
+		display: none
+	}
+
+}
 @media all and (max-width:780px) {
     #contend-index-mobile{
         display: block;
