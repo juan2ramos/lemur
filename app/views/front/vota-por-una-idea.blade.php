@@ -12,7 +12,7 @@
         <p>Elige tu idea favorita y ayudala con tu voto, encontrarás información detallada de cada idea donde podrás
             dejar tus comentarios.</p>
         @else
-        <h2>No hay resultados</h2>
+        <h2>No hay resultados de tu búsqueda.</h2>
         @endif
         <ul>
             @foreach($ideasImage as $value)
