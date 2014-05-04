@@ -41,8 +41,12 @@
         <p>te estábamos esperando</p>
 
         <p>esto te va a encantar!!!</p>
-        <figure>
+        <figure id="scroll-down-pc">
             <img src="images/scroll-down.png " alt="">
+            <figcaption></figcaption>
+        </figure>
+        <figure id="scroll-down-ipad">
+            <img src="images/sample.png " alt="">
             <figcaption></figcaption>
         </figure>
 

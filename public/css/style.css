@@ -333,7 +333,6 @@ nav p{
 network
 ===================================================================*/
 #network{
-	position: absolute;
 	text-align: right;
     	top:auto;
 	width: 220px;
@@ -2072,14 +2071,22 @@ iframe{
     margin: -290px auto;
     width: 440px
 }
+#scroll-down-ipad{
+    display: none;
+}
 @media all and (max-width:980px) {
 	#arrows-slide{
 		display: none
 	}
-	#skrollable{
+	#flecha-inicio{
 		display: none
 	}
-
+    #scroll-down-ipad{
+        display: block;
+    }
+    #scroll-down-pc{
+        display: none;
+    }
 }
 @media all and (max-width:780px) {
     #contend-index-mobile{
