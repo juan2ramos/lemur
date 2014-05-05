@@ -18,7 +18,13 @@
     <meta name="author" content="juan2ramos"/>
     <meta name="description" content="Inicio"/>
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
-    @yield('metas')
+    @section('metas')
+    <meta property="og:url" content="{{Request::url()}}"/>
+    <meta property="og:title" content="Lemur Studio "/>
+    <meta property="og:description"
+          content="Entra y vota por mi idea...¡te encantará! Lemur Studio es una plataforma donde puedes sacarle provecho a tus ideas, visítanos y entérate del resto."/>
+    <meta property="og:image" content="http://lemurstudio.com.co/images/ogfacebook.png"/>
+    @show
 
     <!-- Estilos -->
     <?php echo HTML::script('js/prefixfree.min.js') ?>
