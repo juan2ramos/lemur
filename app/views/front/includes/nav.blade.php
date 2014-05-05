@@ -15,7 +15,9 @@
                     if($pieces[0] == 'registro'){
                         $sub = '/';
                     }
-
+                    if($pieces[0] == 'terminos-y-condiciones'){
+                        $sub = '/';
+                    }
                     ?>
                     @foreach($menu as $link)
                     <?php

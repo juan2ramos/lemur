@@ -1,5 +1,8 @@
 $(function () {
 
+    var height = $('nav').width() + 340;
+    $('#network').css('top',height);
+
     $('.button-responsive ').on("click", function () {
 
         $('.menu-responsive').toggleClass('open-menu');
